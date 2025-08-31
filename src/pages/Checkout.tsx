@@ -194,17 +194,17 @@ const Checkout = () => {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="firstName">First Name *</Label>
-                      <Input id="firstName" placeholder="Enter first name" required />
+                      <Input id="firstName" placeholder="Enter first name" className="border border-input" required />
                     </div>
                     <div>
                       <Label htmlFor="lastName">Last Name *</Label>
-                      <Input id="lastName" placeholder="Enter last name" required />
+                      <Input id="lastName" placeholder="Enter last name" className="border border-input" required />
                     </div>
                   </div>
                   
                   <div>
                     <Label htmlFor="phone">Phone Number *</Label>
-                    <Input id="phone" type="tel" placeholder="Enter phone number" required />
+                    <Input id="phone" type="tel" placeholder="Enter phone number" className="border border-input" required />
                   </div>
 
                   {selectedDelivery !== 'collect' && (
@@ -214,6 +214,8 @@ const Checkout = () => {
                         <Input 
                           id="address" 
                           placeholder="Enter full address"
+                          defaultValue="42 Earlham St, London"
+                          className="border border-input"
                           required
                         />
                       </div>
@@ -221,11 +223,11 @@ const Checkout = () => {
                       <div className="grid grid-cols-2 gap-4">
                         <div>
                           <Label htmlFor="city">City *</Label>
-                          <Input id="city" placeholder="London" required />
+                          <Input id="city" placeholder="London" defaultValue="London" className="border border-input" required />
                         </div>
                         <div>
                           <Label htmlFor="postcode">Postcode *</Label>
-                          <Input id="postcode" placeholder="WC2H 9LA" required />
+                          <Input id="postcode" placeholder="WC2H 9LA" defaultValue="WC2H 9LA" className="border border-input" required />
                         </div>
                       </div>
                     </>
@@ -239,7 +241,7 @@ const Checkout = () => {
                         ? "Any special requirements for pickup?" 
                         : "Delivery instructions (e.g., safe place, gate code, etc.)"
                       }
-                      className="resize-none"
+                      className="resize-none border border-input"
                       rows={3}
                     />
                   </div>
