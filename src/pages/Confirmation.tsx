@@ -143,9 +143,9 @@ const Confirmation = () => {
           </div>
         </div>
 
-        {/* Order Details */}
+        {/* Order Details - Dynamic based on delivery type */}
         <div className="grid md:grid-cols-2 gap-6 mb-8">
-          {/* Delivery Status */}
+          {/* Delivery Information */}
           <Card className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-4">
@@ -158,80 +158,157 @@ const Confirmation = () => {
                 </div>
               </div>
               
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="font-medium">
-                    {selectedDelivery === 'collect' ? 'Ready by:' : 'Delivery by:'}
-                  </span>
-                  <span className="text-lg font-bold text-primary">{deliveryTime}</span>
-                </div>
-                
-                <div className="flex justify-between items-center">
-                  <span>Estimated time:</span>
-                  <span className="text-lg font-semibold text-green-600">
-                    {formatTimeRemaining(timeRemaining)}
-                  </span>
-                </div>
-                
-                <div className="w-full bg-muted rounded-full h-2">
-                  <div 
-                    className="bg-primary h-2 rounded-full transition-all duration-1000"
-                    style={{ width: '25%' }}
-                  ></div>
-                </div>
-                
-                {selectedDelivery === 'collect' ? (
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <MapPin className="w-4 h-4" />
-                    <span>42 Earlham St, London WC2H 9LA</span>
+              {selectedDelivery === 'express' ? (
+                // Express delivery - show countdown and progress
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Delivery by:</span>
+                    <span className="text-lg font-bold text-primary">{deliveryTime}</span>
                   </div>
-                ) : (
+                  
+                  <div className="flex justify-between items-center">
+                    <span>Time remaining:</span>
+                    <span className="text-lg font-semibold text-green-600">
+                      {formatTimeRemaining(timeRemaining)}
+                    </span>
+                  </div>
+                  
+                  <div className="w-full bg-muted rounded-full h-2">
+                    <div 
+                      className="bg-primary h-2 rounded-full transition-all duration-1000 animate-pulse"
+                      style={{ width: '25%' }}
+                    ></div>
+                  </div>
+                  
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Phone className="w-4 h-4" />
                     <span>We'll call you when we're close</span>
                   </div>
-                )}
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Order Status */}
-          <Card className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <CardContent className="p-6">
-              <h3 className="font-semibold mb-4 flex items-center gap-2">
-                <Package className="w-5 h-5" />
-                Order Progress
-              </h3>
-              <div className="space-y-4">
-                {getStatusSteps().map((step, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className={`w-3 h-3 rounded-full ${
-                      step.completed 
-                        ? 'bg-green-500' 
-                        : step.active 
-                        ? 'bg-blue-500 animate-pulse' 
-                        : 'bg-muted'
-                    }`}></div>
-                    <span className={`text-sm ${
-                      step.completed || step.active 
-                        ? 'text-foreground' 
-                        : 'text-muted-foreground'
-                    }`}>
-                      {step.label}
-                    </span>
+                </div>
+              ) : selectedDelivery === 'collect' ? (
+                // Click & Collect - show pickup info
+                <div className="space-y-4">
+                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                    <h4 className="font-semibold text-blue-800 mb-2">Pickup Instructions</h4>
+                    <div className="space-y-2 text-sm text-blue-700">
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4" />
+                        <span>42 Earlham St, London WC2H 9LA</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Clock className="w-4 h-4" />
+                        <span>Ready by {deliveryTime}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Receipt className="w-4 h-4" />
+                        <span>Bring this confirmation and ID</span>
+                      </div>
+                    </div>
                   </div>
-                ))}
-              </div>
-              
-              {selectedDelivery === 'collect' && (
-                <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
-                  <p className="text-sm text-blue-800 font-medium">
-                    💡 Bring this confirmation and a valid ID for pickup
-                  </p>
+                  <div className="text-center">
+                    <p className="text-sm text-muted-foreground">
+                      We'll text you when your order is ready for collection
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                // Home delivery - show delivery window
+                <div className="space-y-4">
+                  <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+                    <h4 className="font-semibold text-green-800 mb-2">Delivery Window</h4>
+                    <div className="space-y-2 text-sm text-green-700">
+                      <div className="flex items-center gap-2">
+                        <Clock className="w-4 h-4" />
+                        <span>Expected delivery: {deliveryTime}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Truck className="w-4 h-4" />
+                        <span>Our driver will call 10 minutes before arrival</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4" />
+                        <span>42 Earlham St, London WC2H 9LA</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-sm text-muted-foreground">
+                      Your groceries will be carefully packed and delivered fresh
+                    </p>
+                  </div>
                 </div>
               )}
             </CardContent>
           </Card>
+
+          {/* Right Panel - Dynamic Content */}
+          {selectedDelivery === 'express' ? (
+            // Express delivery - show order progress
+            <Card className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-4 flex items-center gap-2">
+                  <Package className="w-5 h-5" />
+                  Express Order Progress
+                </h3>
+                <div className="space-y-4">
+                  {getStatusSteps().map((step, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <div className={`w-3 h-3 rounded-full ${
+                        step.completed 
+                          ? 'bg-green-500' 
+                          : step.active 
+                          ? 'bg-blue-500 animate-pulse' 
+                          : 'bg-muted'
+                      }`}></div>
+                      <span className={`text-sm ${
+                        step.completed || step.active 
+                          ? 'text-foreground' 
+                          : 'text-muted-foreground'
+                      }`}>
+                        {step.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ) : (
+            // Home delivery & Click & collect - show order summary
+            <Card className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-4 flex items-center gap-2">
+                  <Receipt className="w-5 h-5" />
+                  Order Summary
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Order Number:</span>
+                    <span className="font-medium">#{orderNumber}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Order Date:</span>
+                    <span className="font-medium">{new Date().toLocaleDateString('en-GB')}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Delivery Method:</span>
+                    <span className="font-medium">{deliveryDetails.label}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Delivery Fee:</span>
+                    <span className="font-medium">{deliveryDetails.fee}</span>
+                  </div>
+                </div>
+                
+                {selectedDelivery === 'collect' && (
+                  <div className="mt-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
+                    <p className="text-sm text-amber-800 font-medium">
+                      💡 Store hours: 7am - 11pm daily
+                    </p>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          )}
         </div>
 
         {/* Customer Service Info */}
