@@ -1,0 +1,20 @@
+{
+  "name": "QuickMart Delivery App",
+  "short_name": "QuickMart",
+  "description": "QuickMart, Earlham Street - Your neighborhood grocery store with fast delivery",
+  "theme_color": "#0099ff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["shopping", "food"],
+  "lang": "en"
+}
