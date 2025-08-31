@@ -4,9 +4,7 @@ import { Button } from '@/components/ui/button';
 interface CategoryItem {
   id: string;
   name: string;
-  color: string;
-  textColor?: string;
-  logo?: string;
+  image: string;
 }
 
 interface CategorySectionProps {
@@ -15,28 +13,34 @@ interface CategorySectionProps {
 
 const categories: CategoryItem[] = [
   { 
-    id: 'special-offers', 
-    name: 'Special Offers', 
-    color: 'bg-brand-yellow', 
-    textColor: 'text-foreground' 
+    id: 'newProducts', 
+    name: 'New Products', 
+    image: '/assets/red-bull-original.jpg'
   },
   { 
-    id: 'marketplace', 
-    name: 'QuickMart\nMarketplace', 
-    color: 'bg-card border-2 border-border shadow-sm', 
-    textColor: 'text-foreground' 
+    id: 'breakfast', 
+    name: 'Breakfast', 
+    image: '/assets/breakfast-items.jpg'
   },
   { 
-    id: 'fresh', 
-    name: 'Clothing &\nAccessories', 
-    color: 'bg-foreground', 
-    textColor: 'text-white' 
+    id: 'energyDrinks', 
+    name: 'Energy Drinks', 
+    image: '/assets/red-bull-original.jpg'
   },
   { 
-    id: 'summer', 
-    name: 'Summer\nEssentials', 
-    color: 'bg-gradient-to-br from-grocery-orange via-grocery-red to-grocery-purple', 
-    textColor: 'text-white' 
+    id: 'matchReady', 
+    name: 'Match Ready', 
+    image: '/assets/snacks.jpg'
+  },
+  { 
+    id: 'softDrinks', 
+    name: 'Soft Drinks', 
+    image: '/assets/juice.jpg'
+  },
+  { 
+    id: 'favourites', 
+    name: 'Favourites', 
+    image: '/assets/red-bull-sugar-free.jpg'
   },
 ];
 
@@ -52,14 +56,22 @@ const CategorySection = ({ onSelectCategory }: CategorySectionProps) => {
           </Button>
         </div>
         
-        <div className="grid grid-cols-2 gap-4">
+        
+        <div className="grid grid-cols-3 gap-6">
           {categories.map((category) => (
             <div
               key={category.id}
               onClick={() => onSelectCategory?.(category.id)}
-              className={`${category.color} rounded-3xl h-28 flex items-center justify-center cursor-pointer hover:scale-105 transition-all duration-200 shadow-sm`}
+              className="flex flex-col items-center cursor-pointer group"
             >
-              <span className={`font-bold text-center px-4 leading-tight whitespace-pre-line ${category.textColor || 'text-white'}`}>
+              <div className="w-20 h-20 rounded-full overflow-hidden mb-3 shadow-lg group-hover:scale-105 transition-transform duration-200">
+                <img 
+                  src={category.image} 
+                  alt={category.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <span className="text-sm font-medium text-foreground text-center leading-tight">
                 {category.name}
               </span>
             </div>
