@@ -182,7 +182,7 @@ const ProductDetail = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           {/* Product image */}
           <div className="space-y-4">
-            <div className="aspect-square bg-muted rounded-lg overflow-hidden">
+            <div className="aspect-square bg-white rounded-lg overflow-hidden border border-gray-100">
               <img
                 src={getProxiedImageUrl(product.image)}
                 alt={product.name}
