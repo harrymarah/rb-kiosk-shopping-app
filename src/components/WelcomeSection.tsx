@@ -1,4 +1,4 @@
-import { Truck, Clock, Bike } from 'lucide-react'
+import { Truck, Clock, Zap } from 'lucide-react'
 import { useState } from 'react'
 
 const WelcomeSection = () => {
@@ -6,7 +6,7 @@ const WelcomeSection = () => {
 
   const deliveryOptions = [
     { id: 'home', icon: Truck, label: 'HOME DELIVERY', description: '1-2 hours' },
-    { id: 'express', icon: Bike, label: 'EXPRESS', description: '30 mins' },
+    { id: 'express', icon: Zap, label: 'EXPRESS', description: '30 mins' },
     { id: 'collect', icon: Clock, label: 'CLICK & COLLECT', description: 'Pick up today' },
   ];
 
