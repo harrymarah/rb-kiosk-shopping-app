@@ -1,41 +1,51 @@
-import { Star, Truck, ReceiptPoundSterling } from 'lucide-react'
+import { Truck, Clock, Car } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 const WelcomeSection = () => {
   return (
-    <section className="bg-background px-6 py-8">
+    <section className="bg-primary px-4 py-6">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl font-bold text-foreground mb-6">
-          Welcome to QuickMart, Earlham Street
-        </h2>
-
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-12 mb-3">
-          <div className="flex items-center gap-3 justify-center sm:justify-start">
-            <Star className="h-6 w-6 text-primary fill-primary" />
-            <div>
-              <span className="text-lg font-bold text-primary">4.8</span>
-              <span className="text-lg text-primary ml-2">Excellent</span>
+        {/* Delivery Options */}
+        <div className="flex justify-center gap-6 mb-6">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+              <Car className="h-6 w-6 text-white" />
+            </div>
+            <div className="text-white text-center">
+              <p className="text-xs">DELIVERY</p>
             </div>
           </div>
-
-          <div className="flex items-center gap-3 justify-center sm:justify-start">
-            <Truck className="h-6 w-6 text-primary" />
-            <div>
-              <span className="text-lg text-foreground">Deliver in</span>
-              <span className="text-lg font-semibold text-primary ml-2">
-                15-30 minutes
-              </span>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+              <Truck className="h-6 w-6 text-white" />
+            </div>
+            <div className="text-white text-center">
+              <p className="text-xs">EXPRESS</p>
             </div>
           </div>
-
-          <div className="flex items-center gap-3 justify-center sm:justify-start">
-            <ReceiptPoundSterling className="h-6 w-6 text-primary" />
-            <div>
-              <span className="text-lg text-foreground">Minimum order</span>
-              <span className="text-lg font-semibold text-primary ml-2">
-                £15
-              </span>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+              <Clock className="h-6 w-6 text-white" />
+            </div>
+            <div className="text-white text-center">
+              <p className="text-xs">PICKUP</p>
             </div>
           </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="space-y-3">
+          <Button 
+            variant="outline" 
+            className="w-full bg-transparent border-white text-white hover:bg-white hover:text-primary rounded-full py-6"
+          >
+            Get Whoosh delivery
+          </Button>
+          <Button 
+            className="w-full bg-white text-primary hover:bg-white/90 rounded-full py-6 font-semibold"
+          >
+            Book a slot
+          </Button>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
 import WelcomeSection from "@/components/WelcomeSection";
+import CategorySection from "@/components/CategorySection";
 import TabNavigation from "@/components/TabNavigation";
 import ProductSection, { useProducts } from "@/components/ProductSection";
 import ProductCarousel from "@/components/ProductCarousel";
@@ -50,6 +51,24 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <WelcomeSection />
+      
+      {/* New Product Showcase */}
+      <section className="bg-muted/30 px-4 py-4">
+        <div className="container mx-auto max-w-4xl">
+          <div className="bg-white rounded-lg p-4 flex items-center gap-4 shadow-sm">
+            <div className="flex-1 grid grid-cols-3 gap-4">
+              <img src="/assets/breakfast-items.jpg" alt="Product 1" className="w-16 h-16 object-cover rounded" />
+              <img src="/assets/croissants.jpg" alt="Product 2" className="w-16 h-16 object-cover rounded" />
+              <img src="/assets/juice.jpg" alt="Product 3" className="w-16 h-16 object-cover rounded" />
+            </div>
+            <div className="bg-primary text-white px-6 py-8 rounded-lg font-bold text-xl">
+              New
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <CategorySection />
       <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
       
       {activeTab === "explore" && !selectedCategory && products && (
