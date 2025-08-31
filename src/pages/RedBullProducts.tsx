@@ -67,7 +67,7 @@ const RedBullProducts = () => {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => navigate('/quickmart')}
+              onClick={() => navigate('/')}
               className="shrink-0"
             >
               <ChevronLeft className="h-6 w-6" />
