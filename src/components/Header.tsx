@@ -31,14 +31,23 @@ const Header = () => {
   return (
     <header className="bg-background border-b">
       {/* Top Status Bar */}
-      <div className="bg-muted/30 py-2 px-4 text-center">
-        <p className="text-sm text-muted-foreground">11:51</p>
+      <div className="bg-muted/30 py-2 px-4 flex justify-between items-center">
+        <div className="text-sm text-muted-foreground">11:51</div>
+        <div className="flex items-center gap-2">
+          <Button variant="ghost" size="icon" className="text-muted-foreground h-8 w-8">
+            <Calendar className="h-4 w-4" />
+          </Button>
+          <Button variant="ghost" size="icon" className="text-muted-foreground relative h-8 w-8">
+            <User className="h-4 w-4" />
+            <div className="absolute -top-1 -right-1 w-2 h-2 bg-success rounded-full"></div>
+          </Button>
+        </div>
       </div>
 
       {/* Main Header */}
-      <div className="container mx-auto px-4 py-4">
-        {/* Delivery Toggle */}
-        <div className="flex justify-center mb-4">
+      <div className="container mx-auto px-4 py-4 space-y-4">
+        {/* Delivery Toggle - Centered */}
+        <div className="flex justify-center">
           <div className="bg-muted rounded-full p-1 flex">
             <Button
               variant={deliveryMode === 'delivery' ? 'default' : 'ghost'}
@@ -65,22 +74,11 @@ const Header = () => {
               In-store
             </Button>
           </div>
-          
-          {/* Top Right Icons */}
-          <div className="ml-auto flex items-center gap-2">
-            <Button variant="ghost" size="icon" className="text-muted-foreground">
-              <Calendar className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="text-muted-foreground relative">
-              <User className="h-5 w-5" />
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-success rounded-full"></div>
-            </Button>
-          </div>
         </div>
 
-        {/* Search and Navigation */}
-        <div className="flex items-center justify-between gap-4 mb-4">
-          <div className="flex-1 max-w-2xl">
+        {/* Search and Navigation Icons */}
+        <div className="flex items-center gap-4">
+          <div className="flex-1">
             <SearchBar />
           </div>
           
@@ -116,7 +114,7 @@ const Header = () => {
 
         {/* Brand Name */}
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-foreground mb-1">
+          <h1 className="text-2xl font-bold text-foreground">
             QuickMart
           </h1>
           <p className="text-sm text-muted-foreground">
