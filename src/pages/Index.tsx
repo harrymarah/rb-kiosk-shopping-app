@@ -51,24 +51,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <WelcomeSection />
-      
-      {/* New Product Showcase */}
-      <section className="bg-background px-4 py-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="bg-card rounded-3xl p-4 flex items-center gap-4 shadow-lg border">
-            <div className="flex-1 grid grid-cols-3 gap-3">
-              <img src="/assets/breakfast-items.jpg" alt="New Product 1" className="w-16 h-16 object-cover rounded-2xl shadow-sm" />
-              <img src="/assets/croissants.jpg" alt="New Product 2" className="w-16 h-16 object-cover rounded-2xl shadow-sm" />
-              <img src="/assets/juice.jpg" alt="New Product 3" className="w-16 h-16 object-cover rounded-2xl shadow-sm" />
-            </div>
-            <div className="bg-grocery-blue text-white px-8 py-6 rounded-2xl font-bold text-2xl shadow-lg">
-              New
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <CategorySection />
+      <CategorySection onSelectCategory={setSelectedCategory} />
       <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
       
       {activeTab === "explore" && !selectedCategory && products && (
