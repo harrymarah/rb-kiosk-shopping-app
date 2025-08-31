@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { BasketProvider } from "@/contexts/BasketContext";
 import { FavoritesProvider } from "@/contexts/FavoritesContext";
 import { DeliveryProvider } from "@/contexts/DeliveryContext";
+import { OrderHistoryProvider } from "@/contexts/OrderHistoryContext";
 import { StickyCartBar } from "@/components/StickyCartBar";
 import Index from "./pages/Index";
 import Basket from "./pages/Basket";
@@ -20,10 +21,11 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <DeliveryProvider>
-      <FavoritesProvider>
-        <BasketProvider>
-          <TooltipProvider>
+    <OrderHistoryProvider>
+      <DeliveryProvider>
+        <FavoritesProvider>
+          <BasketProvider>
+            <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
@@ -42,10 +44,11 @@ const App = () => (
           </div>
           <StickyCartBar />
         </BrowserRouter>
-        </TooltipProvider>
-      </BasketProvider>
-    </FavoritesProvider>
-    </DeliveryProvider>
+          </TooltipProvider>
+        </BasketProvider>
+      </FavoritesProvider>
+      </DeliveryProvider>
+    </OrderHistoryProvider>
   </QueryClientProvider>
 );
 

@@ -11,6 +11,7 @@ import BannerAd from "@/components/BannerAd";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useBasket } from "@/contexts/BasketContext";
 import { useToast } from "@/components/ui/use-toast";
+import { useOrderHistory } from "@/contexts/OrderHistoryContext";
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -19,6 +20,7 @@ const Index = () => {
   const { favorites: favItems, toggleFavorite: toggleFav, isFavorite } = useFavorites();
   const { addItem } = useBasket();
   const { toast } = useToast();
+  const { lastOrder } = useOrderHistory();
   const { products, categories, allProducts } = useProducts();
   const favoritesSet = new Set(favItems.map(f => f.id));
 
@@ -189,10 +191,71 @@ const Index = () => {
         <div className="px-6 py-8">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Last Order</h2>
-            <div className="text-center">
-              <p className="text-muted-foreground">Your previous order will appear here</p>
-              <p className="text-sm text-muted-foreground mt-2">Place an order to see your order history</p>
-            </div>
+            {lastOrder ? (
+              <div className="space-y-6">
+                {/* Order Info */}
+                <div className="bg-gray-50 rounded-lg p-4 border">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-semibold">Order #{lastOrder.id}</span>
+                    <span className="text-sm text-muted-foreground">
+                      {new Date(lastOrder.date).toLocaleDateString('en-GB')}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">
+                      {lastOrder.deliveryMethod === 'collect' ? 'Click & Collect' : 
+                       lastOrder.deliveryMethod === 'express' ? 'Express Delivery' : 'Home Delivery'} • 
+                      {lastOrder.status === 'collected' ? ' Collected' : ' Delivered'}
+                    </span>
+                    <span className="font-bold">£{lastOrder.total.toFixed(2)}</span>
+                  </div>
+                </div>
+                
+                {/* Order Items */}
+                <div className="grid grid-cols-4 gap-6">
+                  {lastOrder.items.map((item) => (
+                    <ProductCard
+                      key={item.id}
+                      image={item.image}
+                      name={item.name}
+                      price={item.price}
+                      isFavorite={favoritesSet.has(item.id)}
+                      onToggleFavorite={() => toggleFavoriteById(item.id)}
+                      onAddToCart={() => handleAddToCart(allProducts?.find(p => p.id === item.id))}
+                      productId={item.id}
+                    />
+                  ))}
+                </div>
+                
+                {/* Reorder Button */}
+                <div className="text-center mt-8">
+                  <button
+                    onClick={() => {
+                      lastOrder.items.forEach(item => {
+                        const product = allProducts?.find(p => p.id === item.id);
+                        if (product) {
+                          for (let i = 0; i < item.quantity; i++) {
+                            handleAddToCart(product);
+                          }
+                        }
+                      });
+                      toast({
+                        title: "Items added to basket",
+                        description: "Your last order has been added to your basket.",
+                      });
+                    }}
+                    className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+                  >
+                    Reorder All Items
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="text-center">
+                <p className="text-muted-foreground">No previous orders yet</p>
+                <p className="text-sm text-muted-foreground mt-2">Place an order to see your order history</p>
+              </div>
+            )}
           </div>
         </div>
       )}

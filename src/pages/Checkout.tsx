@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useBasket } from "@/contexts/BasketContext";
 import { useDelivery } from "@/contexts/DeliveryContext";
+import { useOrderHistory } from "@/contexts/OrderHistoryContext";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -22,6 +23,7 @@ import {
 const Checkout = () => {
   const { items, getTotalPrice, clearBasket, addItem } = useBasket();
   const { selectedDelivery, getDeliveryDetails } = useDelivery();
+  const { addOrder } = useOrderHistory();
   const { allProducts } = useProducts();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -98,6 +100,19 @@ const Checkout = () => {
     
     // Simulate processing time
     await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // Save order to history
+    addOrder({
+      items: items.map(item => ({
+        id: item.id,
+        name: item.name,
+        price: item.price,
+        image: item.image,
+        quantity: item.quantity
+      })),
+      total: total,
+      deliveryMethod: selectedDelivery
+    });
     
     // Clear basket and navigate to confirmation
     clearBasket();
