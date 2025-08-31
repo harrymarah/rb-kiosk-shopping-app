@@ -18,6 +18,17 @@ const Index = () => {
   const { products, categories, allProducts } = useProducts();
   const favoritesSet = new Set(favItems.map(f => f.id));
 
+  // Category display names mapping
+  const categoryDisplayNames: Record<string, string> = {
+    newProducts: "New Products",
+    breakfast: "Breakfast Items", 
+    energyDrinks: "Energy Drinks",
+    matchReady: "Match Ready",
+    softDrinks: "Soft Drinks",
+    favourites: "Customer Favourites",
+    redBull: "Red Bull Products"
+  };
+
   // Handle URL params for category selection
   useEffect(() => {
     const categoryParam = searchParams.get("category");
@@ -116,7 +127,7 @@ const Index = () => {
                 ← Back to explore
               </button>
             </div>
-            <h2 className="text-2xl font-bold text-foreground mb-6 capitalize">{selectedCategory}</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-6">{categoryDisplayNames[selectedCategory] || selectedCategory}</h2>
             <div className="grid grid-cols-4 gap-6">
               {categoryProducts.map((product) => (
                 <ProductCard
