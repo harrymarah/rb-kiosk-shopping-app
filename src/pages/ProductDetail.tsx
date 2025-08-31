@@ -197,7 +197,7 @@ const ProductDetail = () => {
                     target.src = '/placeholder.svg';
                   }
                 }}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
           </div>
