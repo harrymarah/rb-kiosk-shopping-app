@@ -49,11 +49,26 @@ const Index = () => {
     
     if (categoryParam) {
       setSelectedCategory(categoryParam);
-    }
-    if (tabParam) {
+      // When a category is selected, switch to explore mode (clear active tab)
+      setActiveTab("explore");
+    } else if (tabParam) {
       setActiveTab(tabParam);
+      // When switching to a tab, clear category selection
+      setSelectedCategory(null);
     }
   }, [searchParams]);
+
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+    setSelectedCategory(null); // Clear category when switching tabs
+  };
+
+  const handleCategorySelect = (category: string | null) => {
+    setSelectedCategory(category);
+    if (category) {
+      setActiveTab("explore"); // Switch to explore mode when category is selected
+    }
+  };
 
   const toggleFavoriteById = (productId: string) => {
     const product = allProducts?.find(p => p.id === productId);
@@ -89,8 +104,8 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <WelcomeSection />
-      <CategorySection onSelectCategory={setSelectedCategory} />
-      <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
+      <CategorySection onSelectCategory={handleCategorySelect} />
+      <TabNavigation activeTab={activeTab} onTabChange={handleTabChange} />
       
       
       {activeTab === "newin" && products && (
@@ -148,7 +163,7 @@ const Index = () => {
           <div className="container mx-auto max-w-4xl">
             <div className="flex items-center gap-4 mb-6">
               <button
-                onClick={() => setSelectedCategory(null)}
+                onClick={() => handleCategorySelect(null)}
                 className="text-primary hover:text-primary/80 text-sm font-medium"
               >
                 ← Back to explore
