@@ -1,35 +1,29 @@
-import { Truck, Clock, Car } from 'lucide-react'
+import { Truck, Clock, Car, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const WelcomeSection = () => {
   return (
-    <section className="bg-primary px-4 py-6">
+    <section className="bg-grocery-blue px-4 py-6">
       <div className="container mx-auto max-w-4xl">
-        {/* Delivery Options */}
-        <div className="flex justify-center gap-6 mb-6">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
-              <Car className="h-6 w-6 text-white" />
+        {/* Delivery Icons Grid */}
+        <div className="grid grid-cols-3 gap-6 mb-6">
+          <div className="flex flex-col items-center">
+            <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-2 backdrop-blur-sm">
+              <Car className="h-8 w-8 text-white" />
             </div>
-            <div className="text-white text-center">
-              <p className="text-xs">DELIVERY</p>
-            </div>
+            <p className="text-white text-xs font-medium">HOME DELIVERY</p>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
-              <Truck className="h-6 w-6 text-white" />
+          <div className="flex flex-col items-center">
+            <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-2 backdrop-blur-sm">
+              <Truck className="h-8 w-8 text-white" />
             </div>
-            <div className="text-white text-center">
-              <p className="text-xs">EXPRESS</p>
-            </div>
+            <p className="text-white text-xs font-medium">EXPRESS</p>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
-              <Clock className="h-6 w-6 text-white" />
+          <div className="flex flex-col items-center">
+            <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-2 backdrop-blur-sm">
+              <Clock className="h-8 w-8 text-white" />
             </div>
-            <div className="text-white text-center">
-              <p className="text-xs">PICKUP</p>
-            </div>
+            <p className="text-white text-xs font-medium">CLICK & COLLECT</p>
           </div>
         </div>
 
@@ -37,14 +31,15 @@ const WelcomeSection = () => {
         <div className="space-y-3">
           <Button 
             variant="outline" 
-            className="w-full bg-transparent border-white text-white hover:bg-white hover:text-primary rounded-full py-6"
+            className="w-full bg-transparent border-2 border-white text-white hover:bg-white hover:text-grocery-blue rounded-2xl py-4 text-base font-semibold transition-all"
           >
             Get Whoosh delivery
           </Button>
           <Button 
-            className="w-full bg-white text-primary hover:bg-white/90 rounded-full py-6 font-semibold"
+            className="w-full bg-white text-grocery-blue hover:bg-white/90 rounded-2xl py-4 text-base font-bold shadow-lg"
           >
             Book a slot
+            <ChevronRight className="h-5 w-5 ml-2" />
           </Button>
         </div>
       </div>

@@ -8,30 +8,33 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 215 25% 27%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card-foreground: 0 0% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover-foreground: 0 0% 15%;
 
-    /* QuickMart Brand Colors */
-    --primary: 223 87% 44%;
+    /* Supermarket Brand Colors - Clean & Professional */
+    --primary: 220 100% 50%;
     --primary-foreground: 0 0% 100%;
     
-    --brand-yellow: 48 100% 50%;
-    --brand-yellow-foreground: 215 25% 27%;
+    --brand-yellow: 45 100% 60%;
+    --brand-yellow-foreground: 0 0% 15%;
+    
+    --brand-green: 142 69% 58%;
+    --brand-green-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 215 25% 27%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 220 13% 96%;
-    --muted-foreground: 215 16% 60%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 48 100% 50%;
-    --accent-foreground: 215 25% 27%;
+    --accent: 220 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
@@ -39,26 +42,25 @@ All colors MUST be HSL.
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 223 87% 44%;
+    --border: 0 0% 89%;
+    --input: 0 0% 100%;
+    --ring: 220 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Grocery App Specific Colors */
+    --grocery-blue: 220 100% 50%;
+    --grocery-red: 0 100% 50%;
+    --grocery-orange: 25 100% 55%;
+    --grocery-purple: 270 50% 40%;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 

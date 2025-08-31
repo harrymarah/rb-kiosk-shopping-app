@@ -29,32 +29,40 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-background border-b">
+    <header className="bg-card shadow-sm">
       {/* Top Status Bar */}
-      <div className="bg-muted/30 py-2 px-4 flex justify-between items-center">
-        <div className="text-sm text-muted-foreground">11:51</div>
+      <div className="bg-grocery-blue text-white py-1 px-4 flex justify-between items-center text-xs">
+        <div className="flex items-center gap-4">
+          <span>11:51</span>
+          <div className="flex items-center gap-1">
+            <div className="w-1 h-1 bg-white rounded-full"></div>
+            <div className="w-1 h-1 bg-white rounded-full"></div>
+            <div className="w-1 h-1 bg-white rounded-full"></div>
+            <span>4G</span>
+          </div>
+        </div>
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon" className="text-muted-foreground h-8 w-8">
-            <Calendar className="h-4 w-4" />
+          <Button variant="ghost" size="icon" className="text-white h-6 w-6 hover:bg-white/10">
+            <Calendar className="h-3 w-3" />
           </Button>
-          <Button variant="ghost" size="icon" className="text-muted-foreground relative h-8 w-8">
-            <User className="h-4 w-4" />
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-success rounded-full"></div>
+          <Button variant="ghost" size="icon" className="text-white relative h-6 w-6 hover:bg-white/10">
+            <User className="h-3 w-3" />
+            <div className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-brand-green rounded-full"></div>
           </Button>
         </div>
       </div>
 
       {/* Main Header */}
-      <div className="container mx-auto px-4 py-4 space-y-4">
-        {/* Delivery Toggle - Centered */}
-        <div className="flex justify-center">
-          <div className="bg-muted rounded-full p-1 flex">
+      <div className="px-4 py-4">
+        {/* Delivery Toggle */}
+        <div className="flex justify-center mb-4">
+          <div className="bg-muted rounded-full p-0.5 flex shadow-sm border">
             <Button
-              variant={deliveryMode === 'delivery' ? 'default' : 'ghost'}
+              variant="ghost"
               size="sm"
-              className={`rounded-full px-6 ${
+              className={`rounded-full px-8 py-2 text-sm font-medium transition-all ${
                 deliveryMode === 'delivery' 
-                  ? 'bg-primary text-primary-foreground' 
+                  ? 'bg-grocery-blue text-white shadow-sm' 
                   : 'text-muted-foreground hover:text-foreground'
               }`}
               onClick={() => setDeliveryMode('delivery')}
@@ -62,11 +70,11 @@ const Header = () => {
               Online
             </Button>
             <Button
-              variant={deliveryMode === 'collection' ? 'default' : 'ghost'}
+              variant="ghost"
               size="sm"
-              className={`rounded-full px-6 ${
+              className={`rounded-full px-8 py-2 text-sm font-medium transition-all ${
                 deliveryMode === 'collection' 
-                  ? 'bg-primary text-primary-foreground' 
+                  ? 'bg-grocery-blue text-white shadow-sm' 
                   : 'text-muted-foreground hover:text-foreground'
               }`}
               onClick={() => setDeliveryMode('collection')}
@@ -76,20 +84,30 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Search and Navigation Icons */}
-        <div className="flex items-center gap-4">
-          <div className="flex-1">
-            <SearchBar />
+        {/* Search Bar */}
+        <div className="mb-4">
+          <SearchBar />
+        </div>
+
+        {/* Brand and Navigation */}
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-xl font-bold text-foreground tracking-tight">
+              QuickMart
+            </h1>
+            <p className="text-xs text-muted-foreground">
+              Earlham Street • Open until 11pm
+            </p>
           </div>
           
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <FavoritesDrawer>
-              <Button variant="ghost" size="icon" className="relative">
+              <Button variant="ghost" size="icon" className="relative h-10 w-10 rounded-full hover:bg-muted">
                 <Heart className="h-5 w-5" />
                 {favorites.length > 0 && (
                   <Badge 
                     variant="destructive" 
-                    className="absolute -top-2 -right-2 h-4 w-4 p-0 flex items-center justify-center text-xs"
+                    className="absolute -top-1 -right-1 h-4 w-4 p-0 flex items-center justify-center text-xs bg-grocery-red"
                   >
                     {favorites.length}
                   </Badge>
@@ -97,12 +115,12 @@ const Header = () => {
               </Button>
             </FavoritesDrawer>
             <BasketDrawer>
-              <Button variant="ghost" size="icon" className="relative">
+              <Button variant="ghost" size="icon" className="relative h-10 w-10 rounded-full hover:bg-muted">
                 <ShoppingCart className="h-5 w-5" />
                 {getTotalItems() > 0 && (
                   <Badge 
                     variant="destructive" 
-                    className="absolute -top-2 -right-2 h-4 w-4 p-0 flex items-center justify-center text-xs"
+                    className="absolute -top-1 -right-1 h-4 w-4 p-0 flex items-center justify-center text-xs bg-grocery-red"
                   >
                     {getTotalItems()}
                   </Badge>
@@ -110,16 +128,6 @@ const Header = () => {
               </Button>
             </BasketDrawer>
           </div>
-        </div>
-
-        {/* Brand Name */}
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-foreground">
-            QuickMart
-          </h1>
-          <p className="text-sm text-muted-foreground">
-            Earlham Street
-          </p>
         </div>
       </div>
     </header>
