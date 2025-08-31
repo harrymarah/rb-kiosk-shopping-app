@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { BasketProvider } from "@/contexts/BasketContext";
 import { FavoritesProvider } from "@/contexts/FavoritesContext";
+import { DeliveryProvider } from "@/contexts/DeliveryContext";
 import { StickyCartBar } from "@/components/StickyCartBar";
 import Index from "./pages/Index";
 import Basket from "./pages/Basket";
@@ -19,9 +20,10 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <FavoritesProvider>
-      <BasketProvider>
-        <TooltipProvider>
+    <DeliveryProvider>
+      <FavoritesProvider>
+        <BasketProvider>
+          <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
@@ -43,6 +45,7 @@ const App = () => (
         </TooltipProvider>
       </BasketProvider>
     </FavoritesProvider>
+    </DeliveryProvider>
   </QueryClientProvider>
 );
 

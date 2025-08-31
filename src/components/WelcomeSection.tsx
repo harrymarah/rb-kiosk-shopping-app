@@ -1,8 +1,8 @@
 import { Truck, Car, Zap } from 'lucide-react'
-import { useState } from 'react'
+import { useDelivery } from '@/contexts/DeliveryContext'
 
 const WelcomeSection = () => {
-  const [selectedDelivery, setSelectedDelivery] = useState<'home' | 'express' | 'collect'>('home');
+  const { selectedDelivery, setSelectedDelivery } = useDelivery();
 
   const deliveryOptions = [
     { id: 'home', icon: Truck, label: 'HOME DELIVERY', description: '1-2 hours' },
