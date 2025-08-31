@@ -9,12 +9,16 @@ import ProductCarousel from "@/components/ProductCarousel";
 import ProductCard from "@/components/ProductCard";
 import BannerAd from "@/components/BannerAd";
 import { useFavorites } from "@/contexts/FavoritesContext";
+import { useBasket } from "@/contexts/BasketContext";
+import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
   const [searchParams] = useSearchParams();
   const [activeTab, setActiveTab] = useState("favourites");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const { favorites: favItems, toggleFavorite: toggleFav, isFavorite } = useFavorites();
+  const { addItem } = useBasket();
+  const { toast } = useToast();
   const { products, categories, allProducts } = useProducts();
   const favoritesSet = new Set(favItems.map(f => f.id));
 
@@ -58,6 +62,20 @@ const Index = () => {
       price: product.price,
       image: product.image,
       category: product.category,
+    });
+  };
+
+  const handleAddToCart = (product: any) => {
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image
+    });
+    
+    toast({
+      title: "Added to basket",
+      description: `${product.name} has been added to your basket.`,
     });
   };
 
@@ -146,7 +164,7 @@ const Index = () => {
                   offer={product.offer}
                   isFavorite={favoritesSet.has(product.id)}
                   onToggleFavorite={() => toggleFavoriteById(product.id)}
-                  onAddToCart={() => console.log(`Added ${product.name} to cart`)}
+                   onAddToCart={() => handleAddToCart(product)}
                   productId={product.id}
                 />
               ))}
@@ -194,7 +212,7 @@ const Index = () => {
                     price={product.price}
                     isFavorite={true}
                     onToggleFavorite={() => toggleFav(product)}
-                    onAddToCart={() => console.log(`Added ${product.name} to cart`)}
+                    onAddToCart={() => handleAddToCart(product)}
                     productId={product.id}
                   />
                 ))}
