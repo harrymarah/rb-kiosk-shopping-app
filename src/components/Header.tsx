@@ -9,48 +9,27 @@ import BasketDrawer from "./BasketDrawer";
 import FavoritesDrawer from "./FavoritesDrawer";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
 const Header = () => {
-  const { products } = useProducts();
-  const { getTotalItems } = useBasket();
-  const { favorites } = useFavorites();
+  const {
+    products
+  } = useProducts();
+  const {
+    getTotalItems
+  } = useBasket();
+  const {
+    favorites
+  } = useFavorites();
   const navigate = useNavigate();
-  
-  
-  // Flatten all products for search
-  const allProducts = products ? [
-    ...(products.shopNew || []),
-    ...(products.breakfast || [])
-  ] : [];
 
+  // Flatten all products for search
+  const allProducts = products ? [...(products.shopNew || []), ...(products.breakfast || [])] : [];
   const handleProductSelect = (product: any) => {
     console.log('Selected product:', product);
     // You can add navigation logic here
   };
-
-  return (
-    <header className="bg-white shadow-md border-b border-border">
+  return <header className="bg-white shadow-md border-b border-border">
       {/* Top Status Bar */}
-      <div className="bg-gray-900 text-white py-2 px-4 flex justify-between items-center text-xs">
-        <div className="flex items-center gap-4">
-          <span className="font-medium">11:51</span>
-          <div className="flex items-center gap-1">
-            <div className="w-1 h-1 bg-white rounded-full"></div>
-            <div className="w-1 h-1 bg-white rounded-full"></div>
-            <div className="w-1 h-1 bg-white rounded-full"></div>
-            <span className="font-medium">4G</span>
-          </div>
-        </div>
-        <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon" className="text-white h-6 w-6 hover:bg-white/20">
-            <Calendar className="h-3 w-3" />
-          </Button>
-          <Button variant="ghost" size="icon" className="text-white relative h-6 w-6 hover:bg-white/20">
-            <User className="h-3 w-3" />
-            <div className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-          </Button>
-        </div>
-      </div>
+      
 
       {/* Main Header */}
       <div className="px-4 py-6 bg-white">
@@ -75,32 +54,22 @@ const Header = () => {
             <FavoritesDrawer>
               <Button variant="ghost" size="icon" className="relative h-11 w-11 rounded-full hover:bg-gray-100 border border-gray-200">
                 <Heart className="h-5 w-5 text-gray-700" />
-                {favorites.length > 0 && (
-                  <Badge 
-                    className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center text-xs bg-red-500 text-white border-2 border-white"
-                  >
+                {favorites.length > 0 && <Badge className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center text-xs bg-red-500 text-white border-2 border-white">
                     {favorites.length}
-                  </Badge>
-                )}
+                  </Badge>}
               </Button>
             </FavoritesDrawer>
             <BasketDrawer>
               <Button variant="ghost" size="icon" className="relative h-11 w-11 rounded-full hover:bg-gray-100 border border-gray-200">
                 <ShoppingCart className="h-5 w-5 text-gray-700" />
-                {getTotalItems() > 0 && (
-                  <Badge 
-                    className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center text-xs bg-red-500 text-white border-2 border-white"
-                  >
+                {getTotalItems() > 0 && <Badge className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center text-xs bg-red-500 text-white border-2 border-white">
                     {getTotalItems()}
-                  </Badge>
-                )}
+                  </Badge>}
               </Button>
             </BasketDrawer>
           </div>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
