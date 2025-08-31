@@ -15,7 +15,7 @@ const Header = () => {
   const { getTotalItems } = useBasket();
   const { favorites } = useFavorites();
   const navigate = useNavigate();
-  const [deliveryMode, setDeliveryMode] = useState<'delivery' | 'collection'>('delivery');
+  
   
   // Flatten all products for search
   const allProducts = products ? [
@@ -54,35 +54,6 @@ const Header = () => {
 
       {/* Main Header */}
       <div className="px-4 py-6 bg-white">
-        {/* Delivery Toggle */}
-        <div className="flex justify-center mb-6">
-          <div className="bg-gray-100 rounded-full p-1 flex shadow-sm border border-gray-200">
-            <Button
-              variant="ghost"
-              size="sm"
-              className={`rounded-full px-8 py-3 text-sm font-semibold transition-all ${
-                deliveryMode === 'delivery' 
-                  ? 'bg-blue-600 text-white shadow-md' 
-                  : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
-              }`}
-              onClick={() => setDeliveryMode('delivery')}
-            >
-              Online
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className={`rounded-full px-8 py-3 text-sm font-semibold transition-all ${
-                deliveryMode === 'collection' 
-                  ? 'bg-blue-600 text-white shadow-md' 
-                  : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
-              }`}
-              onClick={() => setDeliveryMode('collection')}
-            >
-              In-store
-            </Button>
-          </div>
-        </div>
 
         {/* Search Bar - Made more prominent */}
         <div className="mb-8">
