@@ -57,7 +57,7 @@ const CategorySection = ({ onSelectCategory }: CategorySectionProps) => {
         </div>
         
         
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-6 gap-6">
           {categories.map((category) => (
             <div
               key={category.id}
