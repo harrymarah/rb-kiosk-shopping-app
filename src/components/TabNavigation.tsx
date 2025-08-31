@@ -2,8 +2,10 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const tabs = [
-  { id: "explore", label: "Explore" },
   { id: "favourites", label: "Favourites" },
+  { id: "usuals", label: "Usuals" },
+  { id: "lastorder", label: "Last Order" },
+  { id: "newin", label: "New In" },
 ];
 
 interface TabNavigationProps {

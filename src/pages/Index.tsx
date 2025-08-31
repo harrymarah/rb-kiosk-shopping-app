@@ -12,7 +12,7 @@ import { useFavorites } from "@/contexts/FavoritesContext";
 
 const Index = () => {
   const [searchParams] = useSearchParams();
-  const [activeTab, setActiveTab] = useState("explore");
+  const [activeTab, setActiveTab] = useState("favourites");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const { favorites: favItems, toggleFavorite: toggleFav, isFavorite } = useFavorites();
   const { products, categories, allProducts } = useProducts();
@@ -54,7 +54,8 @@ const Index = () => {
       <CategorySection onSelectCategory={setSelectedCategory} />
       <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
       
-      {activeTab === "explore" && !selectedCategory && products && (
+      
+      {activeTab === "newin" && products && (
         <div className="space-y-8">
           <ProductCarousel 
             title="Shop new" 
@@ -104,7 +105,7 @@ const Index = () => {
         </div>
       )}
 
-      {activeTab === "explore" && selectedCategory && (
+      {selectedCategory && (
         <div className="px-6 py-6">
           <div className="container mx-auto max-w-4xl">
             <div className="flex items-center gap-4 mb-6">
@@ -131,6 +132,30 @@ const Index = () => {
                   productId={product.id}
                 />
               ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeTab === "usuals" && (
+        <div className="px-6 py-8">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Your Usual Items</h2>
+            <div className="text-center">
+              <p className="text-muted-foreground">Items you buy regularly will appear here</p>
+              <p className="text-sm text-muted-foreground mt-2">Start shopping to build your usuals list</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeTab === "lastorder" && (
+        <div className="px-6 py-8">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Last Order</h2>
+            <div className="text-center">
+              <p className="text-muted-foreground">Your previous order will appear here</p>
+              <p className="text-sm text-muted-foreground mt-2">Place an order to see your order history</p>
             </div>
           </div>
         </div>
