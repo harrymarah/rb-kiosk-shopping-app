@@ -29,6 +29,13 @@ const Index = () => {
     redBull: "Red Bull Products"
   };
 
+  // Title case utility function
+  const toTitleCase = (str: string) => {
+    return str.replace(/\w\S*/g, (txt) => 
+      txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+    ).replace(/([a-z])([A-Z])/g, '$1 $2');
+  };
+
   // Handle URL params for category selection
   useEffect(() => {
     const categoryParam = searchParams.get("category");
@@ -127,7 +134,7 @@ const Index = () => {
                 ← Back to explore
               </button>
             </div>
-            <h2 className="text-2xl font-bold text-foreground mb-6">{categoryDisplayNames[selectedCategory] || selectedCategory}</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-6">{categoryDisplayNames[selectedCategory] || toTitleCase(selectedCategory)}</h2>
             <div className="grid grid-cols-4 gap-6">
               {categoryProducts.map((product) => (
                 <ProductCard
