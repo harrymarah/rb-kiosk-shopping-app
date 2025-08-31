@@ -28,7 +28,7 @@ export const DeliveryProvider: React.FC<DeliveryProviderProps> = ({ children }) 
         return {
           label: 'HOME DELIVERY',
           description: 'Delivered to your doorstep',
-          estimatedTime: '1-2 hours',
+          estimatedTime: 'Next day delivery',
           fee: 'Free for orders over £35'
         };
       case 'express':
@@ -49,7 +49,7 @@ export const DeliveryProvider: React.FC<DeliveryProviderProps> = ({ children }) 
         return {
           label: 'HOME DELIVERY',
           description: 'Delivered to your doorstep',
-          estimatedTime: '1-2 hours',
+          estimatedTime: 'Next day delivery',
           fee: 'Free for orders over £35'
         };
     }
