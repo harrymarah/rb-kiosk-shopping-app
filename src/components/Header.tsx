@@ -84,8 +84,8 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Search Bar */}
-        <div className="mb-6">
+        {/* Search Bar - Made more prominent */}
+        <div className="mb-8">
           <SearchBar />
         </div>
 
