@@ -133,6 +133,13 @@
         "category": "breakfast"
       },
       {
+        "id": "breakfast7",
+        "name": "Red Bull Energy Drink 250ml",
+        "price": "£2.49",
+        "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/1%20-%20Red%20Bull%20Energy%20250ml%20x4.jpeg",
+        "category": "breakfast"
+      },
+      {
         "id": "breakfast4",
         "name": "Large Free Range Eggs 6 Pack",
         "price": "£2.49",
@@ -144,6 +151,13 @@
         "name": "Activia Vanilla & Granola Breakfast Pot",
         "price": "£2.99",
         "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%205%20-%20Activia%20Vanilla%20&%20Granola%20Breakfast%20Pot.jpg",
+        "category": "breakfast"
+      },
+      {
+        "id": "breakfast8",
+        "name": "The Jolly Hog Smoked Black Treacle Back Bacon Rashers 300g",
+        "price": "£4.99",
+        "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/The%20Jolly%20Hog%20Smoked%20Black%20Treacle%20Back%20Bacon%20Rashers%20300g.jpg",
         "category": "breakfast"
       },
       {
