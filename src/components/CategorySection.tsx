@@ -15,7 +15,7 @@ const categories: CategoryItem[] = [
   { 
     id: 'newProducts', 
     name: 'New Products', 
-    image: '/assets/red-bull-original.jpg'
+    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%201%20-%20Red%20Bull%20Lilac%20Edition%20Sugar%20Free%20Energy%20Drink%204x250ml.jpg'
   },
   { 
     id: 'breakfast', 
@@ -25,7 +25,7 @@ const categories: CategoryItem[] = [
   { 
     id: 'energyDrinks', 
     name: 'Energy Drinks', 
-    image: '/assets/red-bull-original.jpg'
+    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/1%20-%20Red%20Bull%20Energy%20250ml%20x4.jpeg'
   },
   { 
     id: 'matchReady', 
