@@ -103,13 +103,6 @@
         "category": "newProducts"
       },
       {
-        "id": "new11",
-        "name": "Heinz Sweet Sriracha Tomato Ketchup",
-        "price": "£2.99",
-        "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%2011%20-%20Heinz%20Sweet%20Sriracha%20Tomato%20Ketchup.jpg",
-        "category": "newProducts"
-      },
-      {
         "id": "new12",
         "name": "Mrs Crimble's 12 Bakewell Slices",
         "price": "£4.99",
