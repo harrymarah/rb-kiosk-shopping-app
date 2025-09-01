@@ -241,6 +241,39 @@ const ProductDetail = () => {
               <p className="text-muted-foreground leading-relaxed">
                 {product.description || "A high-quality product perfect for your daily needs. Made with care and attention to detail, this item offers great value and satisfaction."}
               </p>
+              
+              {/* Info squares for Sugar Free Red Bull products */}
+              {product.name.toLowerCase().includes('sugar free') && product.name.toLowerCase().includes('red bull') && (
+                <div className="mt-6">
+                  <h4 className="text-md font-semibold text-foreground mb-4">Product Information</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="bg-white rounded-lg overflow-hidden border border-gray-100">
+                      <img
+                        src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Info%20Squares/1.jpg"
+                        alt="Red Bull Product Information 1"
+                        loading="lazy"
+                        className="w-full h-auto object-contain"
+                      />
+                    </div>
+                    <div className="bg-white rounded-lg overflow-hidden border border-gray-100">
+                      <img
+                        src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Info%20Squares/2.jpg"
+                        alt="Red Bull Product Information 2"
+                        loading="lazy"
+                        className="w-full h-auto object-contain"
+                      />
+                    </div>
+                    <div className="bg-white rounded-lg overflow-hidden border border-gray-100">
+                      <img
+                        src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Info%20Squares/3.jpg"
+                        alt="Red Bull Product Information 3"
+                        loading="lazy"
+                        className="w-full h-auto object-contain"
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Quantity selector and actions */}
