@@ -20,7 +20,7 @@ const categories: CategoryItem[] = [
   { 
     id: 'breakfast', 
     name: 'Breakfast', 
-    image: '/assets/breakfast-items.jpg'
+    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/category_images/breakfast_category_image.jpg'
   },
   { 
     id: 'energyDrinks', 
@@ -30,7 +30,7 @@ const categories: CategoryItem[] = [
   { 
     id: 'matchReady', 
     name: 'Match Ready', 
-    image: '/assets/snacks.jpg'
+    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/category_images/match_ready_category_image.jpg'
   },
   { 
     id: 'softDrinks', 
