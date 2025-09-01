@@ -50,6 +50,7 @@
         "id": "new2",
         "name": "Tony's Chocolonely Milk Rice Crispy Caramel Bar",
         "price": "£4.49",
+        "offer": "New Arrival",
         "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%202%20-%20Tony's%20Chocolonely%20Milk%20Rice%20Crispy%20Caramel%20Bar.jpg",
         "category": "newProducts"
       },
@@ -57,6 +58,7 @@
         "id": "new3",
         "name": "Smirnoff Miami Peach Spirit Drink",
         "price": "£6.99",
+        "offer": "New Arrival",
         "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%203%20-%20Smirnoff%20Miami%20Peach%20Spirit%20Drink.jpg",
         "category": "newProducts"
       },
@@ -64,6 +66,7 @@
         "id": "new4",
         "name": "Dairy Milk Iced Latte",
         "price": "£3.99",
+        "offer": "New Arrival",
         "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%204%20-%20Dairy%20Milk%20Iced%20Latte.jpg",
         "category": "newProducts"
       },
@@ -71,6 +74,7 @@
         "id": "new5",
         "name": "Aero Orange & Chocolate Mousse Pots",
         "price": "£2.99",
+        "offer": "New Arrival",
         "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%205%20-%20Aero%20Orange%20&%20Chocolate%20Mousse%20Pots.jpg",
         "category": "newProducts"
       },
@@ -78,6 +82,7 @@
         "id": "new7",
         "name": "Lipton Kombucha Mango Passionfruit",
         "price": "£2.49",
+        "offer": "New Arrival",
         "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%207%20-%20Lipton%20Kombucha%20Mango%20Passionfruit.jpg",
         "category": "newProducts"
       },
@@ -85,6 +90,7 @@
         "id": "new8",
         "name": "Kettle Honey Dijon Mustard Potato Chips 130g",
         "price": "£2.79",
+        "offer": "New Arrival",
         "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%208%20-%20Kettle%20Honey%20Dijon%20Mustard%20Potato%20Chips%20130g.jpg",
         "category": "newProducts"
       },
@@ -92,6 +98,7 @@
         "id": "new9",
         "name": "Walkers Tomato Ketchup Multipack Crisps",
         "price": "£3.49",
+        "offer": "New Arrival",
         "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%209%20-%20Walkers%20Tomato%20Ketchup%20Multipack%20Crisps.jpg",
         "category": "newProducts"
       },
@@ -99,6 +106,7 @@
         "id": "new10",
         "name": "Monster Lando Norris Zero Sugar Energy Drink 4x500ml",
         "price": "£8.99",
+        "offer": "New Arrival",
         "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%2010%20-%20Monster%20Lando%20Norris%20Zero%20Sugar%20Energy%20Drink%204x500ml.jpg",
         "category": "newProducts"
       },
@@ -106,6 +114,7 @@
         "id": "new12",
         "name": "Mrs Crimble's 12 Bakewell Slices",
         "price": "£4.99",
+        "offer": "New Arrival",
         "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%2012%20-%20Mrs%20Crimble's%2012%20Bakewell%20Slices.jpg",
         "category": "newProducts"
       }
