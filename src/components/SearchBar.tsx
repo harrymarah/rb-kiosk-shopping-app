@@ -79,7 +79,7 @@ const SearchBar = () => {
           {filteredSuggestions.map((suggestion, index) => (
             <div
               key={`${suggestion.type}-${suggestion.id}`}
-              className="flex items-center gap-3 p-3 hover:bg-accent cursor-pointer border-b border-border last:border-0"
+              className="flex items-center gap-3 p-3 hover:bg-primary hover:text-white cursor-pointer border-b border-border last:border-0 transition-colors"
               onClick={() => handleSuggestionClick(suggestion)}
             >
               {suggestion.image && (
@@ -90,18 +90,18 @@ const SearchBar = () => {
                 />
               )}
               <div className="flex-1 min-w-0">
-                <p className="font-medium text-foreground truncate">{suggestion.name}</p>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <p className="font-medium truncate">{suggestion.name}</p>
+                <div className="flex items-center gap-2 text-sm opacity-80">
                   <span className="capitalize">{suggestion.type}</span>
                   {suggestion.price && <span>• {suggestion.price}</span>}
-                  {suggestion.offer && <span className="text-destructive">• {suggestion.offer}</span>}
+                  {suggestion.offer && <span className="text-red-400">• {suggestion.offer}</span>}
                 </div>
               </div>
             </div>
           ))}
           {searchTerm && (
             <div
-              className="flex items-center gap-3 p-3 hover:bg-accent cursor-pointer border-t border-border text-primary"
+              className="flex items-center gap-3 p-3 hover:bg-primary hover:text-white cursor-pointer border-t border-border transition-colors"
               onClick={() => handleSubmit(new Event('submit') as any)}
             >
               <Search className="h-4 w-4" />
