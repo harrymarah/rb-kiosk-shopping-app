@@ -48,7 +48,19 @@ const Index = () => {
     const tabParam = searchParams.get("tab");
     
     if (categoryParam) {
-      setSelectedCategory(categoryParam);
+      // Map category display names to IDs
+      const categoryMappings: Record<string, string> = {
+        'red bull products': 'redBull',
+        'new products': 'newProducts',
+        'energy drinks': 'energyDrinks',
+        'match ready': 'matchReady',
+        'soft drinks': 'softDrinks',
+        'breakfast items': 'breakfast',
+        'customer favourites': 'favourites'
+      };
+      
+      const categoryId = categoryMappings[categoryParam.toLowerCase()] || categoryParam;
+      setSelectedCategory(categoryId);
       // When a category is selected, switch to explore mode (clear active tab)
       setActiveTab("explore");
     } else if (tabParam) {
