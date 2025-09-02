@@ -94,7 +94,7 @@ const SearchBar = () => {
                 <div className="flex items-center gap-2 text-sm opacity-80">
                   <span className="capitalize">{suggestion.type}</span>
                   {suggestion.price && <span>• {suggestion.price}</span>}
-                  {suggestion.offer && <span className="text-red-400">• {suggestion.offer}</span>}
+                  {suggestion.offer && <span className="text-destructive">• {suggestion.offer}</span>}
                 </div>
               </div>
             </div>
