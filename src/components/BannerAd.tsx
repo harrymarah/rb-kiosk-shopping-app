@@ -19,15 +19,17 @@ const BannerAd = ({
   };
 
   return (
-    <div 
-      className={`w-full max-w-4xl mx-auto rounded-lg overflow-hidden cursor-pointer hover:opacity-95 transition-opacity ${className}`}
-      onClick={handleBannerClick}
-    >
-      <img 
-        src={bannerImage} 
-        alt="Red Bull Products - Click to view all" 
-        className="w-full h-auto object-cover"
-      />
+    <div className="w-full flex justify-center">
+      <div 
+        className={`w-full max-w-4xl max-h-48 mx-auto rounded-lg overflow-hidden cursor-pointer hover:opacity-95 transition-opacity ${className}`}
+        onClick={handleBannerClick}
+      >
+        <img 
+          src={bannerImage} 
+          alt="Red Bull Products - Click to view all" 
+          className="w-full h-full max-h-48 object-cover object-center"
+        />
+      </div>
     </div>
   );
 };
