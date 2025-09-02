@@ -42,11 +42,6 @@ const categories: CategoryItem[] = [
     name: 'Favourites', 
     image: '/assets/red-bull-sugar-free.jpg'
   },
-  { 
-    id: 'redBull', 
-    name: 'Red Bull Products', 
-    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/17%20-%20Red%20Bull%20Energy%20Drink%20250ml.png'
-  },
 ];
 
 const CategorySection = ({ onSelectCategory }: CategorySectionProps) => {
