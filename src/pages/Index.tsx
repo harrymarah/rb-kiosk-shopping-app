@@ -239,15 +239,71 @@ const Index = () => {
         </div>
       )}
 
-      {activeTab === "usuals" && (
-        <div className="px-6 py-8">
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Your Usual Items</h2>
-            <div className="text-center">
-              <p className="text-muted-foreground">Items you buy regularly will appear here</p>
-              <p className="text-sm text-muted-foreground mt-2">Start shopping to build your usuals list</p>
-            </div>
-          </div>
+      {activeTab === "usuals" && allProducts && (
+        <div className="space-y-8">
+          <ProductCarousel 
+            title="Your Usual Items" 
+            products={[
+              // Milk - essential everyday item
+              allProducts?.find(p => p.id === 'breakfast2') || {
+                id: 'breakfast2',
+                name: 'British Whole Milk 2 Pint',
+                price: '£1.89',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%202%20-%20British%20Whole%20Milk%202%20Pint.jpg'
+              },
+              // Eggs - cooking staple
+              allProducts?.find(p => p.id === 'breakfast6') || {
+                id: 'breakfast6',
+                name: 'Large Free Range Eggs 6 Pack',
+                price: '£2.49',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%204%20-%20Large%20Free%20Range%20Eggs%206%20Pack.jpg'
+              },
+              // Bread - daily essential
+              allProducts?.find(p => p.id === 'breakfast4') || {
+                id: 'breakfast4',
+                name: 'White Farmhouse Bread 800g',
+                price: '£1.25',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%203%20-%20White%20Farmhouse%20Bread%20800g.jpg'
+              },
+              // Orange juice - breakfast staple
+              allProducts?.find(p => p.id === 'breakfast8') || {
+                id: 'breakfast8',
+                name: 'Innocent Orange Juice Smooth 900ml',
+                price: '£3.49',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%206%20-%20Innocent%20Orange%20Juice%20Smooth%20900ml.jpg'
+              },
+              // Red Bull original single - regular energy boost
+              allProducts?.find(p => p.id === 'energy1') || {
+                id: 'energy1',
+                name: 'Red Bull Energy Drink 250ml',
+                price: '£2.49',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/17%20-%20Red%20Bull%20Energy%20Drink%20250ml.png'
+              },
+              // Red Bull sugar free - healthier option
+              allProducts?.find(p => p.id === 'energy2') || {
+                id: 'energy2',
+                name: 'Red Bull Sugar Free Energy Drink 250ml',
+                price: '£2.49',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/18%20-%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%20250ml%20.png'
+              },
+              // Red Bull 4-pack - bulk buy for regular consumers
+              allProducts?.find(p => p.id === 'energy3') || {
+                id: 'energy3',
+                name: 'Red Bull Energy 250ml x4',
+                price: '£7.99',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/1%20-%20Red%20Bull%20Energy%20250ml%20x4.jpeg'
+              },
+              // Yogurt - healthy breakfast/snack option
+              allProducts?.find(p => p.id === 'breakfast7') || {
+                id: 'breakfast7',
+                name: 'Activia Vanilla & Granola Breakfast Pot',
+                price: '£2.99',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%205%20-%20Activia%20Vanilla%20&%20Granola%20Breakfast%20Pot.jpg'
+              }
+            ].filter(Boolean)} 
+            favorites={favoritesSet}
+            onToggleFavorite={toggleFavoriteById}
+          />
         </div>
       )}
 
