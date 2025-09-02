@@ -15,7 +15,7 @@ interface Product {
   originalPrice?: string;
   offer?: string;
   image: string;
-  category: string;
+  categories: string[];
   description?: string;
 }
 
@@ -42,7 +42,7 @@ const SearchResults = () => {
       // Filter products that match the search query
       const productMatches = allProducts.filter((product: Product) =>
         product.name.toLowerCase().includes(query.toLowerCase()) ||
-        product.category.toLowerCase().includes(query.toLowerCase())
+        product.categories.some(cat => cat.toLowerCase().includes(query.toLowerCase()))
       );
 
       // Filter categories that match the search query
@@ -63,7 +63,7 @@ const SearchResults = () => {
     // Filter by category
     if (selectedCategory !== "all") {
       filtered = filtered.filter(product => 
-        product.category.toLowerCase() === selectedCategory.toLowerCase()
+        product.categories.some(cat => cat.toLowerCase() === selectedCategory.toLowerCase())
       );
     }
 
@@ -120,7 +120,7 @@ const SearchResults = () => {
 
   // Get unique categories from matching products
   const availableCategories = Array.from(
-    new Set(matchingProducts.map(product => product.category))
+    new Set(matchingProducts.flatMap(product => product.categories))
   );
 
   if (!query) {

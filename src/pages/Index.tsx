@@ -97,7 +97,7 @@ const Index = () => {
   };
 
   const categoryProducts = selectedCategory 
-    ? allProducts?.filter(product => product.category === selectedCategory) || []
+    ? allProducts?.filter(product => product.categories?.includes(selectedCategory)) || []
     : [];
 
   return (
@@ -108,39 +108,39 @@ const Index = () => {
       <TabNavigation activeTab={activeTab} onTabChange={handleTabChange} />
       
       
-      {activeTab === "newin" && products && (
+      {activeTab === "newin" && allProducts && (
         <div className="space-y-8">
           <ProductCarousel 
             title="Shop new" 
-            products={products.shopNew} 
+            products={allProducts.filter(p => p.categories?.includes('newProducts'))} 
             favorites={favoritesSet}
             onToggleFavorite={toggleFavoriteById}
           />
           
           <ProductCarousel
             title="Breakfast" 
-            products={products.breakfast?.slice(0, 6)} 
+            products={allProducts.filter(p => p.categories?.includes('breakfast')).slice(0, 6)} 
             favorites={favoritesSet}
             onToggleFavorite={toggleFavoriteById}
           />
           
           <ProductCarousel 
             title="Get Match Ready" 
-            products={products.matchReady?.slice(0, 6)} 
+            products={allProducts.filter(p => p.categories?.includes('matchReady')).slice(0, 6)} 
             favorites={favoritesSet}
             onToggleFavorite={toggleFavoriteById}
           />
           
           <ProductCarousel 
             title="Soft Drinks" 
-            products={products.softDrinks?.slice(0, 6)} 
+            products={allProducts.filter(p => p.categories?.includes('softDrinks')).slice(0, 6)} 
             favorites={favoritesSet}
             onToggleFavorite={toggleFavoriteById}
           />
           
           <ProductCarousel 
             title="Energy Drinks" 
-            products={products.energyDrinks?.slice(0, 6)} 
+            products={allProducts.filter(p => p.categories?.includes('energyDrinks')).slice(0, 6)} 
             favorites={favoritesSet}
             onToggleFavorite={toggleFavoriteById}
           />

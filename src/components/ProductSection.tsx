@@ -61,20 +61,8 @@ export const useProducts = () => {
           setProducts(data.products);
           setCategories(data.categories);
           
-          // Flatten all products into a single array
-          const flatProducts = [
-            ...(data.products.shopNew || []),
-            ...(data.products.breakfast || []),
-            ...(data.products.lunch || []),
-            ...(data.products.meals || []),
-            ...(data.products.snacks || []),
-            ...(data.products.beverages || []),
-            ...(data.products.energyDrinks || []),
-            ...(data.products.matchReady || []),
-            ...(data.products.softDrinks || []),
-            ...(data.products.favourites || []),
-            ...(data.products.redBull || [])
-          ];
+          // Use products directly as it's now a flat array
+          const flatProducts = data.products || [];
           setAllProducts(flatProducts);
           setIsLoading(false);
         }
@@ -90,20 +78,8 @@ export const useProducts = () => {
           setProducts(data.products);
           setCategories(data.categories);
           
-          // Flatten all products into a single array
-          const flatProducts = [
-            ...(data.products.shopNew || []),
-            ...(data.products.breakfast || []),
-            ...(data.products.lunch || []),
-            ...(data.products.meals || []),
-            ...(data.products.snacks || []),
-            ...(data.products.beverages || []),
-            ...(data.products.energyDrinks || []),
-            ...(data.products.matchReady || []),
-            ...(data.products.softDrinks || []),
-            ...(data.products.favourites || []),
-            ...(data.products.redBull || [])
-          ];
+          // Use products directly as it's now a flat array
+          const flatProducts = data.products || [];
           setAllProducts(flatProducts);
         }
       } catch (error) {
@@ -116,19 +92,7 @@ export const useProducts = () => {
           setProducts(data.products);
           setCategories(data.categories);
           
-          const flatProducts = [
-            ...(data.products.shopNew || []),
-            ...(data.products.breakfast || []),
-            ...(data.products.lunch || []),
-            ...(data.products.meals || []),
-            ...(data.products.snacks || []),
-            ...(data.products.beverages || []),
-            ...(data.products.energyDrinks || []),
-            ...(data.products.matchReady || []),
-            ...(data.products.softDrinks || []),
-            ...(data.products.favourites || []),
-            ...(data.products.redBull || [])
-          ];
+          const flatProducts = data.products || [];
           setAllProducts(flatProducts);
         }
       } finally {
