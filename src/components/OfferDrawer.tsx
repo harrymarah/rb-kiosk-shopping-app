@@ -19,7 +19,7 @@ interface Product {
   name: string;
   price: string;
   image: string;
-  category: string;
+  categories: string[];
 }
 
 interface Offer {
@@ -73,7 +73,7 @@ const generateOffers = (product: Product, quantity: number): Offer[] => {
           name: 'Red Bull Original',
           price: '£2.55',
           image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/red_bull_original.png',
-          category: 'beverages'
+          categories: ['beverages']
         }
       ]
     });
@@ -102,7 +102,7 @@ const generateOffers = (product: Product, quantity: number): Offer[] => {
     let bundleItemImage = '';
     
     // Check if the product is a food item (not beverages)
-    const isFoodItem = ['breakfast', 'lunch', 'meals', 'snacks'].includes(product.category);
+    const isFoodItem = product.categories?.some(cat => ['breakfast', 'lunch', 'meals', 'snacks'].includes(cat)) || false;
     
     if (isFoodItem) {
       // Prioritize Red Bull for all food items
@@ -110,7 +110,8 @@ const generateOffers = (product: Product, quantity: number): Offer[] => {
       bundleItemImage = 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/red_bull_original.png';
     } else {
       // For beverages (non-hot drinks), suggest food items
-      switch (product.category) {
+      const primaryCategory = product.categories?.[0] || '';
+      switch (primaryCategory) {
         case 'beverages':
           bundleItem = 'Mixed Nuts';
           bundleItemImage = 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/snacks.jpg';
@@ -136,7 +137,7 @@ const generateOffers = (product: Product, quantity: number): Offer[] => {
           name: bundleItem,
           price: '£2.99',
           image: bundleItemImage,
-          category: isFoodItem ? 'beverages' : 'snacks'
+          categories: isFoodItem ? ['beverages'] : ['snacks']
         }
       ]
     });

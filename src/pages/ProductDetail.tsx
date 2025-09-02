@@ -33,7 +33,7 @@ interface Product {
   originalPrice?: string;
   offer?: string;
   image: string;
-  category: string;
+  categories: string[];
   description?: string;
 }
 
@@ -55,9 +55,9 @@ const ProductDetail = () => {
       if (foundProduct) {
         setProduct(foundProduct);
         
-        // Get related products from the same category
+        // Get related products from the same categories
         const related = allProducts
-          .filter((p: Product) => p.category === foundProduct.category && p.id !== foundProduct.id)
+          .filter((p: Product) => p.categories?.some(cat => foundProduct.categories?.includes(cat)) && p.id !== foundProduct.id)
           .slice(0, 4);
         setRelatedProducts(related);
       }
@@ -165,10 +165,10 @@ const ProductDetail = () => {
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink 
-                onClick={() => navigate(`/?category=${product.category}&tab=explore`)}
+                onClick={() => navigate(`/?category=${product.categories?.[0]}&tab=explore`)}
                 className="cursor-pointer hover:text-foreground"
               >
-                {product.category.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()).trim()}
+                {product.categories?.[0]?.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()).trim() || 'Products'}
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />

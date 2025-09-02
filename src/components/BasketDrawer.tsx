@@ -19,7 +19,7 @@ const BasketDrawer = ({ children }: BasketDrawerProps) => {
 
   // Get product recommendations (products not in basket)
   const getRecommendations = () => {
-    if (!allProducts) return [];
+    if (!allProducts || !Array.isArray(allProducts)) return [];
     const basketProductIds = new Set(items.map(item => item.id));
     return allProducts
       .filter(product => !basketProductIds.has(product.id))
