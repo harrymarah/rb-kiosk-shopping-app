@@ -115,36 +115,36 @@ const EnergyDrinks = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-16 px-4">
+      <section className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-12 px-4">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="flex-1 text-center lg:text-left">
-              <h2 className="text-4xl lg:text-6xl font-bold mb-4">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
                 Energise<br />
                 every<br />
                 moment
               </h2>
             </div>
-            <div className="flex-1 grid grid-cols-3 gap-4 max-w-md">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+            <div className="flex-1 flex justify-center items-center gap-4 max-w-lg">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <img 
                   src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/1%20-%20Red%20Bull%20Energy%20250ml%20x4.jpeg" 
                   alt="Red Bull 4 Pack" 
-                  className="w-full h-24 object-contain mb-2"
+                  className="w-32 h-32 object-contain"
                 />
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                <img 
-                  src="/lovable-uploads/90f439c3-8bb8-4361-8c67-130e63eada93.png" 
-                  alt="Orange Energy Drink" 
-                  className="w-full h-24 object-contain mb-2"
-                />
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <img 
                   src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/2%20-%20Monster%20Energy%20Drink%204x500ml.jpg" 
                   alt="Monster Energy 4 Pack" 
-                  className="w-full h-24 object-contain mb-2"
+                  className="w-32 h-32 object-contain"
+                />
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <img 
+                  src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/6%20-%20Lucozade%20Energy%20Orange%204x500ml.jpg" 
+                  alt="Lucozade Energy 4 Pack" 
+                  className="w-32 h-32 object-contain"
                 />
               </div>
             </div>
