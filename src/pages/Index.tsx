@@ -116,6 +116,22 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <WelcomeSection />
+      
+      {/* New Products Banner */}
+      <div className="px-6 py-4">
+        <div className="container mx-auto max-w-4xl">
+          <button
+            onClick={() => handleCategorySelect('newProducts')}
+            className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-4 px-6 rounded-xl font-bold text-lg hover:from-orange-600 hover:to-red-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
+          >
+            <div className="flex items-center justify-center gap-3">
+              <span className="bg-white/20 px-3 py-1 rounded-full text-sm font-medium">NEW</span>
+              <span>Discover Our Latest Products</span>
+            </div>
+          </button>
+        </div>
+      </div>
+      
       <CategorySection onSelectCategory={handleCategorySelect} />
       <TabNavigation activeTab={activeTab} onTabChange={handleTabChange} />
       
