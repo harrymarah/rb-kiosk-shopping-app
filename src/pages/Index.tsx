@@ -77,9 +77,7 @@ const Index = () => {
 
   const handleCategorySelect = (category: string | null) => {
     setSelectedCategory(category);
-    if (category) {
-      setActiveTab("explore"); // Switch to explore mode when category is selected
-    }
+    // Don't change activeTab - let the category view show regardless of tab
   };
 
   const toggleFavoriteById = (productId: string) => {
