@@ -132,7 +132,7 @@ const BasketDrawer = ({ children }: BasketDrawerProps) => {
                         className="space-y-2"
                         onClick={() => navigate(`/product/${product.id}`)}
                       >
-                        <div className="w-full h-20 bg-muted rounded overflow-hidden">
+                        <div className="w-full h-24 bg-white rounded overflow-hidden">
                           <img
                             src={product.image}
                             alt={product.name}
