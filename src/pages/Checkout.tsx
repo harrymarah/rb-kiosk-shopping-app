@@ -12,6 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { ArrowLeft, ShoppingCart, Plus, MapPin, Clock, Truck, Zap, Car } from "lucide-react";
 import { useProducts } from "@/components/ProductSection";
+import CouponWallet from "@/components/CouponWallet";
 import {
   Carousel,
   CarouselContent,
@@ -29,6 +30,8 @@ const Checkout = () => {
   const [loading, setLoading] = useState(false);
   const [recommendations, setRecommendations] = useState<any[]>([]);
   const [selectedTimeSlot, setSelectedTimeSlot] = useState("");
+  const [appliedCoupons, setAppliedCoupons] = useState<string[]>([]);
+  const [couponDiscount, setCouponDiscount] = useState(0);
   
   const deliveryDetails = getDeliveryDetails();
 
@@ -126,7 +129,19 @@ const Checkout = () => {
 
   const subtotal = getTotalPrice();
   const deliveryFee = selectedDelivery === 'express' ? 2.99 : selectedDelivery === 'collect' ? 0 : (subtotal >= 35 ? 0 : 3.99);
-  const total = subtotal + deliveryFee;
+  const total = subtotal + deliveryFee - couponDiscount;
+
+  const handleCouponApply = (coupon: any) => {
+    if (!appliedCoupons.includes(coupon.id)) {
+      setAppliedCoupons([...appliedCoupons, coupon.id]);
+      // Add discount amount if it's a discount coupon
+      if (coupon.type === 'discount') {
+        const discountAmount = parseFloat(coupon.value.replace('£', '').replace(' off', ''));
+        setCouponDiscount(prev => prev + discountAmount);
+      }
+      // For points coupons, just add to applied list (points would be credited after purchase)
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -263,6 +278,12 @@ const Checkout = () => {
                 </form>
               </CardContent>
             </Card>
+
+            {/* Coupon Wallet */}
+            <CouponWallet 
+              onCouponApply={handleCouponApply}
+              appliedCoupons={appliedCoupons}
+            />
           </div>
 
           {/* Order Summary */}
@@ -311,6 +332,12 @@ const Checkout = () => {
                     <span>{selectedDelivery === 'collect' ? 'Pickup' : 'Delivery'} Fee:</span>
                     <span>{deliveryFee === 0 ? 'Free' : formatPrice(deliveryFee)}</span>
                   </div>
+                  {couponDiscount > 0 && (
+                    <div className="flex justify-between text-sm text-green-600">
+                      <span>Coupon Discount:</span>
+                      <span>-{formatPrice(couponDiscount)}</span>
+                    </div>
+                  )}
                 </div>
                 
                 <Separator />
