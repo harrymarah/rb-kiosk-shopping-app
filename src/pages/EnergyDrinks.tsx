@@ -114,41 +114,43 @@ const EnergyDrinks = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-12 px-4">
-        <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-8">
-            <div className="flex-1 text-center lg:text-left">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-                Fuel<br />
-                your<br />
-                potential
-              </h2>
-            </div>
-            <div className="flex-1 flex justify-center items-center gap-4 max-w-lg">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <img 
-                  src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/1%20-%20Red%20Bull%20Energy%20250ml%20x4.jpeg" 
-                  alt="Red Bull 4 Pack" 
-                  className="w-32 h-32 object-contain"
-                />
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <img 
-                  src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/2%20-%20Monster%20Energy%20Drink%204x500ml.jpg" 
-                  alt="Monster Energy 4 Pack" 
-                  className="w-32 h-32 object-contain"
-                />
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <img 
-                  src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/6%20-%20Lucozade%20Energy%20Orange%204x500ml.jpg" 
-                  alt="Lucozade Energy 4 Pack" 
-                  className="w-32 h-32 object-contain"
-                />
-              </div>
-            </div>
+      <section className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+        <div className="container mx-auto px-4 py-12">
+          <div className="text-center lg:text-left mb-8">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+              Fuel<br />
+              your<br />
+              potential
+            </h2>
           </div>
+        </div>
+        {/* Product tiles at bottom */}
+        <div className="flex w-full">
+          <img 
+            src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/product_tile_images/Red_bull_tile.png" 
+            alt="Red Bull" 
+            className="flex-1 w-full h-auto object-cover"
+          />
+          <img 
+            src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/product_tile_images/Lucozade_tile.png" 
+            alt="Lucozade" 
+            className="flex-1 w-full h-auto object-cover"
+          />
+          <img 
+            src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/product_tile_images/Powerade_tile.png" 
+            alt="Powerade" 
+            className="flex-1 w-full h-auto object-cover"
+          />
+          <img 
+            src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/product_tile_images/Monster_tile.png" 
+            alt="Monster" 
+            className="flex-1 w-full h-auto object-cover"
+          />
+          <img 
+            src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/product_tile_images/Starbucks_coffee_tile.png" 
+            alt="Starbucks" 
+            className="flex-1 w-full h-auto object-cover"
+          />
         </div>
       </section>
 
