@@ -118,9 +118,7 @@ const EnergyDrinks = () => {
         <div className="container mx-auto px-4 py-12">
           <div className="text-center lg:text-left mb-8">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-              Fuel<br />
-              your<br />
-              potential
+              Fuel your potential
             </h2>
           </div>
         </div>
