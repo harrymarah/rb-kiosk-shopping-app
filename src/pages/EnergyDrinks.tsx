@@ -125,31 +125,31 @@ const EnergyDrinks = () => {
           </div>
         </div>
         {/* Product tiles at bottom */}
-        <div className="flex w-full">
+        <div className="flex w-full h-24">
           <img 
             src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/product_tile_images/Red_bull_tile.png" 
             alt="Red Bull" 
-            className="flex-1 w-full h-auto object-cover"
+            className="w-1/5 h-full object-cover"
           />
           <img 
             src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/product_tile_images/Lucozade_tile.png" 
             alt="Lucozade" 
-            className="flex-1 w-full h-auto object-cover"
+            className="w-1/5 h-full object-cover"
           />
           <img 
             src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/product_tile_images/Powerade_tile.png" 
             alt="Powerade" 
-            className="flex-1 w-full h-auto object-cover"
+            className="w-1/5 h-full object-cover"
           />
           <img 
             src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/product_tile_images/Monster_tile.png" 
             alt="Monster" 
-            className="flex-1 w-full h-auto object-cover"
+            className="w-1/5 h-full object-cover"
           />
           <img 
             src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/product_tile_images/Starbucks_coffee_tile.png" 
             alt="Starbucks" 
-            className="flex-1 w-full h-auto object-cover"
+            className="w-1/5 h-full object-cover"
           />
         </div>
       </section>
