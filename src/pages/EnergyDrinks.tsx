@@ -115,8 +115,8 @@ const EnergyDrinks = () => {
       </header>
 
       <section className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-        <div className="container mx-auto px-4 py-12">
-          <div className="text-center lg:text-left mb-8">
+        <div className="container mx-auto px-4 py-12 flex items-center justify-center min-h-[300px]">
+          <div className="text-center">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
               Fuel your potential
             </h2>
