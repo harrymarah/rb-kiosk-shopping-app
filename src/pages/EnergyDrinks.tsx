@@ -108,7 +108,7 @@ const EnergyDrinks = () => {
             </Button>
             <div>
               <h1 className="text-2xl font-bold">Energy Drinks</h1>
-              <p className="text-muted-foreground">Energise every moment</p>
+              <p className="text-muted-foreground">Fuel your potential</p>
             </div>
           </div>
         </div>
@@ -120,9 +120,9 @@ const EnergyDrinks = () => {
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="flex-1 text-center lg:text-left">
               <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-                Energise<br />
-                every<br />
-                moment
+                Fuel<br />
+                your<br />
+                potential
               </h2>
             </div>
             <div className="flex-1 flex justify-center items-center gap-4 max-w-lg">
