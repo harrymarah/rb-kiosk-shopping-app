@@ -1,5 +1,6 @@
 import { ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 interface CategoryItem {
   id: string;
@@ -45,6 +46,7 @@ const categories: CategoryItem[] = [
 ];
 
 const CategorySection = ({ onSelectCategory }: CategorySectionProps) => {
+  const navigate = useNavigate();
   return (
     <section className="bg-background px-4 py-6">
       <div className="container mx-auto max-w-4xl">
@@ -61,7 +63,13 @@ const CategorySection = ({ onSelectCategory }: CategorySectionProps) => {
           {categories.map((category) => (
             <div
               key={category.id}
-              onClick={() => onSelectCategory?.(category.id)}
+              onClick={() => {
+                if (category.id === 'energyDrinks') {
+                  navigate('/energy-drinks');
+                } else {
+                  onSelectCategory?.(category.id);
+                }
+              }}
               className="flex flex-col items-center cursor-pointer group"
             >
               <div className="w-20 h-20 rounded-full overflow-hidden mb-3 shadow-lg group-hover:scale-105 transition-transform duration-200">
