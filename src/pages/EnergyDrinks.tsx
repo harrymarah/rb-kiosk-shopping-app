@@ -164,34 +164,6 @@ const EnergyDrinks = () => {
         </div>
       </section>
 
-      {/* Brand Categories */}
-      <section className="py-8 px-4 bg-gray-50">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {energyBrands.map((brand) => (
-              <button
-                key={brand.id}
-                onClick={() => setSelectedBrand(brand.id)}
-                className={`p-4 rounded-lg border-2 transition-all duration-200 ${
-                  selectedBrand === brand.id 
-                    ? 'border-blue-500 bg-blue-50' 
-                    : 'border-gray-200 bg-white hover:border-gray-300'
-                }`}
-              >
-                {brand.image && (
-                  <img 
-                    src={brand.image} 
-                    alt={brand.name} 
-                    className="w-full h-16 object-contain mb-2"
-                  />
-                )}
-                <p className="font-medium text-sm">{brand.name}</p>
-                <p className="text-xs text-muted-foreground">({brand.count} items)</p>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Filter Bar */}
       <div className="container mx-auto px-4 py-4">
