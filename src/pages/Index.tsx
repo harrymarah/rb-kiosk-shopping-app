@@ -12,6 +12,7 @@ import { useFavorites } from "@/contexts/FavoritesContext";
 import { useBasket } from "@/contexts/BasketContext";
 import { useToast } from "@/components/ui/use-toast";
 
+// Force fresh component compilation
 const Index = () => {
   const [searchParams] = useSearchParams();
   const [forYouProducts, setForYouProducts] = useState<any[]>([]);
