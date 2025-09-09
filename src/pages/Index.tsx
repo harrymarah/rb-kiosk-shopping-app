@@ -132,50 +132,24 @@ const Index = () => {
       
       
       {activeTab === "newin" && allProducts && (
-        <div className="space-y-8">
-          <ProductCarousel 
-            title="Shop new" 
-            products={allProducts.filter(p => p.categories?.includes('newProducts'))} 
-            favorites={favoritesSet}
-            onToggleFavorite={toggleFavoriteById}
-          />
-          
-          <ProductCarousel
-            title="Breakfast" 
-            products={allProducts.filter(p => p.categories?.includes('breakfast')).slice(0, 6)} 
-            favorites={favoritesSet}
-            onToggleFavorite={toggleFavoriteById}
-          />
-          
-          <ProductCarousel 
-            title="Get Match Ready" 
-            products={allProducts.filter(p => p.categories?.includes('matchReady')).slice(0, 6)} 
-            favorites={favoritesSet}
-            onToggleFavorite={toggleFavoriteById}
-          />
-          
-          <ProductCarousel 
-            title="Soft Drinks" 
-            products={allProducts.filter(p => p.categories?.includes('softDrinks')).slice(0, 6)} 
-            favorites={favoritesSet}
-            onToggleFavorite={toggleFavoriteById}
-          />
-          
-          <ProductCarousel 
-            title="Energy Drinks" 
-            products={allProducts.filter(p => p.categories?.includes('energyDrinks')).slice(0, 6)} 
-            favorites={favoritesSet}
-            onToggleFavorite={toggleFavoriteById}
-          />
-          
-          {/* Bottom Banner Advertisement */}
-          <div className="px-6">
-            <div className="container mx-auto max-w-4xl">
-              <BannerAd 
-                title="Join Our Loyalty Program" 
-                subtitle="Earn points with every purchase and get exclusive member discounts"
-                className="my-8"
-              />
+        <div className="px-6 py-6">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-2xl font-bold text-foreground mb-6">New Products</h2>
+            <div className="grid grid-cols-4 gap-6">
+              {allProducts.filter(p => p.categories?.includes('newProducts')).map((product) => (
+                <ProductCard
+                  key={product.id}
+                  image={product.image}
+                  name={product.name}
+                  price={product.price}
+                  originalPrice={product.originalPrice}
+                  offer={product.offer}
+                  isFavorite={favoritesSet.has(product.id)}
+                  onToggleFavorite={() => toggleFavoriteById(product.id)}
+                  onAddToCart={() => handleAddToCart(product)}
+                  productId={product.id}
+                />
+              ))}
             </div>
           </div>
         </div>
