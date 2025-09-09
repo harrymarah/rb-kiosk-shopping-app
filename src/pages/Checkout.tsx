@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useCheckout } from "@/hooks/useCheckout";
+import { useCoupons } from "@/contexts/CouponContext";
 import { useNavigate } from "react-router-dom";
 import { useBasket } from "@/contexts/BasketContext";
 import { useDelivery } from "@/contexts/DeliveryContext";
@@ -13,7 +14,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { ArrowLeft, ShoppingCart, Plus, MapPin, Clock, Truck, Zap, Car } from "lucide-react";
 import { useProducts } from "@/components/ProductSection";
-import CouponWallet from "@/components/CouponWallet";
+import CheckoutCouponWallet from "@/components/CheckoutCouponWallet";
+
 import {
   Carousel,
   CarouselContent,
@@ -25,6 +27,7 @@ import {
 const Checkout = () => {
   const { items, getTotalPrice, clearBasket, addItem } = useBasket();
   const { markCheckoutComplete } = useCheckout();
+  const { availableCoupons, applyCoupon: applyGlobalCoupon, getAppliedCoupons, getTotalDiscount } = useCoupons();
   const { selectedDelivery, getDeliveryDetails } = useDelivery();
   const { addOrder } = useOrderHistory();
   const { allProducts } = useProducts();
@@ -32,8 +35,6 @@ const Checkout = () => {
   const [loading, setLoading] = useState(false);
   const [recommendations, setRecommendations] = useState<any[]>([]);
   const [selectedTimeSlot, setSelectedTimeSlot] = useState("");
-  const [appliedCoupons, setAppliedCoupons] = useState<string[]>([]);
-  const [couponDiscount, setCouponDiscount] = useState(0);
   
   const deliveryDetails = getDeliveryDetails();
 
@@ -134,19 +135,9 @@ const Checkout = () => {
 
   const subtotal = getTotalPrice();
   const deliveryFee = selectedDelivery === 'express' ? 2.99 : selectedDelivery === 'collect' ? 0 : (subtotal >= 35 ? 0 : 3.99);
+  const couponDiscount = getTotalDiscount();
   const total = subtotal + deliveryFee - couponDiscount;
 
-  const handleCouponApply = (coupon: any) => {
-    if (!appliedCoupons.includes(coupon.id)) {
-      setAppliedCoupons([...appliedCoupons, coupon.id]);
-      // Add discount amount if it's a discount coupon
-      if (coupon.type === 'discount') {
-        const discountAmount = parseFloat(coupon.value.replace('£', '').replace(' off', ''));
-        setCouponDiscount(prev => prev + discountAmount);
-      }
-      // For points coupons, just add to applied list (points would be credited after purchase)
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -285,10 +276,7 @@ const Checkout = () => {
             </Card>
 
             {/* Coupon Wallet */}
-            <CouponWallet 
-              onCouponApply={handleCouponApply}
-              appliedCoupons={appliedCoupons}
-            />
+            <CheckoutCouponWallet />
           </div>
 
           {/* Order Summary */}
