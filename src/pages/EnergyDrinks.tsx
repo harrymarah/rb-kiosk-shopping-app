@@ -119,7 +119,7 @@ const EnergyDrinks = () => {
       </header>
 
       {/* Interactive Hero Image Banner */}
-      <section className="relative h-[140px] overflow-hidden">
+      <section className="relative h-[200px] overflow-hidden">
         <div className="absolute inset-0 transition-all duration-500 ease-in-out">
           {selectedHeroImage === "energise" && (
             <div 
@@ -173,13 +173,13 @@ const EnergyDrinks = () => {
         {/* Image Tiles */}
         <div className="flex w-full h-64">
           <div 
-            className="w-1/3 relative overflow-hidden cursor-pointer transition-transform duration-200 hover:scale-105"
+            className="w-1/3 relative overflow-hidden cursor-pointer group"
             onClick={() => setSelectedHeroImage("energise")}
           >
             <img 
               src={redBullCategory} 
               alt="Red Bull Energy Drinks" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center">
               <h3 className="text-white text-xl md:text-2xl font-bold text-center px-4 pb-6">
@@ -188,13 +188,13 @@ const EnergyDrinks = () => {
             </div>
           </div>
           <div 
-            className="w-1/3 relative overflow-hidden cursor-pointer transition-transform duration-200 hover:scale-105"
+            className="w-1/3 relative overflow-hidden cursor-pointer group"
             onClick={() => setSelectedHeroImage("sport")}
           >
             <img 
               src={lucozadeCategory} 
               alt="Lucozade Energy Drinks" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center">
               <h3 className="text-white text-xl md:text-2xl font-bold text-center px-4 pb-6">
@@ -203,13 +203,13 @@ const EnergyDrinks = () => {
             </div>
           </div>
           <div 
-            className="w-1/3 relative overflow-hidden cursor-pointer transition-transform duration-200 hover:scale-105"
+            className="w-1/3 relative overflow-hidden cursor-pointer group"
             onClick={() => setSelectedHeroImage("new")}
           >
             <img 
               src={tripCategory} 
               alt="Trip Energy Drinks" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center">
               <h3 className="text-white text-xl md:text-2xl font-bold text-center px-4 pb-6">
