@@ -7,6 +7,9 @@ import { useFavorites } from "@/contexts/FavoritesContext";
 import { useProducts } from "@/components/ProductSection";
 import { useBasket } from "@/contexts/BasketContext";
 import SearchFilterBar from "@/components/SearchFilterBar";
+import redBullCategory from "@/assets/red-bull-category.png";
+import lucozadeCategory from "@/assets/lucozade-category.png";
+import tripCategory from "@/assets/trip-category.png";
 
 const EnergyDrinks = () => {
   const navigate = useNavigate();
@@ -114,50 +117,44 @@ const EnergyDrinks = () => {
         </div>
       </header>
 
-      <section className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-        <div className="container mx-auto px-4 py-8 flex items-center justify-center min-h-[200px]">
-          <div className="text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-              Fuel your potential
-            </h2>
-          </div>
-        </div>
-        {/* Product tiles at bottom */}
-        <div className="flex w-full">
-          <div className="w-1/5 aspect-square">
+      {/* Banner with Image Tiles */}
+      <section className="relative">
+        <div className="flex w-full h-64">
+          <div className="w-1/3 relative overflow-hidden">
             <img 
-              src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/product_tile_images/Red_bull_tile.png" 
-              alt="Red Bull" 
+              src={redBullCategory} 
+              alt="Red Bull Energy Drinks" 
               className="w-full h-full object-cover"
             />
+            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+              <h2 className="text-white text-2xl md:text-3xl font-bold text-center px-4">
+                ENERGISE ALL DAY
+              </h2>
+            </div>
           </div>
-          <div className="w-1/5 aspect-square">
+          <div className="w-1/3 relative overflow-hidden">
             <img 
-              src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/product_tile_images/Lucozade_tile.png" 
-              alt="Lucozade" 
+              src={lucozadeCategory} 
+              alt="Lucozade Energy Drinks" 
               className="w-full h-full object-cover"
             />
+            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+              <h2 className="text-white text-2xl md:text-3xl font-bold text-center px-4">
+                GET SPORT READY
+              </h2>
+            </div>
           </div>
-          <div className="w-1/5 aspect-square">
+          <div className="w-1/3 relative overflow-hidden">
             <img 
-              src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/product_tile_images/Powerade_tile.png" 
-              alt="Powerade" 
+              src={tripCategory} 
+              alt="Trip Energy Drinks" 
               className="w-full h-full object-cover"
             />
-          </div>
-          <div className="w-1/5 aspect-square">
-            <img 
-              src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/product_tile_images/Monster_tile.png" 
-              alt="Monster" 
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="w-1/5 aspect-square">
-            <img 
-              src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/product_tile_images/Starbucks_coffee_tile.png" 
-              alt="Starbucks" 
-              className="w-full h-full object-cover"
-            />
+            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+              <h2 className="text-white text-2xl md:text-3xl font-bold text-center px-4">
+                TRY SOMETHING NEW
+              </h2>
+            </div>
           </div>
         </div>
       </section>
