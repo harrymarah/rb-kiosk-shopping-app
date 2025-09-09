@@ -18,6 +18,7 @@ const EnergyDrinks = () => {
   const { addItem } = useBasket();
   const [selectedBrand, setSelectedBrand] = useState("all");
   const [sortBy, setSortBy] = useState("relevance");
+  const [selectedHeroImage, setSelectedHeroImage] = useState("energise");
 
   // SEO: set page metadata
   useEffect(() => {
@@ -117,6 +118,37 @@ const EnergyDrinks = () => {
         </div>
       </header>
 
+      {/* Interactive Hero Image Banner */}
+      <section className="relative h-[140px] overflow-hidden">
+        <div className="absolute inset-0 transition-all duration-500 ease-in-out">
+          {selectedHeroImage === "energise" && (
+            <div 
+              className="w-full h-full bg-cover bg-center bg-red-600"
+              style={{ 
+                backgroundImage: `linear-gradient(rgba(220, 38, 127, 0.6), rgba(220, 38, 127, 0.6)), url(${redBullCategory})`
+              }}
+            />
+          )}
+          {selectedHeroImage === "sport" && (
+            <div 
+              className="w-full h-full bg-cover bg-center bg-orange-600"
+              style={{ 
+                backgroundImage: `linear-gradient(rgba(255, 165, 0, 0.6), rgba(255, 165, 0, 0.6)), url(${lucozadeCategory})`
+              }}
+            />
+          )}
+          {selectedHeroImage === "new" && (
+            <div 
+              className="w-full h-full bg-cover bg-center bg-green-600"
+              style={{ 
+                backgroundImage: `linear-gradient(rgba(34, 197, 94, 0.6), rgba(34, 197, 94, 0.6)), url(${tripCategory})`
+              }}
+            />
+          )}
+        </div>
+        <div className="absolute inset-0 bg-black/20"></div>
+      </section>
+
       {/* Enhanced Banner with Header */}
       <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-purple-800 text-white overflow-hidden">
         {/* Animated background elements */}
@@ -140,7 +172,10 @@ const EnergyDrinks = () => {
         
         {/* Image Tiles */}
         <div className="flex w-full h-64">
-          <div className="w-1/3 relative overflow-hidden">
+          <div 
+            className="w-1/3 relative overflow-hidden cursor-pointer transition-transform duration-200 hover:scale-105"
+            onClick={() => setSelectedHeroImage("energise")}
+          >
             <img 
               src={redBullCategory} 
               alt="Red Bull Energy Drinks" 
@@ -152,7 +187,10 @@ const EnergyDrinks = () => {
               </h3>
             </div>
           </div>
-          <div className="w-1/3 relative overflow-hidden">
+          <div 
+            className="w-1/3 relative overflow-hidden cursor-pointer transition-transform duration-200 hover:scale-105"
+            onClick={() => setSelectedHeroImage("sport")}
+          >
             <img 
               src={lucozadeCategory} 
               alt="Lucozade Energy Drinks" 
@@ -164,7 +202,10 @@ const EnergyDrinks = () => {
               </h3>
             </div>
           </div>
-          <div className="w-1/3 relative overflow-hidden">
+          <div 
+            className="w-1/3 relative overflow-hidden cursor-pointer transition-transform duration-200 hover:scale-105"
+            onClick={() => setSelectedHeroImage("new")}
+          >
             <img 
               src={tripCategory} 
               alt="Trip Energy Drinks" 
