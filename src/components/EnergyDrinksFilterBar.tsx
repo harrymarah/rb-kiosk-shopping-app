@@ -110,11 +110,9 @@ const EnergyDrinksFilterBar = ({
                 </SelectTrigger>
                 <SelectContent className="bg-background border border-border shadow-lg z-50">
                   <SelectItem value="all">All Brands</SelectItem>
-                  {brands.map((brand) => (
-                    <SelectItem key={brand} value={brand}>
-                      {brand}
-                    </SelectItem>
-                  ))}
+                  <SelectItem value="Red Bull">Red Bull</SelectItem>
+                  <SelectItem value="Monster">Monster</SelectItem>
+                  <SelectItem value="Lucozade">Lucozade</SelectItem>
                 </SelectContent>
               </Select>
             </div>

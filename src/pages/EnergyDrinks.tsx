@@ -74,19 +74,33 @@ const EnergyDrinks = () => {
   const filteredProducts = energyDrinkProducts.filter(product => {
     // Brand filter
     if (selectedBrand !== "all") {
-      if (selectedBrand === "redBull" && !(product.categories?.includes('redBull') || product.name?.toLowerCase().includes('red bull'))) return false;
-      if (selectedBrand === "monster" && !product.name?.toLowerCase().includes('monster')) return false;
-      if (selectedBrand === "lucozade" && !product.name?.toLowerCase().includes('lucozade')) return false;
+      const brandName = selectedBrand.toLowerCase();
+      const productName = product.name?.toLowerCase() || '';
+      
+      if (brandName === "red bull" && !productName.includes('red bull') && !product.categories?.includes('redBull')) return false;
+      if (brandName === "monster" && !productName.includes('monster')) return false;
+      if (brandName === "lucozade" && !productName.includes('lucozade')) return false;
     }
     
     // Flavour filter
-    if (selectedFlavour !== "all" && !product.name?.toLowerCase().includes(selectedFlavour.toLowerCase())) return false;
+    if (selectedFlavour !== "all") {
+      const flavourName = selectedFlavour.toLowerCase();
+      const productName = product.name?.toLowerCase() || '';
+      if (!productName.includes(flavourName)) return false;
+    }
     
     // Low sugar filter
-    if (lowSugar && !product.name?.toLowerCase().includes('sugar free') && !product.name?.toLowerCase().includes('zero')) return false;
+    if (lowSugar) {
+      const productName = product.name?.toLowerCase() || '';
+      if (!productName.includes('sugar free') && !productName.includes('zero') && !productName.includes('diet')) return false;
+    }
     
-    // New filter (assuming products with 'new' in description or recent)
-    if (isNew && !product.name?.toLowerCase().includes('new') && !product.description?.toLowerCase().includes('new')) return false;
+    // New filter
+    if (isNew) {
+      const productName = product.name?.toLowerCase() || '';
+      const description = product.description?.toLowerCase() || '';
+      if (!productName.includes('new') && !description.includes('new')) return false;
+    }
     
     // On offer filter
     if (onOffer && !product.offer) return false;
@@ -249,7 +263,7 @@ const EnergyDrinks = () => {
       {/* Filter Bar */}
       <div className="container mx-auto px-4 py-4">
         <EnergyDrinksFilterBar
-          brands={energyBrands.map(b => b.name).filter(name => name !== "All Brands")}
+          brands={[]} // Not used anymore since we hardcode them
           flavours={availableFlavours}
           selectedBrand={selectedBrand}
           selectedFlavour={selectedFlavour}
