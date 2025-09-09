@@ -145,7 +145,8 @@ const Index = () => {
                   name={product.name}
                   price={product.price}
                   originalPrice={product.originalPrice}
-                  offer={index < 2 ? "Sponsored" : product.offer}
+                  offer={product.offer}
+                  isSponsored={index < 2}
                   isFavorite={favoritesSet.has(product.id)}
                   onToggleFavorite={() => toggleFavoriteById(product.id)}
                   onAddToCart={() => handleAddToCart(product)}

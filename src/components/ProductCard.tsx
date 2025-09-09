@@ -10,6 +10,7 @@ interface ProductCardProps {
   price: string;
   originalPrice?: string;
   offer?: string;
+  isSponsored?: boolean;
   isFavorite?: boolean;
   onToggleFavorite?: () => void;
   onAddToCart?: () => void;
@@ -22,6 +23,7 @@ const ProductCard = ({
   price, 
   originalPrice, 
   offer,
+  isSponsored = false,
   isFavorite = false,
   onToggleFavorite,
   onAddToCart,
@@ -38,8 +40,13 @@ const ProductCard = ({
     <Card className="group cursor-pointer hover:shadow-lg transition-all duration-200 border border-border h-full flex flex-col" onClick={handleCardClick}>
       <CardContent className="p-4 flex flex-col flex-1">
         <div className="relative mb-4">
+          {isSponsored && (
+            <div className="absolute top-2 left-2 z-10 bg-brand-yellow text-brand-yellow-foreground px-2 py-1 text-xs font-semibold rounded-md">
+              Sponsored
+            </div>
+          )}
           <div className="aspect-square bg-white rounded-lg overflow-hidden border border-border/20">
-            <img 
+            <img
               src={getProxiedImageUrl(image)} 
               alt={name} 
               loading="lazy"
@@ -59,7 +66,7 @@ const ProductCard = ({
           <Button
             variant="ghost"
             size="icon"
-            className="absolute top-2 right-2 h-8 w-8 bg-gray-100/90 hover:bg-gray-200/90 backdrop-blur-sm"
+            className="absolute top-2 right-2 h-8 w-8 bg-gray-100/90 hover:bg-gray-200/90 backdrop-blur-sm z-10"
             onClick={(e) => {
               e.stopPropagation();
               onToggleFavorite?.();
