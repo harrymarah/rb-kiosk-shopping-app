@@ -317,7 +317,7 @@ const EnergyDrinks = () => {
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-lg p-4 border border-blue-200 dark:border-blue-700">
             <div className="relative mb-3 bg-white rounded-lg p-3 shadow-sm">
               <img 
-                src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/15.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%2012%20X%20250ml.jpeg"
+                src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/14.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%2012%20X%20250ml.jpeg"
                 alt="Red Bull Sugar Free 12pk"
                 className="w-full h-32 object-contain"
               />
