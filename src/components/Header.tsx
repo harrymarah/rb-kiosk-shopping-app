@@ -1,4 +1,4 @@
-import { Heart, User, ShoppingCart, Home, Calendar } from "lucide-react";
+import { Heart, User, ShoppingCart, Home, Calendar, Ticket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import SearchBar from "./SearchBar";
@@ -7,6 +7,7 @@ import { useBasket } from "@/contexts/BasketContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import BasketDrawer from "./BasketDrawer";
 import FavoritesDrawer from "./FavoritesDrawer";
+import CouponsDrawer from "./CouponsDrawer";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 const Header = () => {
@@ -51,6 +52,11 @@ const Header = () => {
           </div>
           
           <div className="flex items-center gap-2">
+            <CouponsDrawer>
+              <Button variant="ghost" size="icon" className="relative h-11 w-11 rounded-full hover:bg-gray-100 border border-gray-200">
+                <Ticket className="h-5 w-5 text-gray-700" />
+              </Button>
+            </CouponsDrawer>
             <FavoritesDrawer>
               <Button variant="ghost" size="icon" className="relative h-11 w-11 rounded-full hover:bg-gray-100 border border-gray-200">
                 <Heart className="h-5 w-5 text-gray-700" />
