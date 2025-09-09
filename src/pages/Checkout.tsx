@@ -193,12 +193,12 @@ const Checkout = () => {
               </CardHeader>
               <CardContent>
                 <Select value={selectedTimeSlot} onValueChange={setSelectedTimeSlot} required>
-                  <SelectTrigger>
+                  <SelectTrigger className="w-full">
                     <SelectValue placeholder={`Select your preferred ${selectedDelivery === 'collect' ? 'pickup' : 'delivery'} time`} />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-background border border-border shadow-lg z-[100] pointer-events-auto">
                     {getTimeSlots().map((slot) => (
-                      <SelectItem key={slot.value} value={slot.value}>
+                      <SelectItem key={slot.value} value={slot.value} className="cursor-pointer hover:bg-accent">
                         {slot.label}
                       </SelectItem>
                     ))}
