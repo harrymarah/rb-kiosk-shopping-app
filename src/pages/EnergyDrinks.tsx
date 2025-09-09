@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft, Filter, SortAsc } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import ProductCard from "@/components/ProductCard";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useProducts } from "@/components/ProductSection";
@@ -304,6 +305,102 @@ const EnergyDrinks = () => {
           resultCount={sortedProducts.length}
         />
       </div>
+
+      {/* Sponsored Products Section */}
+      <section className="container mx-auto px-4 py-6">
+        <div className="mb-4 flex items-center gap-2">
+          <h2 className="text-xl font-bold text-foreground">Sponsored Products</h2>
+          <Badge variant="secondary" className="text-xs">Ad</Badge>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {/* Red Bull Sugar Free 12pk */}
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-lg p-4 border border-blue-200 dark:border-blue-700">
+            <div className="relative mb-3">
+              <img 
+                src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/15.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%2012%20X%20250ml.jpeg"
+                alt="Red Bull Sugar Free 12pk"
+                className="w-full h-32 object-contain"
+              />
+              <Badge className="absolute top-2 right-2 bg-yellow-500 text-black">Sponsored</Badge>
+            </div>
+            <h3 className="font-semibold text-sm mb-2">Red Bull Sugar Free 12pk</h3>
+            <p className="text-lg font-bold text-primary mb-3">£14.25</p>
+            <Button 
+              size="sm" 
+              className="w-full bg-blue-600 hover:bg-blue-700"
+              onClick={() => {
+                const product = {
+                  id: "red-bull-sugar-free-12pk-sponsored",
+                  name: "Red Bull Sugar Free 12pk",
+                  price: "£14.25",
+                  image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/15.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%2012%20X%20250ml.jpeg"
+                };
+                addItem(product);
+              }}
+            >
+              Add to Basket
+            </Button>
+          </div>
+
+          {/* Monster White 4pk */}
+          <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-lg p-4 border border-green-200 dark:border-green-700">
+            <div className="relative mb-3">
+              <img 
+                src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/2%20-%20Monster%20Energy%20Drink%204x500ml.jpg"
+                alt="Monster White 4pk"
+                className="w-full h-32 object-contain"
+              />
+              <Badge className="absolute top-2 right-2 bg-yellow-500 text-black">Sponsored</Badge>
+            </div>
+            <h3 className="font-semibold text-sm mb-2">Monster White 4pk</h3>
+            <p className="text-lg font-bold text-primary mb-3">£6.99</p>
+            <Button 
+              size="sm" 
+              className="w-full bg-green-600 hover:bg-green-700"
+              onClick={() => {
+                const product = {
+                  id: "monster-white-4pk-sponsored",
+                  name: "Monster White 4pk",
+                  price: "£6.99",
+                  image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/2%20-%20Monster%20Energy%20Drink%204x500ml.jpg"
+                };
+                addItem(product);
+              }}
+            >
+              Add to Basket
+            </Button>
+          </div>
+
+          {/* Red Bull Winter Edition 4pk */}
+          <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-lg p-4 border border-purple-200 dark:border-purple-700">
+            <div className="relative mb-3">
+              <img 
+                src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/6.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%20Fuji%20Apple%20&%20Ginger,%20Winter%20Edition%204%20X%20250ml.jpeg"
+                alt="Red Bull Winter Edition 4pk"
+                className="w-full h-32 object-contain"
+              />
+              <Badge className="absolute top-2 right-2 bg-yellow-500 text-black">Sponsored</Badge>
+            </div>
+            <h3 className="font-semibold text-sm mb-2">Red Bull Winter Edition 4pk</h3>
+            <p className="text-lg font-bold text-primary mb-3">£3.50</p>
+            <Button 
+              size="sm" 
+              className="w-full bg-purple-600 hover:bg-purple-700"
+              onClick={() => {
+                const product = {
+                  id: "red-bull-winter-edition-4pk-sponsored",
+                  name: "Red Bull Winter Edition 4pk",
+                  price: "£3.50",
+                  image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/6.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%20Fuji%20Apple%20&%20Ginger,%20Winter%20Edition%204%20X%20250ml.jpeg"
+                };
+                addItem(product);
+              }}
+            >
+              Add to Basket
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Products Grid */}
       <main className="container mx-auto px-4 pb-6">
