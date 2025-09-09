@@ -491,7 +491,8 @@
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/3.%20Red%20Bull%20Energy%20Drink%204%20X%20250ml.jpeg",
       "categories": [
         "favourites",
-        "redBull"
+        "redBull",
+        "energyDrinks"
       ]
     },
     {
@@ -584,7 +585,8 @@
       "price": "£7.50",
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/4.%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%208%20X%20250ml.jpeg",
       "categories": [
-        "redBull"
+        "redBull",
+        "energyDrinks"
       ]
     },
     {
@@ -593,7 +595,8 @@
       "price": "£3.50",
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/5.%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%20Summer%20White%20Peach%20Edition%204%20X%20250ml.jpeg",
       "categories": [
-        "redBull"
+        "redBull",
+        "energyDrinks"
       ]
     },
     {
@@ -602,7 +605,8 @@
       "price": "£9.50",
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/6.%20Red%20Bull%20Zero%20Energy%20Drink%208%20X%20250ml.avif",
       "categories": [
-        "redBull"
+        "redBull",
+        "energyDrinks"
       ]
     },
     {
@@ -611,7 +615,8 @@
       "price": "£3.50",
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/8.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%20Grapefruit%20&%20Blossom,%20Lilac%20Edition%204%20X%20250ml.jpg",
       "categories": [
-        "redBull"
+        "redBull",
+        "energyDrinks"
       ]
     },
     {
@@ -620,7 +625,8 @@
       "price": "£3.50",
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/9.%20Red%20Bull%20Sugar%20Free%20The%20Winter%20Edition%20Vanilla%20Iced%20Berry%20Energy%20Drink%204%20X%20250ml.avif",
       "categories": [
-        "redBull"
+        "redBull",
+        "energyDrinks"
       ]
     },
     {
@@ -629,7 +635,8 @@
       "price": "£3.50",
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/10.%20Red%20Bull%20The%20Pink%20Edition%20Sugarfree%20Energy%20Drink%20Forest%20Fruit%204%20X%20250ml.jpeg",
       "categories": [
-        "redBull"
+        "redBull",
+        "energyDrinks"
       ]
     },
     {
@@ -638,7 +645,8 @@
       "price": "£5.65",
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/11.%20Red%20Bull%20Red%20Watermelon%20Edition%204%20X%20250ml.jpeg",
       "categories": [
-        "redBull"
+        "redBull",
+        "energyDrinks"
       ]
     },
     {
@@ -647,7 +655,8 @@
       "price": "£14.25",
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/12.%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%2012%20X%20250ml.jpeg",
       "categories": [
-        "redBull"
+        "redBull",
+        "energyDrinks"
       ]
     },
     {
@@ -656,7 +665,8 @@
       "price": "£8.00",
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/13.%20Red%20Bull%20Energy%20Drink%208%20X%20250ml.jpeg",
       "categories": [
-        "redBull"
+        "redBull",
+        "energyDrinks"
       ]
     },
     {
@@ -665,7 +675,8 @@
       "price": "£3.50",
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/14.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%20Blue%20Edition%20Juneberry%204%20X%20250ml.jpg",
       "categories": [
-        "redBull"
+        "redBull",
+        "energyDrinks"
       ]
     }
   ]
