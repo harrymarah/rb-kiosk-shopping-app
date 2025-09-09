@@ -10,6 +10,9 @@ import SearchFilterBar from "@/components/SearchFilterBar";
 import redBullCategory from "@/assets/red-bull-category.png";
 import lucozadeCategory from "@/assets/lucozade-category.png";
 import tripCategory from "@/assets/trip-category.png";
+import energiseAllDay from "@/assets/energise-all-day.jpg";
+import getSportReady from "@/assets/get-sport-ready.jpg";
+import trySomethingNew from "@/assets/try-something-new.jpg";
 
 const EnergyDrinks = () => {
   const navigate = useNavigate();
@@ -125,7 +128,7 @@ const EnergyDrinks = () => {
             <div 
               className="w-full h-full bg-cover bg-center bg-red-600"
               style={{ 
-                backgroundImage: `linear-gradient(rgba(220, 38, 127, 0.6), rgba(220, 38, 127, 0.6)), url(${redBullCategory})`
+                backgroundImage: `linear-gradient(rgba(220, 38, 127, 0.6), rgba(220, 38, 127, 0.6)), url(${energiseAllDay})`
               }}
             />
           )}
@@ -133,7 +136,7 @@ const EnergyDrinks = () => {
             <div 
               className="w-full h-full bg-cover bg-center bg-orange-600"
               style={{ 
-                backgroundImage: `linear-gradient(rgba(255, 165, 0, 0.6), rgba(255, 165, 0, 0.6)), url(${lucozadeCategory})`
+                backgroundImage: `linear-gradient(rgba(255, 165, 0, 0.6), rgba(255, 165, 0, 0.6)), url(${getSportReady})`
               }}
             />
           )}
@@ -141,7 +144,7 @@ const EnergyDrinks = () => {
             <div 
               className="w-full h-full bg-cover bg-center bg-green-600"
               style={{ 
-                backgroundImage: `linear-gradient(rgba(34, 197, 94, 0.6), rgba(34, 197, 94, 0.6)), url(${tripCategory})`
+                backgroundImage: `linear-gradient(rgba(34, 197, 94, 0.6), rgba(34, 197, 94, 0.6)), url(${trySomethingNew})`
               }}
             />
           )}
