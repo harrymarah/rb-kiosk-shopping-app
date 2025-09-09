@@ -11,7 +11,6 @@ import BannerAd from "@/components/BannerAd";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useBasket } from "@/contexts/BasketContext";
 import { useToast } from "@/components/ui/use-toast";
-import { useOrderHistory } from "@/contexts/OrderHistoryContext";
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -20,7 +19,6 @@ const Index = () => {
   const { favorites: favItems, toggleFavorite: toggleFav, isFavorite } = useFavorites();
   const { addItem } = useBasket();
   const { toast } = useToast();
-  const { lastOrder } = useOrderHistory();
   const { products, categories, allProducts } = useProducts();
   const favoritesSet = new Set(favItems.map(f => f.id));
 
@@ -392,71 +390,139 @@ const Index = () => {
         <div className="px-6 py-8">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Last Order</h2>
-            {lastOrder ? (
-              <div className="space-y-6">
-                {/* Order Info */}
-                <div className="bg-gray-50 rounded-lg p-4 border">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="font-semibold">Order #{lastOrder.id}</span>
-                    <span className="text-sm text-muted-foreground">
-                      {new Date(lastOrder.date).toLocaleDateString('en-GB')}
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">
-                      {lastOrder.deliveryMethod === 'collect' ? 'Click & Collect' : 
-                       lastOrder.deliveryMethod === 'express' ? 'Express Delivery' : 'Home Delivery'} • 
-                      {lastOrder.status === 'collected' ? ' Collected' : ' Delivered'}
-                    </span>
-                    <span className="font-bold">£{lastOrder.total.toFixed(2)}</span>
-                  </div>
+            <div className="space-y-6">
+              {/* Order Info */}
+              <div className="bg-gray-50 rounded-lg p-4 border">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="font-semibold">Order #ORD-2024-0892</span>
+                  <span className="text-sm text-muted-foreground">
+                    {new Date(Date.now() - 86400000 * 3).toLocaleDateString('en-GB')}
+                  </span>
                 </div>
-                
-                {/* Order Items */}
-                <div className="grid grid-cols-4 gap-6">
-                  {lastOrder.items.map((item) => (
-                    <ProductCard
-                      key={item.id}
-                      image={item.image}
-                      name={item.name}
-                      price={item.price}
-                      isFavorite={favoritesSet.has(item.id)}
-                      onToggleFavorite={() => toggleFavoriteById(item.id)}
-                      onAddToCart={() => handleAddToCart(allProducts?.find(p => p.id === item.id))}
-                      productId={item.id}
-                    />
-                  ))}
-                </div>
-                
-                {/* Reorder Button */}
-                <div className="text-center mt-8">
-                  <button
-                    onClick={() => {
-                      lastOrder.items.forEach(item => {
-                        const product = allProducts?.find(p => p.id === item.id);
-                        if (product) {
-                          for (let i = 0; i < item.quantity; i++) {
-                            handleAddToCart(product);
-                          }
-                        }
-                      });
-                      toast({
-                        title: "Items added to basket",
-                        description: "Your last order has been added to your basket.",
-                      });
-                    }}
-                    className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                  >
-                    Reorder All Items
-                  </button>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-muted-foreground">
+                    Home Delivery • Delivered
+                  </span>
+                  <span className="font-bold">£28.45</span>
                 </div>
               </div>
-            ) : (
-              <div className="text-center">
-                <p className="text-muted-foreground">No previous orders yet</p>
-                <p className="text-sm text-muted-foreground mt-2">Place an order to see your order history</p>
+              
+              {/* Order Items */}
+              <div className="grid grid-cols-4 gap-6">
+                {[
+                  {
+                    id: 'happy-egg-co-free-range-6-pack-medium',
+                    name: 'Free-range 6-pack (medium) - The Happy Egg Co.',
+                    price: '£3.50',
+                    image: '/placeholder.svg'
+                  },
+                  {
+                    id: 'arla-whole-milk-2l',
+                    name: 'Whole Milk, 2 L - Arla',
+                    price: '£1.45',
+                    image: '/placeholder.svg'
+                  },
+                  {
+                    id: 'red-bull-energy-drink-12-x-250ml-e1fde4',
+                    name: 'Red Bull ED 12pk',
+                    price: '£10.50',
+                    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/7.%20Red%20Bull%20Energy%20Drink%2012%20X%20250ml.jpeg'
+                  },
+                  {
+                    id: 'cravendale-semi-skimmed-milk-2l',
+                    name: 'Semi-skimmed Milk, 2 L - Cravendale',
+                    price: '£1.55',
+                    image: '/placeholder.svg'
+                  },
+                  {
+                    id: 'heinz-beanz-in-tomato-sauce-415g-16a467',
+                    name: 'Baked Beans, 415 g tin - Heinz Beanz',
+                    price: '£1.40',
+                    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/4.%20Heinz%20Beanz%20In%20Tomato%20Sauce%20415g.avif'
+                  },
+                  {
+                    id: 'heinz-curry-tomato-ketchup-570g',
+                    name: 'Tomato Ketchup, 570 g - Heinz Curry Tomato Ketchup',
+                    price: '£2.25',
+                    image: '/placeholder.svg'
+                  },
+                  {
+                    id: 'cathedral-city-cheddar-cheese-400g',
+                    name: 'Cheddar Cheese, 400 g - Cathedral City',
+                    price: '£4.50',
+                    image: '/placeholder.svg'
+                  },
+                  {
+                    id: 'birds-eye-southern-fried-chicken-burgers-2pack',
+                    name: 'Southern-fried Chicken Burgers (2 pack) - Birds Eye',
+                    price: '£2.75',
+                    image: '/placeholder.svg'
+                  },
+                  {
+                    id: 'heinz-cream-of-tomato-soup-400g',
+                    name: 'Cream of Tomato Soup, 400 g - Heinz',
+                    price: '£1.25',
+                    image: '/placeholder.svg'
+                  },
+                  {
+                    id: 'pot-noodle-instant-noodles',
+                    name: 'Instant Noodles (pot) - Pot Noodle',
+                    price: '£1.25',
+                    image: '/placeholder.svg'
+                  },
+                  {
+                    id: 'cadbury-dairy-milk-chocolate-bar-110g',
+                    name: 'Cadbury Dairy Milk Chocolate Bar, 110 g - Cadbury',
+                    price: '£2.00',
+                    image: '/placeholder.svg'
+                  }
+                ].map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    image={product.image}
+                    name={product.name}
+                    price={product.price}
+                    isFavorite={favoritesSet.has(product.id)}
+                    onToggleFavorite={() => toggleFavoriteById(product.id)}
+                    onAddToCart={() => handleAddToCart(product)}
+                    productId={product.id}
+                  />
+                ))}
               </div>
-            )}
+              
+              {/* Reorder Button */}
+              <div className="text-center mt-8">
+                <button
+                  onClick={() => {
+                    const hardCodedProducts = [
+                      { id: 'happy-egg-co-free-range-6-pack-medium', name: 'Free-range 6-pack (medium) - The Happy Egg Co.', price: '£3.50' },
+                      { id: 'arla-whole-milk-2l', name: 'Whole Milk, 2 L - Arla', price: '£1.45' },
+                      { id: 'red-bull-energy-drink-12-x-250ml-e1fde4', name: 'Red Bull ED 12pk', price: '£10.50' },
+                      { id: 'cravendale-semi-skimmed-milk-2l', name: 'Semi-skimmed Milk, 2 L - Cravendale', price: '£1.55' },
+                      { id: 'heinz-beanz-in-tomato-sauce-415g-16a467', name: 'Baked Beans, 415 g tin - Heinz Beanz', price: '£1.40' },
+                      { id: 'heinz-curry-tomato-ketchup-570g', name: 'Tomato Ketchup, 570 g - Heinz Curry Tomato Ketchup', price: '£2.25' },
+                      { id: 'cathedral-city-cheddar-cheese-400g', name: 'Cheddar Cheese, 400 g - Cathedral City', price: '£4.50' },
+                      { id: 'birds-eye-southern-fried-chicken-burgers-2pack', name: 'Southern-fried Chicken Burgers (2 pack) - Birds Eye', price: '£2.75' },
+                      { id: 'heinz-cream-of-tomato-soup-400g', name: 'Cream of Tomato Soup, 400 g - Heinz', price: '£1.25' },
+                      { id: 'pot-noodle-instant-noodles', name: 'Instant Noodles (pot) - Pot Noodle', price: '£1.25' },
+                      { id: 'cadbury-dairy-milk-chocolate-bar-110g', name: 'Cadbury Dairy Milk Chocolate Bar, 110 g - Cadbury', price: '£2.00' }
+                    ];
+                    
+                    hardCodedProducts.forEach(product => {
+                      handleAddToCart(product);
+                    });
+                    
+                    toast({
+                      title: "Items added to basket",
+                      description: "Your last order has been added to your basket.",
+                    });
+                  }}
+                  className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+                >
+                  Reorder All Items
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       )}
