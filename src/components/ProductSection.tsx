@@ -51,48 +51,54 @@ export const useProducts = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const CACHE_KEY = 'productsData';
+    const VERSION_KEY = 'productsDataVersion';
+    const CACHE_VERSION = '2025-09-09-v2';
+    const DATA_URL = '/data/products.json';
+
     const loadData = async () => {
       try {
         setIsLoading(true);
+
+        // Invalidate cache when version changes
+        const storedVersion = localStorage.getItem(VERSION_KEY);
+        if (storedVersion !== CACHE_VERSION) {
+          localStorage.removeItem(CACHE_KEY);
+          localStorage.setItem(VERSION_KEY, CACHE_VERSION);
+        }
         
-        // Try to load from localStorage first
-        const cachedData = localStorage.getItem('productsData');
+        // Try to load from localStorage first for instant UI
+        const cachedData = localStorage.getItem(CACHE_KEY);
         if (cachedData) {
           const data = JSON.parse(cachedData);
           setProducts(data.products);
           setCategories(data.categories);
-          
-          // Use products directly as it's now a flat array
           const flatProducts = data.products || [];
           setAllProducts(flatProducts);
           setIsLoading(false);
         }
         
-        // Always try to fetch fresh data when online
-        if (navigator.onLine) {
-          const response = await fetch('/data/products.json');
-          const data = await response.json();
-          
-          // Cache the data for offline use
-          localStorage.setItem('productsData', JSON.stringify(data));
-          
-          setProducts(data.products);
-          setCategories(data.categories);
-          
-          // Use products directly as it's now a flat array
-          const flatProducts = data.products || [];
-          setAllProducts(flatProducts);
-        }
+        // Fetch fresh data (cache-busted) and update state/cache
+        const response = await fetch(`${DATA_URL}?v=${CACHE_VERSION}`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        
+        localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+        localStorage.setItem(VERSION_KEY, CACHE_VERSION);
+        
+        setProducts(data.products);
+        setCategories(data.categories);
+        const flatProducts = data.products || [];
+        setAllProducts(flatProducts);
       } catch (error) {
         console.error('Failed to load products:', error);
         
-        // If online fetch fails, try to use cached data
-        const cachedData = localStorage.getItem('productsData');
+        // If fetch fails, try to use cached data
+        const cachedData = localStorage.getItem(CACHE_KEY);
         if (cachedData) {
           const data = JSON.parse(cachedData);
           setProducts(data.products);
           setCategories(data.categories);
-          
           const flatProducts = data.products || [];
           setAllProducts(flatProducts);
         }

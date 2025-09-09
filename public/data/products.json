@@ -1,14 +1,14 @@
 {
   "categories": [
     {
-      "id": "newProducts",
-      "name": "New Products", 
-      "description": "Latest additions to our store"
+      "id": "bbq",
+      "name": "BBQ Essentials",
+      "description": "Everything for your BBQ"
     },
     {
-      "id": "breakfast",
-      "name": "Breakfast Items",
-      "description": "Essential breakfast items to start your day"
+      "id": "bigNightIn",
+      "name": "Big Night In",
+      "description": "Cosy night-in essentials"
     },
     {
       "id": "energyDrinks",
@@ -16,19 +16,14 @@
       "description": "Boost your energy levels"
     },
     {
-      "id": "matchReady",
-      "name": "Match Ready",
-      "description": "Everything you need to get match ready"
-    },
-    {
-      "id": "softDrinks",
-      "name": "Soft Drinks",
-      "description": "Refreshing non-alcoholic beverages"
-    },
-    {
       "id": "favourites",
       "name": "Customer Favourites",
       "description": "Our most popular products"
+    },
+    {
+      "id": "newProducts",
+      "name": "New Products",
+      "description": "Latest additions to our store"
     },
     {
       "id": "redBull",
@@ -36,489 +31,651 @@
       "description": "Full range of Red Bull energy drinks"
     },
     {
-      "id": "beverages",
-      "name": "Beverages",
-      "description": "All types of beverages and drinks"
+      "id": "softDrinks",
+      "name": "Soft Drinks",
+      "description": "Refreshing non-alcoholic beverages"
     },
     {
-      "id": "lunch",
-      "name": "Lunch Items",
-      "description": "Perfect lunch options"
-    },
-    {
-      "id": "meals",
-      "name": "Meals",
-      "description": "Ready-to-eat meals"
-    },
-    {
-      "id": "snacks",
-      "name": "Snacks",
-      "description": "Delicious snacks and treats"
+      "id": "summerOfSport",
+      "name": "Summer of Sport",
+      "description": "Snacks and drinks for big games"
     }
   ],
   "products": [
     {
-      "id": "new1",
-      "name": "Red Bull Lilac Edition Sugar Free Energy Drink 4x250ml",
-      "price": "£5.00",
-      "offer": "New Arrival",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%201%20-%20Red%20Bull%20Lilac%20Edition%20Sugar%20Free%20Energy%20Drink%204x250ml.jpg",
-      "categories": ["newProducts", "redBull", "beverages"]
+      "id": "red-bull-energy-drink-sugar-free-fuji-apple-ginger-winter-edition-4-x-250ml-1e5cfe",
+      "name": "Red Bull Energy Drink Sugar Free Fuji Apple & Ginger, Winter Edition 4 X 250ml",
+      "price": "£3.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/6.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%20Fuji%20Apple%20&%20Ginger,%20Winter%20Edition%204%20X%20250ml.jpeg",
+      "categories": [
+        "energyDrinks",
+        "newProducts",
+        "redBull"
+      ],
+      "offer": "New Arrival"
     },
     {
-      "id": "new2",
-      "name": "Tony's Chocolonely Milk Rice Crispy Caramel Bar",
-      "price": "£4.00",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%202%20-%20Tony's%20Chocolonely%20Milk%20Rice%20Crispy%20Caramel%20Bar.jpg",
-      "categories": ["newProducts"]
-    },
-    {
-      "id": "new3",
-      "name": "Smirnoff Miami Peach Spirit Drink",
-      "price": "£19.00",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%203%20-%20Smirnoff%20Miami%20Peach%20Spirit%20Drink.jpg",
-      "categories": ["newProducts"]
-    },
-    {
-      "id": "new4",
-      "name": "Dairy Milk Iced Latte",
-      "price": "£1.75",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%204%20-%20Dairy%20Milk%20Iced%20Latte.jpg",
-      "categories": ["newProducts"]
-    },
-    {
-      "id": "new5",
-      "name": "Aero Orange & Chocolate Mousse Pots",
-      "price": "£2.00",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%205%20-%20Aero%20Orange%20&%20Chocolate%20Mousse%20Pots.jpg",
-      "categories": ["newProducts"]
-    },
-    {
-      "id": "new7",
-      "name": "Lipton Kombucha Mango Passionfruit",
-      "price": "£1.75",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%207%20-%20Lipton%20Kombucha%20Mango%20Passionfruit.jpg",
-      "categories": ["newProducts"]
-    },
-    {
-      "id": "new8",
+      "id": "kettle-honey-dijon-mustard-potato-chips-130g-94b0ff",
       "name": "Kettle Honey Dijon Mustard Potato Chips 130g",
       "price": "£2.65",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%208%20-%20Kettle%20Honey%20Dijon%20Mustard%20Potato%20Chips%20130g.jpg",
-      "categories": ["newProducts"]
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/New/2.%20Kettle%20Honey%20Dijon%20Mustard%20Potato%20Chips%20130g.jpg",
+      "categories": [
+        "newProducts"
+      ],
+      "offer": "New Arrival"
     },
     {
-      "id": "new9",
-      "name": "Walkers Tomato Ketchup Multipack Crisps",
-      "price": "£2.15",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%209%20-%20Walkers%20Tomato%20Ketchup%20Multipack%20Crisps.jpg",
-      "categories": ["newProducts"]
+      "id": "tony-s-chocolonely-caramel-milk-rice-crispy-180g-dfa168",
+      "name": "Tony's Chocolonely Caramel Milk Rice Crispy 180g",
+      "price": "£3.15",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/New/3.%20Tony's%20Chocolonely%20Caramel%20Milk%20Rice%20Crispy%20180g.jpg",
+      "categories": [
+        "newProducts"
+      ],
+      "offer": "New Arrival"
     },
     {
-      "id": "new10",
-      "name": "Monster Lando Norris Zero Sugar Energy Drink 4x500ml",
-      "price": "£5.60",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%2010%20-%20Monster%20Lando%20Norris%20Zero%20Sugar%20Energy%20Drink%204x500ml.jpg",
-      "categories": ["newProducts", "beverages"]
+      "id": "the-laughing-cow-chilli-cheese-spread-triangles-8-x-128g-cbb690",
+      "name": "The Laughing Cow Chilli Cheese Spread Triangles 8 X 128g",
+      "price": "£1.95",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/New/4.%20The%20Laughing%20Cow%20Chilli%20Cheese%20Spread%20Triangles%208%20X%20128g.jpg",
+      "categories": [
+        "newProducts"
+      ],
+      "offer": "New Arrival"
     },
     {
-      "id": "new12",
-      "name": "Mrs Crimble's 12 Bakewell Slices",
-      "price": "£1.85",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%2012%20-%20Mrs%20Crimble's%2012%20Bakewell%20Slices.jpg",
-      "categories": ["newProducts"]
+      "id": "baileys-cinnamon-swirl-17-vol-70cl-eb7892",
+      "name": "Baileys Cinnamon Swirl 17% Vol 70cl",
+      "price": "£17.00",
+      "image": "",
+      "categories": [
+        "newProducts"
+      ],
+      "offer": "New Arrival"
     },
     {
-      "id": "breakfast1",
-      "name": "Weetabix Crispy Minis Chocolate 500g",
-      "price": "£3.80",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%201%20-%20Weetabix%20Crispy%20Minis%20Chocolate%20500g.jpg",
-      "categories": ["breakfast"]
+      "id": "maltesers-whilte-chocolate-honeycomb-more-to-share-pouch-126g-aca84b",
+      "name": "Maltesers Whilte Chocolate & Honeycomb More to Share Pouch 126g",
+      "price": "£3.75",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/New/6.%20Maltesers%20Whilte%20Chocolate%20&%20Honeycomb%20More%20to%20Share%20Pouch%20126g.jpg",
+      "categories": [
+        "newProducts"
+      ],
+      "offer": "New Arrival"
     },
     {
-      "id": "breakfast2",
-      "name": "British Whole Milk 2 Pint",
-      "price": "£1.20",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%202%20-%20British%20Whole%20Milk%202%20Pint.jpg",
-      "categories": ["breakfast"]
+      "id": "dash-mixed-pack-12-x-330ml-d5e4e0",
+      "name": "Dash Mixed Pack 12 X 330ml",
+      "price": "£13.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/New/7.%20Dash%20Mixed%20Pack%2012%20X%20330ml.jpg",
+      "categories": [
+        "newProducts"
+      ],
+      "offer": "New Arrival"
     },
     {
-      "id": "energy1",
-      "name": "Red Bull Energy Drink 250ml",
-      "price": "£1.85",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/17%20-%20Red%20Bull%20Energy%20Drink%20250ml.png",
-      "categories": ["breakfast", "energyDrinks", "redBull"]
+      "id": "mcvitie-s-jaffa-cakes-hot-honey-flavour-x10-04db04",
+      "name": "McVitie's Jaffa Cakes Hot Honey Flavour x10",
+      "price": "£1.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/New/8.%20McVitie's%20Jaffa%20Cakes%20Hot%20Honey%20Flavour%20x10.jpg",
+      "categories": [
+        "newProducts"
+      ],
+      "offer": "New Arrival"
     },
     {
-      "id": "breakfast4",
-      "name": "White Farmhouse Bread 800g",
-      "price": "£1.60",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%203%20-%20White%20Farmhouse%20Bread%20800g.jpg",
-      "categories": ["breakfast"]
+      "id": "starbucks-pumpkin-spice-latte-instant-coffee-sachets-4-x-24g-03d73a",
+      "name": "Starbucks Pumpkin Spice Latte Instant Coffee Sachets 4 X 24g",
+      "price": "£1.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/New/9.%20Starbucks%20Pumpkin%20Spice%20Latte%20Instant%20Coffee%20Sachets%204%20X%2024g.jpg",
+      "categories": [
+        "newProducts"
+      ],
+      "offer": "New Arrival"
     },
     {
-      "id": "breakfast5",
-      "name": "The Jolly Hog Smoked Black Treacle Back Bacon Rashers 300g",
-      "price": "£4.50",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/The%20Jolly%20Hog%20Smoked%20Black%20Treacle%20Back%20Bacon%20Rashers%20300g.jpg",
-      "categories": ["breakfast"]
-    },
-    {
-      "id": "breakfast6",
-      "name": "Large Free Range Eggs 6 Pack",
-      "price": "£2.55",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%204%20-%20Large%20Free%20Range%20Eggs%206%20Pack.jpg",
-      "categories": ["breakfast"]
-    },
-    {
-      "id": "breakfast7",
-      "name": "Activia Vanilla & Granola Breakfast Pot",
-      "price": "£1.85",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%205%20-%20Activia%20Vanilla%20&%20Granola%20Breakfast%20Pot.jpg",
-      "categories": ["breakfast"]
-    },
-    {
-      "id": "breakfast8",
-      "name": "Innocent Orange Juice Smooth 900ml",
-      "price": "£3.20",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%206%20-%20Innocent%20Orange%20Juice%20Smooth%20900ml.jpg",
-      "categories": ["breakfast"]
-    },
-    {
-      "id": "energy2",
-      "name": "Red Bull Sugar Free Energy Drink 250ml",
-      "price": "£1.65",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/18%20-%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%20250ml%20.png",
-      "categories": ["energyDrinks", "redBull"]
-    },
-    {
-      "id": "energy3",
-      "name": "Red Bull Energy 250ml x4",
-      "price": "£5.65",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/1%20-%20Red%20Bull%20Energy%20250ml%20x4.jpeg",
-      "categories": ["energyDrinks", "redBull", "matchReady", "beverages"]
-    },
-    {
-      "id": "energy4",
-      "name": "Red Bull Sugar Free Energy Drink 250ml x4",
-      "price": "£5.40",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/4%20-%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%20250ml%20x4.jpeg",
-      "categories": ["energyDrinks", "redBull", "beverages"]
-    },
-    {
-      "id": "energy5",
-      "name": "Monster Energy 500ml",
-      "price": "£2.05",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Soft%20Drinks/Monster%20Energy%20Drink%20500ml.jpg",
-      "categories": ["energyDrinks"]
-    },
-    {
-      "id": "energy6",
-      "name": "Monster Energy Drink Ultra 500ml",
-      "price": "£2.00",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Soft%20Drinks/Monster%20Energy%20Drink%20Ultra%20500ml.jpg",
-      "categories": ["energyDrinks"]
-    },
-    {
-      "id": "energy7",
-      "name": "Monster Energy Energy Drink 500ml x 4",
-      "price": "£5.85",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/2%20-%20Monster%20Energy%20Drink%204x500ml.jpg",
-      "categories": ["energyDrinks", "beverages"]
-    },
-    {
-      "id": "energy8",
-      "name": "Monster Energy Drink Ultra 4x500ml",
-      "price": "£5.85",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Soft%20Drinks/Monster%20Energy%20Drink%20Ultra%204x500ml.jpg",
-      "categories": ["energyDrinks", "beverages"]
-    },
-    {
-      "id": "energy9",
-      "name": "Lucozade Energy Drink Orange 500ml",
-      "price": "£1.69",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Soft%20Drinks/Lucozade%20Energy%20Drink%20Orange%20500ml.jpg",
-      "categories": ["energyDrinks"]
-    },
-    {
-      "id": "energy10",
-      "name": "Lucozade Energy Drink Orange 4x380ml",
-      "price": "£3.25",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/6%20-%20Lucozade%20Energy%20Orange%204x500ml.jpg",
-      "categories": ["energyDrinks", "beverages"]
-    },
-    {
-      "id": "match1",
-      "name": "Heineken Lager Beer Bottles 4x330ml",
-      "price": "£5.20",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Match%20Ready%20Items/Image%201%20-%20Heineken%20Lager%20Beer%20Bottles%204x330ml.jpg",
-      "categories": ["matchReady", "favourites"]
-    },
-    {
-      "id": "match2",
-      "name": "Doritos Tortilla Chips Nacho Cheese",
-      "price": "£2.50",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Match%20Ready%20Items/Image%202%20-%20Doritos%20Tortilla%20Chips%20Nacho%20Cheese.jpg",
-      "categories": ["matchReady"]
-    },
-    {
-      "id": "match3",
-      "name": "Doritos Mild Salsa Sharing Dip",
-      "price": "£2.50",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Match%20Ready%20Items/Image%203%20-%20Doritos%20Mild%20Salsa%20Sharing%20Dip.jpg",
-      "categories": ["matchReady"]
-    },
-    {
-      "id": "match4",
-      "name": "Goodfella's Stonebaked Thin Pepperoni Pizza",
-      "price": "£3.00",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Match%20Ready%20Items/Image%204%20-%20Goodfella's%20Stonebaked%20Thin%20Pepperoni%20Pizza.jpg",
-      "categories": ["matchReady", "favourites"]
-    },
-    {
-      "id": "soft1",
-      "name": "Coca Cola Original 8x330ml",
-      "price": "£5.59",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Soft%20Drinks/2%20-%20Coca%20Cola%20Original%208x330ml.jpg",
-      "categories": ["matchReady", "softDrinks", "favourites"]
-    },
-    {
-      "id": "soft2",
-      "name": "Diet Coke 10x330ml",
-      "price": "£5.25",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Soft%20Drinks/4%20-%20Diet%20Coke%2010x330ml.jpg",
-      "categories": ["softDrinks"]
-    },
-    {
-      "id": "soft3",
-      "name": "Pepsi Max 8x330ml",
-      "price": "£3.98",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Soft%20Drinks/3%20-%20Pepsi%20Max%208x330ml.jpg",
-      "categories": ["softDrinks"]
-    },
-    {
-      "id": "soft4",
-      "name": "Evian Water 6x500ml",
-      "price": "£3.35",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Soft%20Drinks/6%20-%20Evian%20Water%206x500ml.jpg",
-      "categories": ["softDrinks"]
-    },
-    {
-      "id": "fav1",
-      "name": "Oatly Oat Drink Barista Edition",
-      "price": "£2.20",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%201%20-%20Oatly%20Oat%20Drink%20Barista%20Edition.jpg",
-      "categories": ["favourites"]
-    },
-    {
-      "id": "fav3",
-      "name": "Propercorn Sweet & Salty",
-      "price": "£2.00",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%203%20-%20Propercorn%20Sweet%20&%20Salty.jpg",
-      "categories": ["favourites"]
-    },
-    {
-      "id": "fav4",
-      "name": "Red Bull Energy Drink 8x250ml",
-      "price": "£10.00",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%204%20-%20Red%20Bull%20Energy%20Drink%208x250ml.jpg",
-      "categories": ["favourites", "redBull", "energyDrinks", "beverages"]
-    },
-    {
-      "id": "fav5",
-      "name": "Cadbury Dairy Milk Caramel Chocolate Bar",
+      "id": "that-s-nuts-walkers-salt-vinegar-sharing-coated-peanuts-160g-9de494",
+      "name": "That’s Nuts Walkers Salt & Vinegar Sharing Coated Peanuts 160g",
       "price": "£2.75",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%205%20-%20Cadbury%20Dairy%20Milk%20Caramel%20Chocolate%20Bar.jpg",
-      "categories": ["favourites"]
+      "image": "",
+      "categories": [
+        "newProducts"
+      ],
+      "offer": "New Arrival"
     },
     {
-      "id": "fav8",
-      "name": "Candy Kittens Wild Strawberry 140g",
+      "id": "richmond-8-thick-pork-sausages-410g-954055",
+      "name": "Richmond 8 Thick Pork Sausages 410g",
+      "price": "£1.10",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/1.%20Richmond%208%20Thick%20Pork%20Sausages%20410g.jpeg",
+      "categories": [
+        "bbq"
+      ]
+    },
+    {
+      "id": "heinz-bbq-sauce-classic-570ml-8a8197",
+      "name": "Heinz Bbq Sauce Classic 570ml",
+      "price": "£3.90",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/2.%20Heinz%20Bbq%20Sauce%20Classic%20570ml.jpeg",
+      "categories": [
+        "bbq"
+      ]
+    },
+    {
+      "id": "warburtons-hot-dog-rolls-6-pack-sliced-65c415",
+      "name": "Warburtons Hot Dog Rolls 6 Pack Sliced",
+      "price": "£1.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/3.%20Warburtons%20Hot%20Dog%20Rolls%206%20Pack%20Sliced.jpeg",
+      "categories": [
+        "bbq"
+      ]
+    },
+    {
+      "id": "budweiser-lager-beer-12-x-300ml-b34476",
+      "name": "Budweiser Lager Beer 12 X 300ml",
+      "price": "£8.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20%20Assets/qcom/products/BBQ/4.%20Budweiser%20Lager%20Beer%2012%20X%20300ml.jpeg",
+      "categories": [
+        "bbq"
+      ]
+    },
+    {
+      "id": "coca-cola-zero-sugar-24-x-330ml-0a0ed5",
+      "name": "Coca-Cola Zero Sugar 24 X 330ml",
+      "price": "£12.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/5.%20Coca-Cola%20Zero%20Sugar%2024%20X%20330ml.jpeg",
+      "categories": [
+        "bbq",
+        "softDrinks"
+      ]
+    },
+    {
+      "id": "rustlers-the-essential-cheese-burger-with-our-rich-tomato-relish-172g-39180d",
+      "name": "Rustlers the Essential Cheese Burger with our Rich Tomato Relish 172g",
+      "price": "£1.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/6.%20Rustlers%20the%20Essential%20Cheese%20Burger%20with%20our%20Rich%20Tomato%20Relish%20172g.jpg",
+      "categories": [
+        "bbq"
+      ]
+    },
+    {
+      "id": "heinz-tomato-ketchup-910g-729f91",
+      "name": "Heinz Tomato Ketchup 910g",
+      "price": "£4.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/7.%20Heinz%20Tomato%20Ketchup%20910g.jpg",
+      "categories": [
+        "bbq"
+      ]
+    },
+    {
+      "id": "st-pierre-sesame-seeds-brioche-burger-buns-4-pack-6e904d",
+      "name": "St Pierre Sesame Seeds Brioche Burger Buns 4 Pack",
+      "price": "£2.85",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/8.%20St%20Pierre%20Sesame%20Seeds%20Brioche%20Burger%20Buns%204%20Pack.jpeg",
+      "categories": [
+        "bbq"
+      ]
+    },
+    {
+      "id": "doritos-cool-original-tortilla-chips-sharing-bag-crisps-180g-e0e8e9",
+      "name": "Doritos Cool Original Tortilla Chips Sharing Bag Crisps 180g",
+      "price": "£1.75",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/1.%20Doritos%20Cool%20Original%20Tortilla%20Chips%20Sharing%20Bag%20Crisps%20180g.jpg",
+      "categories": [
+        "summerOfSport"
+      ]
+    },
+    {
+      "id": "doritos-mild-salsa-dip-300g-328d5e",
+      "name": "Doritos Mild Salsa Dip 300g",
       "price": "£2.50",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%208%20-%20Candy%20Kittens%20Wild%20Strawberry%20140g.jpg",
-      "categories": ["favourites"]
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/2.%20Doritos%20Mild%20Salsa%20Dip%20300g.jpeg",
+      "categories": [
+        "summerOfSport"
+      ]
     },
     {
-      "id": "fav10",
-      "name": "Graze Protein Salt & Pepper Sharing Mixed Nuts Snack",
+      "id": "red-bull-energy-drink-12-x-250ml-e1fde4",
+      "name": "Red Bull Energy Drink 12 X 250ml",
+      "price": "£10.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/7.%20Red%20Bull%20Energy%20Drink%2012%20X%20250ml.jpeg",
+      "categories": [
+        "energyDrinks",
+        "redBull",
+        "softDrinks",
+        "summerOfSport"
+      ]
+    },
+    {
+      "id": "walls-4-hearty-sausage-rolls-220g-c5eded",
+      "name": "Walls 4 Hearty Sausage Rolls 220g",
+      "price": "£1.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/4.%20Walls%204%20Hearty%20Sausage%20Rolls%20220g.jpeg",
+      "categories": [
+        "summerOfSport"
+      ]
+    },
+    {
+      "id": "ben-jerry-s-cookie-dough-vanilla-ice-cream-tub-465ml-f66254",
+      "name": "Ben & Jerry's Cookie Dough Vanilla Ice Cream Tub 465ml",
+      "price": "£3.75",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/5.%20Ben%20&%20Jerry's%20Cookie%20Dough%20Vanilla%20Ice%20Cream%20Tub%20465ml.jpg",
+      "categories": [
+        "summerOfSport"
+      ]
+    },
+    {
+      "id": "goodfella-s-stonebaked-thin-pepperoni-pizza-332g-856938",
+      "name": "Goodfella's Stonebaked Thin Pepperoni Pizza 332g",
+      "price": "£3.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/6.%20Goodfella's%20Stonebaked%20Thin%20Pepperoni%20Pizza%20332g.jpeg",
+      "categories": [
+        "summerOfSport"
+      ]
+    },
+    {
+      "id": "diet-coke-24-x-330ml-49908f",
+      "name": "Diet Coke 24 X 330ml",
+      "price": "£12.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/7.%20Diet%20Coke%2024%20X%20330ml.jpeg",
+      "categories": [
+        "summerOfSport"
+      ]
+    },
+    {
+      "id": "cadbury-dairy-milk-chocolate-bar-large-360g-6456f6",
+      "name": "Cadbury Dairy Milk Chocolate Bar Large 360g",
+      "price": "£4.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/8.%20Cadbury%20Dairy%20Milk%20Chocolate%20Bar%20Large%20360g.jpeg",
+      "categories": [
+        "summerOfSport"
+      ]
+    },
+    {
+      "id": "charlie-bigham-s-lasagne-690g-e63037",
+      "name": "Charlie Bigham's Lasagne 690g",
+      "price": "£9.95",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Big%20Night%20In/1.%20Charlie%20Bigham's%20Lasagne%20690g.jpeg",
+      "categories": [
+        "bigNightIn"
+      ]
+    },
+    {
+      "id": "noel-sliced-tapas-selection-120g-d80af1",
+      "name": "Noel Sliced Tapas Selection 120G",
+      "price": "£3.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Big%20Night%20In/2.%20Noel%20Sliced%20Tapas%20Selection%20120g.jpeg",
+      "categories": [
+        "bigNightIn"
+      ]
+    },
+    {
+      "id": "cypressa-green-whole-nocellara-olives-290g-4131ef",
+      "name": "Cypressa Green Whole Nocellara Olives 290g",
+      "price": "£2.30",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Big%20Night%20In/3.%20Cypressa%20Green%20Whole%20Nocellara%20Olives%20290g.jpeg",
+      "categories": [
+        "bigNightIn"
+      ]
+    },
+    {
+      "id": "stockwell-co-cheese-twists-125g-f3ad46",
+      "name": "Stockwell & Co. Cheese Twists 125g",
+      "price": "£0.79",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Big%20Night%20In/4.%20Stockwell%20&%20Co.%20Cheese%20Twists%20125g.jpeg",
+      "categories": [
+        "bigNightIn"
+      ]
+    },
+    {
+      "id": "gordon-s-pink-gin-tonic-original-6-x-250ml-be4488",
+      "name": "Gordon's Pink Gin & Tonic Original 6 X 250ml",
+      "price": "£10.25",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Big%20Night%20In/5.%20Gordon's%20Pink%20Gin%20&%20Tonic%20Original%206%20X%20250ml.jpeg",
+      "categories": [
+        "bigNightIn"
+      ]
+    },
+    {
+      "id": "sprite-zero-sugar-2l-515fe3",
+      "name": "Sprite Zero Sugar 2L",
+      "price": "£2.15",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Big%20Night%20In/6.%20Sprite%20Zero%20Sugar%202L.jpeg",
+      "categories": [
+        "bigNightIn"
+      ]
+    },
+    {
+      "id": "walkers-sensations-poppadoms-lime-coriander-sharing-bag-82-5g-685be8",
+      "name": "Walkers Sensations Poppadoms Lime & Coriander Sharing Bag 82.5g",
+      "price": "£1.75",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Big%20Night%20In/7.%20Walkers%20Sensations%20Poppadoms%20Lime%20&%20Coriander%20Sharing%20Bag%2082.5g.jpeg",
+      "categories": [
+        "bigNightIn"
+      ]
+    },
+    {
+      "id": "sabra-houmous-extra-200g-1c3c50",
+      "name": "Sabra Houmous Extra 200g",
       "price": "£2.50",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%2010%20-%20Graze%20Protein%20Salt%20&%20Pepper%20Sharing%20Mixed%20Nuts%20Snack.jpg",
-      "categories": ["favourites"]
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Big%20Night%20In/8.%20Sabra%20Houmous%20Extra%20200g.jpeg",
+      "categories": [
+        "bigNightIn"
+      ]
     },
     {
-      "id": "fav11",
-      "name": "Haribo Supermix 190g",
-      "price": "£2.49",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%2011%20-%20Haribo%20Supermix%20190g.jpg",
-      "categories": ["favourites"]
+      "id": "pepsi-max-no-sugar-cola-cans-24-x-330ml-605b03",
+      "name": "Pepsi Max No Sugar Cola Cans 24 X 330ml",
+      "price": "£8.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Soft%20Drinks/3.%20Pepsi%20Max%20No%20Sugar%20Cola%20Cans%2024%20X%20330ml.jpg",
+      "categories": [
+        "softDrinks"
+      ]
     },
     {
-      "id": "fav12",
-      "name": "Walkers Extra Flamin Hot",
-      "price": "£2.50",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%2012%20-%20Walkers%20Extra%20Flamin%20Hot.jpg",
-      "categories": ["favourites"]
+      "id": "fanta-orange-8-x-330ml-5b1779",
+      "name": "Fanta Orange 8 X 330ml",
+      "price": "£4.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Soft%20Drinks/4.%20Fanta%20Orange%208%20X%20330ml.jpeg",
+      "categories": [
+        "softDrinks"
+      ]
     },
     {
-      "id": "rb11",
-      "name": "Red Bull Winter Edition Sugar Free Energy Drink 250ml x 4",
-      "price": "£5.00",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/11%20-%20Red%20Bull%20Winter%20Edition%20Sugar%20Free%20Energy%20Drink%20250ml%20x%204.jpg",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "evian-natural-bottled-mineral-still-water-6-x-1-5l-64b2b4",
+      "name": "Evian Natural Bottled Mineral Still Water 6 X 1.5L",
+      "price": "£5.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Soft%20Drinks/5.%20Evian%20Natural%20Bottled%20Mineral%20Still%20Water%206%20X%201.5L.jpg",
+      "categories": [
+        "softDrinks"
+      ]
     },
     {
-      "id": "rb12",
-      "name": "Red Bull Peach Edition Sugar Free Energy Drink 250ml x 4",
-      "price": "£5.00",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/12%20-%20Red%20Bull%20Peach%20Edition%20Sugar%20Free%20Energy%20Drink%20250ml%20x%204.jpg",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "lucozade-sport-drink-orange-4-x-500ml-3ca9b5",
+      "name": "Lucozade Sport Drink Orange 4 X 500ml",
+      "price": "£4.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/8.%20Lucozade%20Sport%20Drink%20Orange%204%20X%20500ml.jpeg",
+      "categories": [
+        "energyDrinks",
+        "softDrinks"
+      ]
     },
     {
-      "id": "bev3",
-      "name": "Lucozade Sport Orange 4x500ml",
-      "price": "£6.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Beverages/12%20Energy%20Drinks/3%20-%20Lucozade%20Sport%20Orange%204x500ml.jpg",
-      "categories": ["beverages"]
+      "id": "monster-energy-drink-ultra-4-x-500ml-052d3d",
+      "name": "Monster Energy Drink Ultra 4 X 500ml",
+      "price": "£4.75",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/4.%20Monster%20Energy%20Drink%20Ultra%204%20X%20500ml.jpeg",
+      "categories": [
+        "energyDrinks"
+      ]
     },
     {
-      "id": "bev9",
+      "id": "monster-energy-zero-sugar-4-x-500ml-5ad702",
+      "name": "Monster Energy Zero Sugar 4 X 500ml",
+      "price": "£4.75",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/2.%20Monster%20Energy%20Zero%20Sugar%204%20X%20500ml.jpeg",
+      "categories": [
+        "energyDrinks"
+      ]
+    },
+    {
+      "id": "red-bull-sugar-free-energy-drink-8-x-250ml-cf4b8f",
+      "name": "Red Bull Sugar Free Energy Drink 8 X 250ml",
+      "price": "£7.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/4.%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%208%20X%20250ml.jpeg",
+      "categories": [
+        "energyDrinks",
+        "redBull"
+      ]
+    },
+    {
+      "id": "lucozade-energy-orange-8-x-380ml-ac5a2b",
+      "name": "Lucozade Energy Orange 8 X 380ml",
+      "price": "£4.60",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/5.%20Lucozade%20Energy%20Orange%208%20X%20380ml.jpeg",
+      "categories": [
+        "energyDrinks"
+      ]
+    },
+    {
+      "id": "monster-energy-drink-mango-loco-4-x-500ml-a24b90",
       "name": "Monster Energy Drink Mango Loco 4 X 500ml",
-      "price": "£8.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Beverages/12%20Energy%20Drinks/9%20-%20Monster%20Energy%20Drink%20Mango%20Loco%204%20X%20500ml.jpg",
-      "categories": ["beverages"]
+      "price": "£5.60",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/7.%20Monster%20Energy%20Drink%20Mango%20Loco%204%20X%20500ml.jpeg",
+      "categories": [
+        "energyDrinks"
+      ]
     },
     {
-      "id": "bev10",
-      "name": "Lucozade Sport Raspberry 4x500ml",
-      "price": "£6.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Beverages/12%20Energy%20Drinks/10%20-%20Lucozade%20Sport%20Raspberry%204x500ml.jpg",
-      "categories": ["beverages"]
+      "id": "red-bull-sugar-free-variety-pack-energy-drink-8-x-250ml-8295d5",
+      "name": "Red Bull Sugar Free Variety Pack Energy Drink 8 X 250ml",
+      "price": "£7.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/3.%20Red%20Bull%20Sugar%20Free%20Variety%20Pack%20Energy%20Drink%208%20X%20250ml.jpeg",
+      "categories": [
+        "energyDrinks",
+        "redBull"
+      ]
     },
     {
-      "id": "bev11",
-      "name": "Powerade Berry & Tropical 500ml",
-      "price": "£1.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Beverages/12%20Energy%20Drinks/11%20-%20Powerade%20Berry%20&%20Tropical%20500ml.jpg",
-      "categories": ["beverages"]
+      "id": "monster-energy-ultra-strawberry-dreams-4-x-500ml-723fdf",
+      "name": "Monster Energy Ultra Strawberry Dreams 4 X 500ml",
+      "price": "£5.65",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/10.%20Monster%20Energy%20Ultra%20Strawberry%20Dreams%204%20X%20500ml.jpeg",
+      "categories": [
+        "energyDrinks"
+      ]
     },
     {
-      "id": "bev12",
-      "name": "Monster Energy Zero Sugar 4x500ml",
-      "price": "£8.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Beverages/12%20Energy%20Drinks/12%20-%20Monster%20Energy%20Zero%20Sugar%204x500ml.jpg",
-      "categories": ["beverages"]
+      "id": "dr-oetker-ristorante-pizza-pepperoni-salame-320g-929eb4",
+      "name": "Dr. Oetker Ristorante Pizza - Pepperoni-Salame 320g",
+      "price": "£1.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/1.%20Dr.%20Oetker%20Ristorante%20Pizza%20-%20Pepperoni-Salame%20320g.jpeg",
+      "categories": [
+        "favourites"
+      ]
     },
     {
-      "id": "rb_sf8pack",
-      "name": "Red Bull Sugar Free Energy Drink 250ml 8 Pack",
-      "price": "£15.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/11%20-%20Red%20Bull%20Sugarfree%20Energy%20Drink%20250ml%208%20Pack.jpeg",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "hula-hoops-original-multipack-crisps-6x24g-43cf4a",
+      "name": "Hula Hoops Original Multipack Crisps 6x24g",
+      "price": "£1.75",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/2.%20Hula%20Hoops%20Original%20Multipack%20Crisps%206x24g.avif",
+      "categories": [
+        "favourites"
+      ]
     },
     {
-      "id": "rb_coconut4pack",
-      "name": "Red Bull Coconut Edition Sugar Free Energy Drink 250ml 4 Pack",
-      "price": "£7.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/16%20-%20Red%20Bull%20Coconut%20Edition%20Sugarfree%20Coconut%20&%20Berry%20Energy%20Drink%20250ml%204%20pack.jpg",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "red-bull-energy-drink-4-x-250ml-559d99",
+      "name": "Red Bull Energy Drink 4 X 250ml",
+      "price": "£5.65",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/3.%20Red%20Bull%20Energy%20Drink%204%20X%20250ml.jpeg",
+      "categories": [
+        "favourites",
+        "redBull"
+      ]
     },
     {
-      "id": "rb_blue4pack",
-      "name": "Red Bull Blue Edition Sugar Free Juneberry Energy Drink 250ml 4 Pack",
-      "price": "£7.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/17%20-%20Red%20Bull%20Blue%20Edition%20Sugarfree%20Juneberry%20Energy%20Drink%20250ml%204%20Pack.jpg",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "heinz-beanz-in-tomato-sauce-415g-16a467",
+      "name": "Heinz Beanz In Tomato Sauce 415G",
+      "price": "£1.40",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/4.%20Heinz%20Beanz%20In%20Tomato%20Sauce%20415g.avif",
+      "categories": [
+        "favourites"
+      ]
     },
     {
-      "id": "rb_original473",
-      "name": "Red Bull Energy Drink 473ml",
-      "price": "£3.49",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/2%20-%20Red%20Bull%20Energy%20Drink%20473ml.png",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "rowntree-s-fruit-pastilles-sweets-sharing-bag-143g-465c8c",
+      "name": "Rowntree's Fruit Pastilles Sweets Sharing Bag 143g",
+      "price": "£1.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/5.%20Rowntree's%20Fruit%20Pastilles%20Sweets%20Sharing%20Bag%20143g.jpeg",
+      "categories": [
+        "favourites"
+      ]
     },
     {
-      "id": "rb_winter355",
-      "name": "Red Bull Winter Edition Sugar Free Fuji Apple & Ginger Energy Drink 355ml",
-      "price": "£2.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/21%20-%20Red%20Bull%20Winter%20Edition%20Sugarfree%20Fuji%20Apple%20&%20Ginger%20Energy%20Drink%20355ml.png",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "kit-kat-chunky-milk-chocolate-bars-multipack-40g-4-pack-eb594b",
+      "name": "Kit Kat Chunky Milk Chocolate Bars Multipack 40g 4 Pack",
+      "price": "£2.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/6.%20Kit%20Kat%20Chunky%20Milk%20Chocolate%20Bars%20Multipack%2040g%204%20Pack.jpeg",
+      "categories": [
+        "favourites"
+      ]
     },
     {
-      "id": "rb_peach355",
-      "name": "Red Bull Peach Edition Sugar Free White Peach Energy Drink 355ml",
-      "price": "£2.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/22%20-%20Red%20Bull%20Peach%20Edition%20Sugarfree%20White%20Peach%20Energy%20Drink%20355ml.jpeg",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "diet-coke-12-x-150ml-0ee34e",
+      "name": "Diet Coke 12 X 150ml",
+      "price": "£6.05",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/7.%20Diet%20Coke%2012%20X%20150ml.jpeg",
+      "categories": [
+        "favourites"
+      ]
     },
     {
-      "id": "rb_lilac355",
-      "name": "Red Bull Lilac Edition Sugar Free Grapefruit & Blossom Energy Drink 355ml",
-      "price": "£2.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/23%20-%20Red%20Bull%20Lilac%20Edition%20Sugarfree%20Grapefruit%20&%20Blossom%20Energy%20Drink%20355ml.png",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "san-miguel-especial-lager-beer-can-4-x-440ml-a5a955",
+      "name": "San Miguel Especial Lager Beer Can 4 X 440ml",
+      "price": "£5.75",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/8.%20San%20Miguel%20Especial%20Lager%20Beer%20Can%204%20X%20440ml.jpeg",
+      "categories": [
+        "favourites"
+      ]
     },
     {
-      "id": "rb_ice355",
-      "name": "Red Bull Ice Edition Sugar Free Iced Vanilla Berry Energy Drink 355ml",
-      "price": "£2.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/24%20-%20Red%20Bull%20Ice%20Edition%20Sugarfree%20Iced%20Vanilla%20Berry%20Energy%20Drink%20355ml.png",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "propercorn-sweet-salty-popcorn-6-x-14g-f81bea",
+      "name": "Propercorn Sweet & Salty Popcorn 6 X 14g",
+      "price": "£1.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/9.%20Propercorn%20Sweet%20&%20Salty%20Popcorn%206%20X%2014g.jpeg",
+      "categories": [
+        "favourites"
+      ]
     },
     {
-      "id": "rb_coconut355",
-      "name": "Red Bull Coconut Edition Sugar Free Coconut & Berry Energy Drink 355ml",
-      "price": "£2.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/25%20-%20Red%20Bull%20Coconut%20Edition%20Sugarfree%20Coconut%20&%20Berry%20Energy%20Drink%20355ml.jpg",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "oatly-barista-edition-oat-drink-long-life-1l-9e71c4",
+      "name": "Oatly Barista Edition Oat Drink Long Life 1L",
+      "price": "£1.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/10.%20Oatly%20Barista%20Edition%20Oat%20Drink%20Long%20Life%201L.jpeg",
+      "categories": [
+        "favourites"
+      ]
     },
     {
-      "id": "rb_blue355",
-      "name": "Red Bull Blue Edition Sugar Free Juneberry Energy Drink 355ml",
-      "price": "£2.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/26%20-%20Red%20Bull%20Blue%20Edition%20Sugarfree%20Juneberry%20Energy%20Drink%20355ml.png",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "mcvitie-s-the-original-jaffa-cakes-snack-packs-6-x-3-pack-af692b",
+      "name": "McVitie's The Original Jaffa Cakes Snack Packs 6 X 3 Pack",
+      "price": "£1.65",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/11.%20McVitie's%20The%20Original%20Jaffa%20Cakes%20Snack%20Packs%206%20X%203%20Pack.jpeg",
+      "categories": [
+        "favourites"
+      ]
     },
     {
-      "id": "rb_original355",
-      "name": "Red Bull Energy Drink 355ml",
-      "price": "£2.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/3%20-%20Red%20Bull%20Energy%20Drink%20355ml.png",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "red-bull-energy-drink-sugar-free-winter-edition-fuji-apple-ginger-4-x-250ml-694fb5",
+      "name": "Red Bull Energy Drink Sugar Free Winter Edition Fuji-Apple & Ginger 4 X 250ml",
+      "price": "£3.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/6.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%20Fuji%20Apple%20&%20Ginger,%20Winter%20Edition%204%20X%20250ml.jpeg",
+      "categories": [
+        "energyDrinks",
+        "newProducts",
+        "redBull"
+      ],
+      "offer": "New Arrival"
     },
     {
-      "id": "rb_sf473",
-      "name": "Red Bull Sugar Free Energy Drink 473ml",
-      "price": "£3.49",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/5%20-%20Red%20Bull%20Sugarfree%20Energy%20Drink%20473ml.png",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "red-bull-energy-drink-sugar-free-variety-pack-8-x-250ml-68e185",
+      "name": "Red Bull Energy Drink Sugar Free Variety Pack 8 X 250ml",
+      "price": "£7.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/3.%20Red%20Bull%20Sugar%20Free%20Variety%20Pack%20Energy%20Drink%208%20X%20250ml.jpeg",
+      "categories": [
+        "redBull"
+      ]
     },
     {
-      "id": "rb_sf355",
-      "name": "Red Bull Sugar Free Energy Drink 355ml",
-      "price": "£2.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/6%20-Red%20Bull%20Sugarfree%20Energy%20Drink%20355ml.jpeg",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "red-bull-energy-drink-sugar-free-8-x-250ml-04d296",
+      "name": "Red Bull Energy Drink Sugar Free 8 X 250ml",
+      "price": "£7.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/4.%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%208%20X%20250ml.jpeg",
+      "categories": [
+        "redBull"
+      ]
     },
     {
-      "id": "rb_zero4pack",
-      "name": "Red Bull Zero Energy Drink 250ml 4 Pack",
-      "price": "£7.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/7%20-%20Red%20Bull%20Zero%20Energy%20Drink%20250ml%204%20Pack.jpg",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "red-bull-sugar-free-energy-drink-summer-white-peach-edition-4-x-250ml-17c73f",
+      "name": "Red Bull Sugar Free Energy Drink Summer White Peach Edition 4 X 250ml",
+      "price": "£3.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/5.%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%20Summer%20White%20Peach%20Edition%204%20X%20250ml.jpeg",
+      "categories": [
+        "redBull"
+      ]
     },
     {
-      "id": "rb_zero473",
-      "name": "Red Bull Zero Energy Drink 473ml",
-      "price": "£3.49",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/8%20-Red%20Bull%20Zero%20Energy%20Drink%20473ml.png",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "red-bull-zero-energy-drink-8-x-250ml-e0426e",
+      "name": "Red Bull Zero Energy Drink 8 X 250ml",
+      "price": "£9.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/6.%20Red%20Bull%20Zero%20Energy%20Drink%208%20X%20250ml.avif",
+      "categories": [
+        "redBull"
+      ]
     },
     {
-      "id": "rb_zero355",
-      "name": "Red Bull Zero Energy Drink 355ml",
-      "price": "£2.99",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/red_bull_assets/9%20-Red%20Bull%20Zero%20Energy%20Drink%20355ml.jpg",
-      "categories": ["redBull", "energyDrinks", "beverages"]
+      "id": "red-bull-energy-drink-sugar-free-lilac-edition-grapefruit-blossom-4-x-250ml-1726f9",
+      "name": "Red Bull Energy Drink Sugar Free Lilac Edition Grapefruit & Blossom 4 X 250ml",
+      "price": "£3.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/8.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%20Grapefruit%20&%20Blossom,%20Lilac%20Edition%204%20X%20250ml.jpg",
+      "categories": [
+        "redBull"
+      ]
+    },
+    {
+      "id": "red-bull-energy-drink-sugar-free-winter-edition-vanilla-iced-berry-energy-drink-4-x-250ml-d22875",
+      "name": "Red Bull Energy Drink Sugar Free Winter Edition Vanilla Iced Berry Energy Drink 4 X 250ml",
+      "price": "£3.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/9.%20Red%20Bull%20Sugar%20Free%20The%20Winter%20Edition%20Vanilla%20Iced%20Berry%20Energy%20Drink%204%20X%20250ml.avif",
+      "categories": [
+        "redBull"
+      ]
+    },
+    {
+      "id": "red-bull-energy-drink-sugarfree-pink-edition-forest-fruit-4-x-250ml-7f8470",
+      "name": "Red Bull Energy Drink Sugarfree Pink Edition Forest Fruit 4 X 250ml",
+      "price": "£3.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/10.%20Red%20Bull%20The%20Pink%20Edition%20Sugarfree%20Energy%20Drink%20Forest%20Fruit%204%20X%20250ml.jpeg",
+      "categories": [
+        "redBull"
+      ]
+    },
+    {
+      "id": "red-bull-red-watermelon-edition-4-x-250ml-fc3209",
+      "name": "Red Bull Red Watermelon Edition 4 X 250ml",
+      "price": "£5.65",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/11.%20Red%20Bull%20Red%20Watermelon%20Edition%204%20X%20250ml.jpeg",
+      "categories": [
+        "redBull"
+      ]
+    },
+    {
+      "id": "red-bull-energy-drink-sugar-free-12-x-250ml-48d657",
+      "name": "Red Bull Energy Drink Sugar Free 12 X 250ml",
+      "price": "£14.25",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/12.%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%2012%20X%20250ml.jpeg",
+      "categories": [
+        "redBull"
+      ]
+    },
+    {
+      "id": "red-bull-energy-drink-8-x-250ml-47cad1",
+      "name": "Red Bull Energy Drink 8 X 250ml",
+      "price": "£8.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/13.%20Red%20Bull%20Energy%20Drink%208%20X%20250ml.jpeg",
+      "categories": [
+        "redBull"
+      ]
+    },
+    {
+      "id": "red-bull-energy-drink-sugar-free-blue-edition-juneberry-4-x-250ml-234203",
+      "name": "Red Bull Energy Drink Sugar Free Blue Edition Juneberry 4 X 250ml",
+      "price": "£3.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/14.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%20Blue%20Edition%20Juneberry%204%20X%20250ml.jpg",
+      "categories": [
+        "redBull"
+      ]
     }
   ]
 }
