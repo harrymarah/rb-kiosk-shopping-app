@@ -247,7 +247,7 @@ const ProductDetail = () => {
                 ['energy1', 'energy3', 'fav4', 'rb_original473', 'rb_original355'].includes(product.id)) && (
                 <div className="mt-6">
                   <h4 className="text-md font-semibold text-foreground mb-4">Product Information</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div className="bg-white rounded-lg overflow-hidden border border-gray-100">
                       <img
                         src={['energy1', 'energy3', 'fav4', 'rb_original473', 'rb_original355'].includes(product.id) 
@@ -261,7 +261,7 @@ const ProductDetail = () => {
                     <div className="bg-white rounded-lg overflow-hidden border border-gray-100">
                       <img
                         src={['energy1', 'energy3', 'fav4', 'rb_original473', 'rb_original355'].includes(product.id) 
-                          ? "/assets/info-squares/red-bull-info-3.jpg"
+                          ? "/assets/info-squares/red-bull-info-1.jpg"
                           : "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Info%20Squares/2.jpg"}
                         alt="Red Bull Product Information 2"
                         loading="lazy"
@@ -271,7 +271,7 @@ const ProductDetail = () => {
                     <div className="bg-white rounded-lg overflow-hidden border border-gray-100">
                       <img
                         src={['energy1', 'energy3', 'fav4', 'rb_original473', 'rb_original355'].includes(product.id) 
-                          ? "/assets/info-squares/red-bull-info-4.jpg"
+                          ? "/assets/info-squares/red-bull-info-3.jpg"
                           : "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Info%20Squares/3.jpg"}
                         alt="Red Bull Product Information 3"
                         loading="lazy"
@@ -281,12 +281,21 @@ const ProductDetail = () => {
                     <div className="bg-white rounded-lg overflow-hidden border border-gray-100">
                       <img
                         src={['energy1', 'energy3', 'fav4', 'rb_original473', 'rb_original355'].includes(product.id) 
-                          ? "/assets/info-squares/red-bull-info-5.jpg"
+                          ? "/assets/info-squares/red-bull-info-4.jpg"
                           : ""}
                         alt="Red Bull Product Information 4"
                         loading="lazy"
                         className="w-full h-auto object-contain"
-                        style={{ display: ['energy1', 'energy3', 'fav4', 'rb_original473', 'rb_original355'].includes(product.id) ? 'block' : 'none' }}
+                      />
+                    </div>
+                    <div className="bg-white rounded-lg overflow-hidden border border-gray-100">
+                      <img
+                        src={['energy1', 'energy3', 'fav4', 'rb_original473', 'rb_original355'].includes(product.id) 
+                          ? "/assets/info-squares/red-bull-info-5.jpg"
+                          : ""}
+                        alt="Red Bull Product Information 5"
+                        loading="lazy"
+                        className="w-full h-auto object-contain"
                       />
                     </div>
                   </div>
