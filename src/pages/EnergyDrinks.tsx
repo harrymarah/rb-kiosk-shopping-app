@@ -6,7 +6,7 @@ import ProductCard from "@/components/ProductCard";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useProducts } from "@/components/ProductSection";
 import { useBasket } from "@/contexts/BasketContext";
-import SearchFilterBar from "@/components/SearchFilterBar";
+import EnergyDrinksFilterBar from "@/components/EnergyDrinksFilterBar";
 import redBullCategory from "@/assets/red-bull-category.png";
 import lucozadeCategory from "@/assets/lucozade-category.png";
 import tripCategory from "@/assets/trip-category.png";
@@ -22,6 +22,10 @@ const EnergyDrinks = () => {
   const [selectedBrand, setSelectedBrand] = useState("all");
   const [sortBy, setSortBy] = useState("relevance");
   const [selectedHeroImage, setSelectedHeroImage] = useState("energise");
+  const [selectedFlavour, setSelectedFlavour] = useState("all");
+  const [lowSugar, setLowSugar] = useState(false);
+  const [isNew, setIsNew] = useState(false);
+  const [onOffer, setOnOffer] = useState(false);
 
   // SEO: set page metadata
   useEffect(() => {
@@ -63,12 +67,30 @@ const EnergyDrinks = () => {
     { id: "lucozade", name: "Lucozade", image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/6%20-%20Lucozade%20Energy%20Orange%204x500ml.jpg", count: energyDrinkProducts.filter(p => p.name?.toLowerCase().includes('lucozade')).length }
   ];
 
-  // Filter products based on selected brand
+  // Available flavours (extracted from product names)
+  const availableFlavours = ["Original", "Sugar Free", "Tropical", "Blue", "Red", "Green", "Coconut", "Orange", "Apple"];
+
+  // Filter products based on all criteria
   const filteredProducts = energyDrinkProducts.filter(product => {
-    if (selectedBrand === "all") return true;
-    if (selectedBrand === "redBull") return product.categories?.includes('redBull') || product.name?.toLowerCase().includes('red bull');
-    if (selectedBrand === "monster") return product.name?.toLowerCase().includes('monster');
-    if (selectedBrand === "lucozade") return product.name?.toLowerCase().includes('lucozade');
+    // Brand filter
+    if (selectedBrand !== "all") {
+      if (selectedBrand === "redBull" && !(product.categories?.includes('redBull') || product.name?.toLowerCase().includes('red bull'))) return false;
+      if (selectedBrand === "monster" && !product.name?.toLowerCase().includes('monster')) return false;
+      if (selectedBrand === "lucozade" && !product.name?.toLowerCase().includes('lucozade')) return false;
+    }
+    
+    // Flavour filter
+    if (selectedFlavour !== "all" && !product.name?.toLowerCase().includes(selectedFlavour.toLowerCase())) return false;
+    
+    // Low sugar filter
+    if (lowSugar && !product.name?.toLowerCase().includes('sugar free') && !product.name?.toLowerCase().includes('zero')) return false;
+    
+    // New filter (assuming products with 'new' in description or recent)
+    if (isNew && !product.name?.toLowerCase().includes('new') && !product.description?.toLowerCase().includes('new')) return false;
+    
+    // On offer filter
+    if (onOffer && !product.offer) return false;
+    
     return true;
   });
 
@@ -226,17 +248,27 @@ const EnergyDrinks = () => {
 
       {/* Filter Bar */}
       <div className="container mx-auto px-4 py-4">
-        <SearchFilterBar
-          categories={energyBrands.map(b => b.name)}
-          selectedCategory={energyBrands.find(b => b.id === selectedBrand)?.name || "All Brands"}
+        <EnergyDrinksFilterBar
+          brands={energyBrands.map(b => b.name).filter(name => name !== "All Brands")}
+          flavours={availableFlavours}
+          selectedBrand={selectedBrand}
+          selectedFlavour={selectedFlavour}
+          lowSugar={lowSugar}
+          isNew={isNew}
+          onOffer={onOffer}
           sortBy={sortBy}
-          onCategoryChange={(category) => {
-            const brand = energyBrands.find(b => b.name === category);
-            if (brand) setSelectedBrand(brand.id);
-          }}
+          onBrandChange={setSelectedBrand}
+          onFlavourChange={setSelectedFlavour}
+          onLowSugarChange={setLowSugar}
+          onNewChange={setIsNew}
+          onOfferChange={setOnOffer}
           onSortChange={setSortBy}
           onClearFilters={() => {
             setSelectedBrand("all");
+            setSelectedFlavour("all");
+            setLowSugar(false);
+            setIsNew(false);
+            setOnOffer(false);
             setSortBy("relevance");
           }}
           resultCount={sortedProducts.length}
