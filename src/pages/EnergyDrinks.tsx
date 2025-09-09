@@ -117,8 +117,17 @@ const EnergyDrinks = () => {
         </div>
       </header>
 
-      {/* Banner with Image Tiles */}
-      <section className="relative">
+      {/* Banner with Header and Image Tiles */}
+      <section className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+        <div className="container mx-auto px-4 py-8 flex items-center justify-center min-h-[120px]">
+          <div className="text-center">
+            <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
+              FUEL YOUR POTENTIAL
+            </h2>
+          </div>
+        </div>
+        
+        {/* Image Tiles */}
         <div className="flex w-full h-64">
           <div className="w-1/3 relative overflow-hidden">
             <img 
@@ -126,10 +135,10 @@ const EnergyDrinks = () => {
               alt="Red Bull Energy Drinks" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-              <h2 className="text-white text-2xl md:text-3xl font-bold text-center px-4">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center">
+              <h3 className="text-white text-xl md:text-2xl font-bold text-center px-4 pb-6">
                 ENERGISE ALL DAY
-              </h2>
+              </h3>
             </div>
           </div>
           <div className="w-1/3 relative overflow-hidden">
@@ -138,10 +147,10 @@ const EnergyDrinks = () => {
               alt="Lucozade Energy Drinks" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-              <h2 className="text-white text-2xl md:text-3xl font-bold text-center px-4">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center">
+              <h3 className="text-white text-xl md:text-2xl font-bold text-center px-4 pb-6">
                 GET SPORT READY
-              </h2>
+              </h3>
             </div>
           </div>
           <div className="w-1/3 relative overflow-hidden">
@@ -150,10 +159,10 @@ const EnergyDrinks = () => {
               alt="Trip Energy Drinks" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-              <h2 className="text-white text-2xl md:text-3xl font-bold text-center px-4">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center">
+              <h3 className="text-white text-xl md:text-2xl font-bold text-center px-4 pb-6">
                 TRY SOMETHING NEW
-              </h2>
+              </h3>
             </div>
           </div>
         </div>
