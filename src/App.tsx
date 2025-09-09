@@ -23,37 +23,37 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-      <OrderHistoryProvider>
-        <DeliveryProvider>
-          <FavoritesProvider>
-            <CouponProvider>
-              <BasketProvider>
-                <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <div className="pb-24">
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/basket" element={<Basket />} />
-              <Route path="/product/:id" element={<ProductDetail />} />
-              <Route path="/search" element={<SearchResults />} />
-              <Route path="/checkout" element={<Checkout />} />
-              <Route path="/confirmation" element={<Confirmation />} />
-              <Route path="/red-bull-products" element={<RedBullProducts />} />
-              <Route path="/energy-drinks" element={<EnergyDrinks />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
-          <StickyCartBar />
-        </BrowserRouter>
-                </TooltipProvider>
-              </BasketProvider>
-            </CouponProvider>
-          </FavoritesProvider>
-        </DeliveryProvider>
-      </OrderHistoryProvider>
+    <OrderHistoryProvider>
+      <DeliveryProvider>
+        <FavoritesProvider>
+          <CouponProvider>
+            <BasketProvider>
+              <TooltipProvider>
+                <Toaster />
+                <Sonner />
+                <BrowserRouter>
+                  <div className="pb-24">
+                    <Routes>
+                      <Route path="/" element={<Index />} />
+                      <Route path="/basket" element={<Basket />} />
+                      <Route path="/product/:id" element={<ProductDetail />} />
+                      <Route path="/search" element={<SearchResults />} />
+                      <Route path="/checkout" element={<Checkout />} />
+                      <Route path="/confirmation" element={<Confirmation />} />
+                      <Route path="/red-bull-products" element={<RedBullProducts />} />
+                      <Route path="/energy-drinks" element={<EnergyDrinks />} />
+                      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </div>
+                  <StickyCartBar />
+                </BrowserRouter>
+              </TooltipProvider>
+            </BasketProvider>
+          </CouponProvider>
+        </FavoritesProvider>
+      </DeliveryProvider>
+    </OrderHistoryProvider>
   </QueryClientProvider>
 );
 
