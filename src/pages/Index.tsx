@@ -24,6 +24,36 @@ const Index = () => {
   const { products, categories, allProducts } = useProducts();
   const favoritesSet = new Set(favItems.map(f => f.id));
 
+  // Generate stable "For You" products that only change after checkout
+  useEffect(() => {
+    if (allProducts && allProducts.length > 0) {
+      const savedForYou = localStorage.getItem('forYouProducts');
+      const lastCheckout = localStorage.getItem('lastCheckoutTime');
+      const currentTime = Date.now();
+      
+      // Check if we need to refresh (no saved products, or 30 minutes since last checkout)
+      const shouldRefresh = !savedForYou || 
+        (lastCheckout && currentTime - parseInt(lastCheckout) > 30 * 60 * 1000) ||
+        !lastCheckout;
+      
+      if (shouldRefresh) {
+        const shuffled = [...allProducts].sort(() => Math.random() - 0.5).slice(0, 8);
+        setForYouProducts(shuffled);
+        localStorage.setItem('forYouProducts', JSON.stringify(shuffled));
+      } else {
+        try {
+          const parsed = JSON.parse(savedForYou);
+          setForYouProducts(parsed);
+        } catch {
+          // If parsing fails, generate new ones
+          const shuffled = [...allProducts].sort(() => Math.random() - 0.5).slice(0, 8);
+          setForYouProducts(shuffled);
+          localStorage.setItem('forYouProducts', JSON.stringify(shuffled));
+        }
+      }
+    }
+  }, [allProducts]);
+
   // Category display names mapping
   const categoryDisplayNames: Record<string, string> = {
     newProducts: "New Products",
