@@ -168,7 +168,7 @@ const ProductDetail = () => {
                 onClick={() => navigate(`/?category=${product.categories?.[0]}&tab=explore`)}
                 className="cursor-pointer hover:text-foreground"
               >
-                {product.categories?.[0]?.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()).trim() || 'Products'}
+                BBQ
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
