@@ -31,7 +31,7 @@ const Index = () => {
     bigNightIn: "Big Night In",
     energyDrinks: "Energy Drinks",
     softDrinks: "Soft Drinks",
-    favourites: "Customer Favourites",
+    favourites: "Favourites",
     redBull: "Red Bull Products",
     summerOfSport: "Summer of Sport",
   };
@@ -54,7 +54,7 @@ const Index = () => {
         'new products': 'newProducts',
         'energy drinks': 'energyDrinks',
         'soft drinks': 'softDrinks',
-        'customer favourites': 'favourites',
+        'favourites': 'favourites',
         'bbq essentials': 'bbq',
         'big night in': 'bigNightIn',
         'summer of sport': 'summerOfSport',
@@ -109,7 +109,6 @@ const Index = () => {
   const categoryProducts = selectedCategory 
     ? allProducts?.filter(product => product.categories?.includes(selectedCategory)) || []
     : [];
-  const favouriteCategoryProducts = allProducts?.filter(p => p.categories?.includes('favourites')) || [];
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -410,41 +409,21 @@ const Index = () => {
       {activeTab === "favourites" && (
         <div className="px-6 py-8">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
-              {favItems.length > 0 ? "Your Favourites" : "Customer Favourites"}
-            </h2>
-            {favItems.length > 0 ? (
-              <div className="grid grid-cols-4 gap-6">
-                {favItems.map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    image={product.image}
-                    name={product.name}
-                    price={product.price}
-                    isFavorite={true}
-                    onToggleFavorite={() => toggleFav(product)}
-                    onAddToCart={() => handleAddToCart(product)}
-                    productId={product.id}
-                  />
-                ))}
-              </div>
-            ) : (
-              <div className="grid grid-cols-4 gap-6">
-                {favouriteCategoryProducts.map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    image={product.image}
-                    name={product.name}
-                    price={product.price}
-                    offer={product.offer}
-                    isFavorite={favoritesSet.has(product.id)}
-                    onToggleFavorite={() => toggleFavoriteById(product.id)}
-                    onAddToCart={() => handleAddToCart(product)}
-                    productId={product.id}
-                  />
-                ))}
-              </div>
-            )}
+            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Your Favourites</h2>
+            <div className="grid grid-cols-4 gap-6">
+              {favItems.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  image={product.image}
+                  name={product.name}
+                  price={product.price}
+                  isFavorite={true}
+                  onToggleFavorite={() => toggleFav(product)}
+                  onAddToCart={() => handleAddToCart(product)}
+                  productId={product.id}
+                />
+              ))}
+            </div>
           </div>
         </div>
       )}

@@ -30,83 +30,83 @@ interface FavoritesProviderProps {
   children: ReactNode;
 }
 
-// Default favorites: Products from the official 'Favourite Products' category
+// Default favorites: Products from the official 'Favourites' category
 const defaultFavorites: FavoriteItem[] = [
   {
-    id: "fav1",
-    name: "Oatly Oat Drink Barista Edition",
-    price: "£2.49",
-    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%201%20-%20Oatly%20Oat%20Drink%20Barista%20Edition.jpg",
+    id: "dr-oetker-ristorante-pizza-pepperoni-salame-320g-929eb4",
+    name: "Dr. Oetker Ristorante Pizza - Pepperoni-Salame 320g",
+    price: "£1.50",
+    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/1.%20Dr.%20Oetker%20Ristorante%20Pizza%20-%20Pepperoni-Salame%20320g.jpeg",
     category: "favourites"
   },
   {
-    id: "fav2",
-    name: "Heineken Lager Beer Bottles 4x330ml",
-    price: "£5.99",
-    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%202%20-%20Heineken%20Lager%20Beer%20Bottles%204x330ml.jpg",
+    id: "hula-hoops-original-multipack-crisps-6x24g-43cf4a",
+    name: "Hula Hoops Original Multipack Crisps 6x24g",
+    price: "£1.75",
+    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/2.%20Hula%20Hoops%20Original%20Multipack%20Crisps%206x24g.avif",
     category: "favourites"
   },
   {
-    id: "fav3",
-    name: "Propercorn Sweet & Salty",
-    price: "£2.99",
-    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%203%20-%20Propercorn%20Sweet%20&%20Salty.jpg",
+    id: "red-bull-energy-drink-4-x-250ml-559d99",
+    name: "Red Bull Energy Drink 4 X 250ml",
+    price: "£5.65",
+    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/3.%20Red%20Bull%20Energy%20Drink%204%20X%20250ml.jpeg",
     category: "favourites"
   },
   {
-    id: "fav4",
-    name: "Red Bull Energy Drink 8x250ml",
-    price: "£15.99",
-    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%204%20-%20Red%20Bull%20Energy%20Drink%208x250ml.jpg",
+    id: "heinz-beanz-in-tomato-sauce-415g-16a467",
+    name: "Heinz Beanz In Tomato Sauce 415G",
+    price: "£1.40",
+    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/4.%20Heinz%20Beanz%20In%20Tomato%20Sauce%20415g.avif",
     category: "favourites"
   },
   {
-    id: "fav5",
-    name: "Cadbury Dairy Milk Caramel Chocolate Bar",
-    price: "£1.99",
-    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%205%20-%20Cadbury%20Dairy%20Milk%20Caramel%20Chocolate%20Bar.jpg",
+    id: "rowntree-s-fruit-pastilles-sweets-sharing-bag-143g-465c8c",
+    name: "Rowntree's Fruit Pastilles Sweets Sharing Bag 143g",
+    price: "£1.50",
+    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/5.%20Rowntree's%20Fruit%20Pastilles%20Sweets%20Sharing%20Bag%20143g.jpeg",
     category: "favourites"
   },
   {
-    id: "fav6",
-    name: "Goodfella's Stonebaked Thin Pepperoni Pizza",
-    price: "£4.99",
-    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%206%20-%20Goodfella's%20Stonebaked%20Thin%20Pepperoni%20Pizza.jpg",
+    id: "kit-kat-chunky-milk-chocolate-bars-multipack-40g-4-pack-eb594b",
+    name: "Kit Kat Chunky Milk Chocolate Bars Multipack 40g 4 Pack",
+    price: "£2.00",
+    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/6.%20Kit%20Kat%20Chunky%20Milk%20Chocolate%20Bars%20Multipack%2040g%204%20Pack.jpeg",
     category: "favourites"
   },
   {
-    id: "fav7",
-    name: "Coca Cola Original 8x330ml",
-    price: "£6.49",
-    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%207%20-%20Coca%20Cola%20Original%208x330ml.jpg",
+    id: "diet-coke-12-x-150ml-0ee34e",
+    name: "Diet Coke 12 X 150ml",
+    price: "£6.05",
+    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/7.%20Diet%20Coke%2012%20X%20150ml.jpeg",
     category: "favourites"
   },
   {
-    id: "fav8",
-    name: "Candy Kittens Wild Strawberry 140g",
-    price: "£3.49",
-    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%208%20-%20Candy%20Kittens%20Wild%20Strawberry%20140g.jpg",
+    id: "san-miguel-especial-lager-beer-can-4-x-440ml-a5a955",
+    name: "San Miguel Especial Lager Beer Can 4 X 440ml",
+    price: "£5.75",
+    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/8.%20San%20Miguel%20Especial%20Lager%20Beer%20Can%204%20X%20440ml.jpeg",
     category: "favourites"
   },
   {
-    id: "fav10",
-    name: "Graze Protein Salt & Pepper Sharing Mixed Nuts Snack",
-    price: "£2.99",
-    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%2010%20-%20Graze%20Protein%20Salt%20&%20Pepper%20Sharing%20Mixed%20Nuts%20Snack.jpg",
+    id: "propercorn-sweet-salty-popcorn-6-x-14g-f81bea",
+    name: "Propercorn Sweet & Salty Popcorn 6 X 14g",
+    price: "£1.50",
+    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/9.%20Propercorn%20Sweet%20&%20Salty%20Popcorn%206%20X%2014g.jpeg",
     category: "favourites"
   },
   {
-    id: "fav11",
-    name: "Starbucks Caramel Macchiato Iced Coffee",
-    price: "£3.49",
-    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%2011%20-%20Starbucks%20Caramel%20Macchiato%20Iced%20Coffee.jpg",
+    id: "oatly-barista-edition-oat-drink-long-life-1l-9e71c4",
+    name: "Oatly Barista Edition Oat Drink Long Life 1L",
+    price: "£1.50",
+    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/10.%20Oatly%20Barista%20Edition%20Oat%20Drink%20Long%20Life%201L.jpeg",
     category: "favourites"
   },
   {
-    id: "fav12",
-    name: "Walkers Extra Flamin Hot",
-    price: "£1.49",
-    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Favourite%20Products/12%20Favourites/Image%2012%20-%20Walkers%20Extra%20Flamin%20Hot.jpg",
+    id: "mcvitie-s-the-original-jaffa-cakes-snack-packs-6-x-3-pack-af692b",
+    name: "McVitie's The Original Jaffa Cakes Snack Packs 6 X 3 Pack",
+    price: "£1.65",
+    image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/11.%20McVitie's%20The%20Original%20Jaffa%20Cakes%20Snack%20Packs%206%20X%203%20Pack.jpeg",
     category: "favourites"
   }
 ];
