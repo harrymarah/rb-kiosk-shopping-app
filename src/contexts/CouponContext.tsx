@@ -41,39 +41,27 @@ export const CouponProvider: React.FC<CouponProviderProps> = ({ children }) => {
 
   const availableCoupons: Coupon[] = [
     {
-      id: 'rb-discount',
+      id: 'rb-winter-discount',
       type: 'discount',
-      value: '£1.50 off',
-      discountAmount: 1.50,
+      value: '£1.00 off',
+      discountAmount: 1.00,
       description: 'when you buy',
-      productName: 'Red Bull Energy Drink Sugar Free Peach Edition 4 x 250ml',
+      productName: 'Red Bull Energy Drink Sugarfree Winter Edition Fuji-Apple & Ginger 4 x 250ml',
       productImage: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/12%20-%20Red%20Bull%20Peach%20Edition%20Sugar%20Free%20Energy%20Drink%20250ml%20x%204.jpg',
-      productPrice: '£5.00/100ml',
-      validUntil: '01 Jul 2024 (20 more days)',
+      productPrice: '£4.99',
+      validUntil: '31 Dec 2024 (Limited Winter Edition)',
       isActive: true
     },
     {
-      id: 'coke-points',
-      type: 'points',
-      value: '300 points',
-      discountAmount: 0, // Points don't reduce price
+      id: 'diet-coke-discount',
+      type: 'discount',
+      value: '50p off',
+      discountAmount: 0.50,
       description: 'when you buy',
       productName: 'Diet Coke 8 x 330ml',
       productImage: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Soft%20Drinks/4%20-%20Diet%20Coke%2010x330ml.jpg',
-      productPrice: '£5.25/100ml',
-      validUntil: '01 Jul 2024 (20 more days)',
-      isActive: true
-    },
-    {
-      id: 'monster-discount',
-      type: 'discount',
-      value: '£2.00 off',
-      discountAmount: 2.00,
-      description: 'when you buy',
-      productName: 'Monster Energy Drink 4x500ml',
-      productImage: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/2%20-%20Monster%20Energy%20Drink%204x500ml.jpg',
-      productPrice: '£5.85/100ml',
-      validUntil: '15 Jul 2024 (34 more days)',
+      productPrice: '£4.25',
+      validUntil: '28 Feb 2024 (Limited time offer)',
       isActive: true
     }
   ];
