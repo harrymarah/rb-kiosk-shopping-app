@@ -63,9 +63,9 @@ const EnergyDrinks = () => {
   // Energy drink brands for category filtering
   const energyBrands = [
     { id: "all", name: "All Brands", image: "", count: energyDrinkProducts.length },
-    { id: "redBull", name: "Red Bull", image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/1%20-%20Red%20Bull%20Energy%20250ml%20x4.jpeg", count: energyDrinkProducts.filter(p => p.categories?.includes('redBull') || p.name?.toLowerCase().includes('red bull')).length },
-    { id: "monster", name: "Monster", image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/2%20-%20Monster%20Energy%20Drink%204x500ml.jpg", count: energyDrinkProducts.filter(p => p.name?.toLowerCase().includes('monster')).length },
-    { id: "lucozade", name: "Lucozade", image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/6%20-%20Lucozade%20Energy%20Orange%204x500ml.jpg", count: energyDrinkProducts.filter(p => p.name?.toLowerCase().includes('lucozade')).length }
+    { id: "Red Bull", name: "Red Bull", image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/1%20-%20Red%20Bull%20Energy%20250ml%20x4.jpeg", count: energyDrinkProducts.filter(p => p.categories?.includes('redBull') || p.name?.toLowerCase().includes('red bull')).length },
+    { id: "Monster", name: "Monster", image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/2%20-%20Monster%20Energy%20Drink%204x500ml.jpg", count: energyDrinkProducts.filter(p => p.name?.toLowerCase().includes('monster')).length },
+    { id: "Lucozade", name: "Lucozade", image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/6%20-%20Lucozade%20Energy%20Orange%204x500ml.jpg", count: energyDrinkProducts.filter(p => p.name?.toLowerCase().includes('lucozade')).length }
   ];
 
   // Available flavours (extracted from actual product names)
