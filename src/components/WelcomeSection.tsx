@@ -5,7 +5,7 @@ const WelcomeSection = () => {
   const { selectedDelivery, setSelectedDelivery } = useDelivery();
 
   const deliveryOptions = [
-    { id: 'home', icon: Truck, label: 'HOME DELIVERY', description: 'from tomorrow' },
+    { id: 'home', icon: Truck, label: 'HOME DELIVERY', description: 'From tomorrow' },
     { id: 'express', icon: Zap, label: 'EXPRESS', description: '30 mins' },
     { id: 'collect', icon: Car, label: 'CLICK & COLLECT', description: 'Pick up today' },
   ];
