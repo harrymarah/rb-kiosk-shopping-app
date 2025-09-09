@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import bannerImage from "@/assets/banner-sf-4pk.png";
+import bannerImage from "@/assets/red-bull-banner-ad.jpg";
 
 interface BannerAdProps {
   title?: string;
