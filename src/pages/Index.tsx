@@ -456,7 +456,7 @@ const Index = () => {
       {activeTab === "favourites" && (
         <div className="px-6 py-8">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Products You'll Love</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Your Favourites</h2>
             <div className="grid grid-cols-4 gap-6">
               {favItems.map((product) => (
                 <ProductCard
