@@ -209,55 +209,6 @@ const Index = () => {
                 />
               ))}
             </div>
-            
-            {/* Energy Drinks Advert Block and Featured Products */}
-            {selectedCategory === 'energyDrinks' && (
-              <div className="mt-12 space-y-8">
-                {/* Advertisement Block */}
-                <BannerAd 
-                  title="Red Bull - Wings When You Need Them" 
-                  subtitle="Discover our complete range of energy drinks and limited edition flavors"
-                />
-                
-                {/* Featured Products Carousel */}
-                <ProductCarousel 
-                  title="Featured Red Bull Products" 
-                  products={[
-                    // 250ml Sugar free red bull
-                    allProducts?.find(p => p.id === 'energy2') || {
-                      id: 'energy2',
-                      name: 'Red Bull Sugar Free Energy Drink 250ml',
-                      price: '£2.49',
-                      image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/18%20-%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%20250ml%20.png'
-                    },
-                    // 4pk Sugar free red bull
-                    allProducts?.find(p => p.id === 'energy4') || {
-                      id: 'energy4',
-                      name: 'Red Bull Sugar Free Energy Drink 250ml x4',
-                      price: '£7.99',
-                      image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/4%20-%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%20250ml%20x4.jpeg'
-                    },
-                    // Winter red bull
-                    allProducts?.find(p => p.id === 'rb11') || {
-                      id: 'rb11',
-                      name: 'Red Bull Winter Edition Sugar Free Energy Drink 250ml x 4',
-                      price: '£7.99',
-                      image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/11%20-%20Red%20Bull%20Winter%20Edition%20Sugar%20Free%20Energy%20Drink%20250ml%20x%204.jpg'
-                    },
-                    // Lilac red bull
-                    allProducts?.find(p => p.id === 'new1') || allProducts?.find(p => p.id === 'bev7') || {
-                      id: 'new1',
-                      name: 'Red Bull Lilac Edition Sugar Free Energy Drink 4x250ml',
-                      price: '£9.99',
-                      offer: 'New Arrival',
-                      image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%201%20-%20Red%20Bull%20Lilac%20Edition%20Sugar%20Free%20Energy%20Drink%204x250ml.jpg'
-                    }
-                  ].filter(Boolean)}
-                  favorites={favoritesSet}
-                  onToggleFavorite={toggleFavoriteById}
-                />
-              </div>
-            )}
           </div>
         </div>
       )}
