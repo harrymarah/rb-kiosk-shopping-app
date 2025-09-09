@@ -39,11 +39,6 @@ const categories: CategoryItem[] = [
     image: '/assets/juice.jpg'
   },
   { 
-    id: 'favourites', 
-    name: 'Customer Favourites', 
-    image: '/placeholder.svg'
-  },
-  { 
     id: 'redBull', 
     name: 'Red Bull Products', 
     image: '/assets/red-bull-original.jpg'
