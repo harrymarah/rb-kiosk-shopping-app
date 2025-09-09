@@ -2,6 +2,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const tabs = [
+  { id: "foryou", label: "For You" },
   { id: "favourites", label: "Favourites" },
   { id: "usuals", label: "Usuals" },
   { id: "lastorder", label: "Last Order" },

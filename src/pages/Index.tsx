@@ -14,7 +14,7 @@ import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
   const [searchParams] = useSearchParams();
-  const [activeTab, setActiveTab] = useState("favourites");
+  const [activeTab, setActiveTab] = useState("foryou");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const { favorites: favItems, toggleFavorite: toggleFav, isFavorite } = useFavorites();
   const { addItem } = useBasket();
@@ -130,6 +130,32 @@ const Index = () => {
       <CategorySection onSelectCategory={handleCategorySelect} />
       <TabNavigation activeTab={activeTab} onTabChange={handleTabChange} />
       
+      {activeTab === "foryou" && !selectedCategory && allProducts && (
+        <div className="px-6 py-6">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-2xl font-bold text-foreground mb-6">Products You'll Love</h2>
+            <div className="grid grid-cols-4 gap-6">
+              {allProducts
+                .sort(() => Math.random() - 0.5)
+                .slice(0, 8)
+                .map((product) => (
+                <ProductCard
+                  key={product.id}
+                  image={product.image}
+                  name={product.name}
+                  price={product.price}
+                  originalPrice={product.originalPrice}
+                  offer={product.offer}
+                  isFavorite={favoritesSet.has(product.id)}
+                  onToggleFavorite={() => toggleFavoriteById(product.id)}
+                  onAddToCart={() => handleAddToCart(product)}
+                  productId={product.id}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
       
       {activeTab === "newin" && !selectedCategory && allProducts && (
         <div className="px-6 py-6">
