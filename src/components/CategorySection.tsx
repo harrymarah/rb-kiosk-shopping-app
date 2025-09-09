@@ -36,7 +36,7 @@ const categories: CategoryItem[] = [
   { 
     id: 'favourites', 
     name: 'Favourites', 
-    image: '/assets/red-bull-original.jpg'
+    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/3%20-%20Red%20Bull%20Energy%20Drink%20355ml.png'
   },
   { 
     id: 'energyDrinks', 
