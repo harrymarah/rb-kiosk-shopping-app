@@ -11,7 +11,7 @@ interface BasketDrawerProps {
 }
 
 const BasketDrawer = ({ children }: BasketDrawerProps) => {
-  const { items, updateQuantity, removeItem, getTotalPrice, clearBasket, addItem } = useBasket();
+  const { items, updateQuantity, removeItem, getTotalPrice, getDiscountedTotal, getCouponDiscount, clearBasket, addItem } = useBasket();
   const { allProducts } = useProducts();
   const navigate = useNavigate();
 
@@ -166,10 +166,23 @@ const BasketDrawer = ({ children }: BasketDrawerProps) => {
             </div>
           )}
           
-          <div className="mt-6 pt-4 border-t border-border">
+          <div className="mt-6 pt-4 border-t border-border space-y-2">
+            {getCouponDiscount() > 0 && (
+              <div className="flex items-center justify-between text-sm text-green-600">
+                <span>Coupon Discount:</span>
+                <span>-{formatPrice(getCouponDiscount())}</span>
+              </div>
+            )}
             <div className="flex items-center justify-between text-lg font-semibold">
               <span>Total:</span>
-              <span>{formatPrice(getTotalPrice())}</span>
+              <div className="text-right">
+                {getCouponDiscount() > 0 && (
+                  <div className="text-sm text-muted-foreground line-through">
+                    {formatPrice(getTotalPrice())}
+                  </div>
+                )}
+                <div>{formatPrice(getDiscountedTotal())}</div>
+              </div>
             </div>
             <Button 
               className="w-full mt-4" 

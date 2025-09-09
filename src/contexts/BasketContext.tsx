@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { useCoupons } from './CouponContext';
 
 export interface BasketItem {
   id: string;
@@ -16,6 +17,8 @@ interface BasketContextType {
   clearBasket: () => void;
   getTotalItems: () => number;
   getTotalPrice: () => number;
+  getDiscountedTotal: () => number;
+  getCouponDiscount: () => number;
 }
 
 const BasketContext = createContext<BasketContextType | undefined>(undefined);
@@ -34,6 +37,7 @@ interface BasketProviderProps {
 
 export const BasketProvider: React.FC<BasketProviderProps> = ({ children }) => {
   const [items, setItems] = useState<BasketItem[]>([]);
+  const coupons = useCoupons();
 
   const addItem = (item: Omit<BasketItem, 'quantity'>, quantity = 1) => {
     setItems(prevItems => {
@@ -80,6 +84,16 @@ export const BasketProvider: React.FC<BasketProviderProps> = ({ children }) => {
     }, 0);
   };
 
+  const getCouponDiscount = () => {
+    return coupons.getTotalDiscount();
+  };
+
+  const getDiscountedTotal = () => {
+    const total = getTotalPrice();
+    const discount = getCouponDiscount();
+    return Math.max(0, total - discount);
+  };
+
   const value: BasketContextType = {
     items,
     addItem,
@@ -88,6 +102,8 @@ export const BasketProvider: React.FC<BasketProviderProps> = ({ children }) => {
     clearBasket,
     getTotalItems,
     getTotalPrice,
+    getDiscountedTotal,
+    getCouponDiscount,
   };
 
   return (
