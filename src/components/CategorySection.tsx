@@ -16,12 +16,12 @@ const categories: CategoryItem[] = [
   { 
     id: 'bbq', 
     name: 'BBQ Essentials', 
-    image: '/placeholder.svg'
+    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/assets/bbq_cat.jpg'
   },
   { 
     id: 'bigNightIn', 
     name: 'Big Night In', 
-    image: '/placeholder.svg'
+    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/assets/big_night_in_cat.jpg'
   },
   { 
     id: 'energyDrinks', 
@@ -41,7 +41,7 @@ const categories: CategoryItem[] = [
   { 
     id: 'summerOfSport', 
     name: 'Summer of Sport', 
-    image: '/placeholder.svg'
+    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/assets/summer_of_sport_cat.jpg'
   },
 ];
 
