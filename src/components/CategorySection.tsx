@@ -14,11 +14,6 @@ interface CategorySectionProps {
 
 const categories: CategoryItem[] = [
   { 
-    id: 'newProducts', 
-    name: 'New Products', 
-    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%201%20-%20Red%20Bull%20Lilac%20Edition%20Sugar%20Free%20Energy%20Drink%204x250ml.jpg'
-  },
-  { 
     id: 'bbq', 
     name: 'BBQ Essentials', 
     image: '/placeholder.svg'
@@ -57,10 +52,6 @@ const CategorySection = ({ onSelectCategory }: CategorySectionProps) => {
       <div className="container mx-auto max-w-4xl">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold text-foreground">Shop categories</h2>
-          <Button variant="ghost" className="text-grocery-blue font-semibold hover:bg-grocery-blue/10">
-            Show all
-            <ChevronRight className="h-4 w-4 ml-1" />
-          </Button>
         </div>
         
         
