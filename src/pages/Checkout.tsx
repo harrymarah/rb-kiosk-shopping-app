@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useCheckout } from "@/hooks/useCheckout";
 import { useCoupons } from "@/contexts/CouponContext";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +15,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ArrowLeft, ShoppingCart, Plus, MapPin, Clock, Truck, Zap, Car } from "lucide-react";
 import { useProducts } from "@/components/ProductSection";
 import CheckoutCouponWallet from "@/components/CheckoutCouponWallet";
+import { format } from "date-fns";
 
 import {
   Carousel,
@@ -50,43 +51,19 @@ const Checkout = () => {
 
   const DeliveryIcon = getDeliveryIcon();
 
-  // Generate time slots based on delivery type
-  const getTimeSlots = () => {
-    const now = new Date();
-    const slots = [];
-    
-    if (selectedDelivery === 'express') {
-      // Express delivery - next 4 hours in 30-minute slots
-      for (let i = 0; i < 8; i++) {
-        const slotTime = new Date(now.getTime() + (30 + i * 30) * 60000);
-        slots.push({
-          value: slotTime.toISOString(),
-          label: `${slotTime.getHours().toString().padStart(2, '0')}:${slotTime.getMinutes().toString().padStart(2, '0')} - ${(slotTime.getHours()).toString().padStart(2, '0')}:${(slotTime.getMinutes() + 30).toString().padStart(2, '0')}`
-        });
-      }
-    } else if (selectedDelivery === 'collect') {
-      // Click & collect - every 15 minutes from now + 15 minutes
-      for (let i = 1; i <= 12; i++) {
-        const slotTime = new Date(now.getTime() + (15 * i) * 60000);
-        slots.push({
-          value: slotTime.toISOString(),
-          label: `Ready by ${slotTime.getHours().toString().padStart(2, '0')}:${slotTime.getMinutes().toString().padStart(2, '0')}`
-        });
-      }
-    } else {
-      // Home delivery - next 8 hours in 1-hour slots
-      for (let i = 1; i <= 8; i++) {
-        const slotTime = new Date(now.getTime() + i * 60 * 60000);
-        const endTime = new Date(slotTime.getTime() + 60 * 60000);
-        slots.push({
-          value: slotTime.toISOString(),
-          label: `${slotTime.getHours().toString().padStart(2, '0')}:00 - ${endTime.getHours().toString().padStart(2, '0')}:00`
-        });
-      }
+  // Generate time slots: 7:00 AM to 10:00 PM in 1-hour intervals (local time)
+  const timeSlots = useMemo(() => {
+    const today = new Date();
+    const slots: { value: string; label: string }[] = [];
+    for (let hour = 7; hour <= 22; hour++) {
+      const start = new Date(today.getFullYear(), today.getMonth(), today.getDate(), hour, 0, 0, 0);
+      const end = new Date(today.getFullYear(), today.getMonth(), today.getDate(), Math.min(hour + 1, 23), 0, 0, 0);
+      const value = start.toTimeString().slice(0, 5); // e.g., "07:00"
+      const label = `${format(start, "h:mm a")} - ${format(end, "h:mm a")}`;
+      slots.push({ value, label });
     }
-    
     return slots;
-  };
+  }, []);
 
   // Get product recommendations (excluding items already in basket)
   useEffect(() => {
@@ -197,7 +174,7 @@ const Checkout = () => {
                     <SelectValue placeholder={`Select your preferred ${selectedDelivery === 'collect' ? 'pickup' : 'delivery'} time`} />
                   </SelectTrigger>
                   <SelectContent className="bg-background border border-border shadow-lg z-[100] pointer-events-auto">
-                    {getTimeSlots().map((slot) => (
+                    {timeSlots.map((slot) => (
                       <SelectItem key={slot.value} value={slot.value} className="cursor-pointer hover:bg-accent">
                         {slot.label}
                       </SelectItem>
