@@ -118,23 +118,23 @@ const EnergyDrinks = () => {
       </header>
 
       {/* Enhanced Banner with Header */}
-      <section className="relative bg-gradient-to-br from-blue-800 via-blue-600 to-red-600 text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-purple-700 via-purple-600 to-blue-600 text-white overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-red-500/20 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-24 h-24 bg-yellow-400/20 rounded-full blur-lg animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-blue-400/15 rounded-full blur-md animate-pulse delay-500"></div>
+          <div className="absolute top-10 left-10 w-32 h-32 bg-purple-500/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-24 h-24 bg-blue-400/20 rounded-full blur-lg animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-violet-400/15 rounded-full blur-md animate-pulse delay-500"></div>
         </div>
         
         <div className="relative container mx-auto px-4 py-12 flex items-center justify-center min-h-[140px]">
           <div className="text-center">
-            <h2 className="text-5xl lg:text-6xl font-black leading-tight bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent animate-fade-in">
+            <h2 className="text-5xl lg:text-6xl font-black leading-tight bg-gradient-to-r from-white via-purple-100 to-blue-200 bg-clip-text text-transparent animate-fade-in">
               FUEL YOUR
             </h2>
-            <h2 className="text-5xl lg:text-6xl font-black leading-tight bg-gradient-to-r from-yellow-300 via-red-400 to-red-500 bg-clip-text text-transparent animate-fade-in delay-200">
+            <h2 className="text-5xl lg:text-6xl font-black leading-tight bg-gradient-to-r from-purple-300 via-violet-400 to-blue-500 bg-clip-text text-transparent animate-fade-in delay-200">
               POTENTIAL
             </h2>
-            <div className="mt-4 w-24 h-1 bg-gradient-to-r from-yellow-400 to-red-500 mx-auto rounded-full animate-scale-in delay-500"></div>
+            <div className="mt-4 w-24 h-1 bg-gradient-to-r from-purple-400 to-blue-500 mx-auto rounded-full animate-scale-in delay-500"></div>
           </div>
         </div>
         
