@@ -459,7 +459,7 @@ const Index = () => {
                     image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Big%20Night%20In/9.%20Pot%20Noodle%20Chicken%20&%20Korma%20Flavour%2090g.jpeg'
                   },
                   {
-                    id: 'pepsi-max-original-24-x-330ml-3ed8fe',
+                    id: 'pepsi-max-no-sugar-cola-cans-24-x-330ml-605b03',
                     name: 'Pepsi Max Original 24 X 330ml',
                     price: '£12.00',
                     image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Big%20Night%20In/10.%20Pepsi%20Max%20Original%2024%20X%20330ml.jpeg'
@@ -498,12 +498,12 @@ const Index = () => {
                       { id: 'red-bull-energy-drink-12-x-250ml-e1fde4', name: 'Red Bull Energy Drink 12 X 250ml', price: '£10.50' },
                       { id: 'heinz-beanz-in-tomato-sauce-415g-16a467', name: 'Heinz Beanz In Tomato Sauce 415G', price: '£1.40' },
                       { id: 'heinz-tomato-ketchup-910g-729f91', name: 'Heinz Tomato Ketchup 910g', price: '£4.50' },
-                      { id: 'cadbury-dairy-milk-chocolate-110g-84b0c1', name: 'Cadbury Dairy Milk Chocolate 110g', price: '£2.50' },
-                      { id: 'walkers-ready-salted-crisps-32-5g-a19e34', name: 'Walkers Ready Salted Crisps 32.5g', price: '£1.25' },
+                      { id: 'cadbury-dairy-milk-chocolate-bar-large-360g-6456f6', name: 'Cadbury Dairy Milk Chocolate Bar Large 360g', price: '£4.50' },,
+                      { id: 'walkers-sensations-poppadoms-lime-coriander-sharing-bag-82-5g-685be8', name: 'Walkers Sensations Poppadoms Lime & Coriander Sharing Bag 82.5g', price: '£1.75' },,
                       { id: 'coca-cola-zero-sugar-24-x-330ml-0a0ed5', name: 'Coca-Cola Zero Sugar 24 X 330ml', price: '£12.00' },
                       { id: 'mcvitie-s-jaffa-cakes-hot-honey-flavour-x10-04db04', name: 'McVitie\'s Jaffa Cakes Hot Honey Flavour x10', price: '£1.50' },
-                      { id: 'pot-noodle-chicken-korma-flavour-90g-8c3b4f', name: 'Pot Noodle Chicken & Korma Flavour 90g', price: '£1.50' },
-                      { id: 'pepsi-max-original-24-x-330ml-3ed8fe', name: 'Pepsi Max Original 24 X 330ml', price: '£12.00' },
+                      { id: 'doritos-cool-original-tortilla-chips-sharing-bag-crisps-180g-e0e8e9', name: 'Doritos Cool Original Tortilla Chips Sharing Bag Crisps 180g', price: '£1.75' },,
+                      { id: 'pepsi-max-no-sugar-cola-cans-24-x-330ml-605b03', name: 'Pepsi Max No Sugar Cola Cans 24 X 330ml', price: '£8.50' },,
                       { id: 'ariel-original-washing-powder-675g-2f1d89', name: 'Ariel Original Washing Powder 675g', price: '£4.00' },
                       { id: 'fairy-washing-up-liquid-original-433ml-9a8c7b', name: 'Fairy Washing Up Liquid Original 433ml', price: '£2.00' }
                     ];
