@@ -138,14 +138,14 @@ const Index = () => {
               {allProducts
                 .sort(() => Math.random() - 0.5)
                 .slice(0, 8)
-                .map((product) => (
+                .map((product, index) => (
                 <ProductCard
                   key={product.id}
                   image={product.image}
                   name={product.name}
                   price={product.price}
                   originalPrice={product.originalPrice}
-                  offer={product.offer}
+                  offer={index < 2 ? "Sponsored" : product.offer}
                   isFavorite={favoritesSet.has(product.id)}
                   onToggleFavorite={() => toggleFavoriteById(product.id)}
                   onAddToCart={() => handleAddToCart(product)}
