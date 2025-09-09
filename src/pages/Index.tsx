@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
 import WelcomeSection from "@/components/WelcomeSection";
@@ -14,6 +14,7 @@ import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
   const [searchParams] = useSearchParams();
+  const [forYouProducts, setForYouProducts] = useState<any[]>([]);
   const [activeTab, setActiveTab] = useState("foryou");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const { favorites: favItems, toggleFavorite: toggleFav, isFavorite } = useFavorites();
@@ -138,10 +139,7 @@ const Index = () => {
             </div>
             <h2 className="text-2xl font-bold text-foreground mb-6">Products You'll Love</h2>
             <div className="grid grid-cols-4 gap-6">
-              {allProducts
-                .sort(() => Math.random() - 0.5)
-                .slice(0, 8)
-                .map((product, index) => (
+              {forYouProducts.map((product, index) => (
                 <ProductCard
                   key={product.id}
                   image={product.image}

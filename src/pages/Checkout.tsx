@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useCheckout } from "@/hooks/useCheckout";
 import { useNavigate } from "react-router-dom";
 import { useBasket } from "@/contexts/BasketContext";
 import { useDelivery } from "@/contexts/DeliveryContext";
@@ -23,6 +24,7 @@ import {
 
 const Checkout = () => {
   const { items, getTotalPrice, clearBasket, addItem } = useBasket();
+  const { markCheckoutComplete } = useCheckout();
   const { selectedDelivery, getDeliveryDetails } = useDelivery();
   const { addOrder } = useOrderHistory();
   const { allProducts } = useProducts();
@@ -116,6 +118,9 @@ const Checkout = () => {
       total: total,
       deliveryMethod: selectedDelivery
     });
+    
+    // Mark checkout completion and refresh "For You" products
+    markCheckoutComplete();
     
     // Clear basket and navigate to confirmation
     clearBasket();
