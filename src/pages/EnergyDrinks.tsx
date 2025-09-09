@@ -117,13 +117,24 @@ const EnergyDrinks = () => {
         </div>
       </header>
 
-      {/* Banner with Header and Image Tiles */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-        <div className="container mx-auto px-4 py-8 flex items-center justify-center min-h-[120px]">
+      {/* Enhanced Banner with Header */}
+      <section className="relative bg-gradient-to-br from-violet-600 via-purple-600 to-blue-600 text-white overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-24 h-24 bg-cyan-400/20 rounded-full blur-lg animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-pink-400/15 rounded-full blur-md animate-pulse delay-500"></div>
+        </div>
+        
+        <div className="relative container mx-auto px-4 py-12 flex items-center justify-center min-h-[140px]">
           <div className="text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
-              FUEL YOUR POTENTIAL
+            <h2 className="text-5xl lg:text-6xl font-black leading-tight bg-gradient-to-r from-white via-cyan-100 to-violet-200 bg-clip-text text-transparent animate-fade-in">
+              FUEL YOUR
             </h2>
+            <h2 className="text-5xl lg:text-6xl font-black leading-tight bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 bg-clip-text text-transparent animate-fade-in delay-200">
+              POTENTIAL
+            </h2>
+            <div className="mt-4 w-24 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 mx-auto rounded-full animate-scale-in delay-500"></div>
           </div>
         </div>
         
