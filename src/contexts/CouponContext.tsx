@@ -49,7 +49,7 @@ export const CouponProvider: React.FC<CouponProviderProps> = ({ children }) => {
       productName: 'Red Bull Energy Drink Sugarfree Winter Edition Fuji-Apple & Ginger 4 x 250ml',
       productImage: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/12%20-%20Red%20Bull%20Peach%20Edition%20Sugar%20Free%20Energy%20Drink%20250ml%20x%204.jpg',
       productPrice: '£4.99',
-      validUntil: '31 Mar 2025 (Limited Winter Edition)',
+      validUntil: '31 Dec 2025 (Limited Winter Edition)',
       isActive: true
     },
     {
@@ -61,7 +61,7 @@ export const CouponProvider: React.FC<CouponProviderProps> = ({ children }) => {
       productName: 'Diet Coke 8 x 330ml',
       productImage: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Soft%20Drinks/4%20-%20Diet%20Coke%2010x330ml.jpg',
       productPrice: '£4.25',
-      validUntil: '30 Jun 2025 (Limited time offer)',
+      validUntil: '31 Dec 2025 (Limited time offer)',
       isActive: true
     }
   ];
