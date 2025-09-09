@@ -112,7 +112,17 @@ const defaultFavorites: FavoriteItem[] = [
 ];
 
 export const FavoritesProvider: React.FC<FavoritesProviderProps> = ({ children }) => {
-  const [favorites, setFavorites] = useState<FavoriteItem[]>(defaultFavorites);
+  // Force reset to new defaults - increment version to clear any cached state
+  const [favorites, setFavorites] = useState<FavoriteItem[]>(() => {
+    // Clear any potential localStorage cache for favorites
+    try {
+      localStorage.removeItem('favoriteItems');
+      localStorage.removeItem('userFavorites');
+    } catch (e) {
+      // Ignore localStorage errors
+    }
+    return defaultFavorites;
+  });
 
   const addToFavorites = (item: FavoriteItem) => {
     setFavorites(prev => {
