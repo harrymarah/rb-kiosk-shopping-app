@@ -1,11 +1,12 @@
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
 interface CategoryItem {
   id: string;
   name: string;
-  image: string;
+  image?: string;
+  isIcon?: boolean;
 }
 
 interface CategorySectionProps {
@@ -13,6 +14,11 @@ interface CategorySectionProps {
 }
 
 const categories: CategoryItem[] = [
+  { 
+    id: 'favourites', 
+    name: 'Favourites', 
+    isIcon: true
+  },
   { 
     id: 'newProducts', 
     name: 'New Products', 
@@ -32,11 +38,6 @@ const categories: CategoryItem[] = [
     id: 'bigNightIn', 
     name: 'Big Night In', 
     image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/assets/big_night_in_cat.jpg'
-  },
-  { 
-    id: 'favourites', 
-    name: 'Favourites', 
-    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/3%20-%20Red%20Bull%20Energy%20Drink%20355ml.png'
   },
   { 
     id: 'energyDrinks', 
@@ -68,12 +69,20 @@ const CategorySection = ({ onSelectCategory }: CategorySectionProps) => {
               }}
               className="flex flex-col items-center cursor-pointer group"
             >
-              <div className="w-20 h-20 rounded-full overflow-hidden mb-3 shadow-lg group-hover:scale-105 transition-transform duration-200">
-                <img 
-                  src={category.image} 
-                  alt={category.name}
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-20 h-20 rounded-full overflow-hidden mb-3 shadow-lg group-hover:scale-105 transition-transform duration-200 flex items-center justify-center bg-white">
+                {category.isIcon ? (
+                  <Heart 
+                    size={32} 
+                    className="text-pink-500" 
+                    fill="currentColor"
+                  />
+                ) : (
+                  <img 
+                    src={category.image} 
+                    alt={category.name}
+                    className="w-full h-full object-cover"
+                  />
+                )}
               </div>
               <span className="text-sm font-medium text-foreground text-center leading-tight">
                 {category.name}
