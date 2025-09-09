@@ -133,6 +133,7 @@ const Index = () => {
       {activeTab === "foryou" && !selectedCategory && allProducts && (
         <div className="px-6 py-6">
           <div className="container mx-auto max-w-4xl">
+            <BannerAd />
             <h2 className="text-2xl font-bold text-foreground mb-6">Products You'll Love</h2>
             <div className="grid grid-cols-4 gap-6">
               {allProducts
