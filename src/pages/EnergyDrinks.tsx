@@ -67,8 +67,19 @@ const EnergyDrinks = () => {
     { id: "lucozade", name: "Lucozade", image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/6%20-%20Lucozade%20Energy%20Orange%204x500ml.jpg", count: energyDrinkProducts.filter(p => p.name?.toLowerCase().includes('lucozade')).length }
   ];
 
-  // Available flavours (extracted from product names)
-  const availableFlavours = ["Original", "Sugar Free", "Tropical", "Blue", "Red", "Green", "Coconut", "Orange", "Apple"];
+  // Available flavours (extracted from actual product names)
+  const availableFlavours = [
+    "Original", 
+    "Sugar Free", 
+    "Fuji Apple & Ginger", 
+    "White Peach", 
+    "Grapefruit & Blossom", 
+    "Vanilla Iced Berry", 
+    "Forest Fruit", 
+    "Watermelon", 
+    "Juneberry",
+    "Zero"
+  ];
 
   // Filter products based on all criteria
   const filteredProducts = energyDrinkProducts.filter(product => {
@@ -82,11 +93,16 @@ const EnergyDrinks = () => {
       if (brandName === "lucozade" && !productName.includes('lucozade')) return false;
     }
     
-    // Flavour filter
+    // Flavour filter - improved matching
     if (selectedFlavour !== "all") {
       const flavourName = selectedFlavour.toLowerCase();
       const productName = product.name?.toLowerCase() || '';
-      if (!productName.includes(flavourName)) return false;
+      
+      // Special handling for different flavour types
+      if (flavourName === "original" && (productName.includes('sugar free') || productName.includes('zero') || productName.includes('edition'))) return false;
+      if (flavourName === "sugar free" && !productName.includes('sugar free') && !productName.includes('sugarfree')) return false;
+      if (flavourName === "zero" && !productName.includes('zero')) return false;
+      if (flavourName !== "original" && flavourName !== "sugar free" && flavourName !== "zero" && !productName.includes(flavourName)) return false;
     }
     
     // Low sugar filter
