@@ -19,19 +19,19 @@ const categories: CategoryItem[] = [
     image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/12%20New%20Products/Image%201%20-%20Red%20Bull%20Lilac%20Edition%20Sugar%20Free%20Energy%20Drink%204x250ml.jpg'
   },
   { 
-    id: 'breakfast', 
-    name: 'Breakfast', 
-    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/category_images/breakfast_category_image.jpg'
+    id: 'bbq', 
+    name: 'BBQ Essentials', 
+    image: '/placeholder.svg'
+  },
+  { 
+    id: 'bigNightIn', 
+    name: 'Big Night In', 
+    image: '/placeholder.svg'
   },
   { 
     id: 'energyDrinks', 
     name: 'Energy Drinks', 
     image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/1%20-%20Red%20Bull%20Energy%20250ml%20x4.jpeg'
-  },
-  { 
-    id: 'matchReady', 
-    name: 'Match Ready', 
-    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/category_images/match_ready_category_image.jpg'
   },
   { 
     id: 'softDrinks', 
@@ -40,8 +40,18 @@ const categories: CategoryItem[] = [
   },
   { 
     id: 'favourites', 
-    name: 'Favourites', 
-    image: '/assets/red-bull-sugar-free.jpg'
+    name: 'Customer Favourites', 
+    image: '/placeholder.svg'
+  },
+  { 
+    id: 'redBull', 
+    name: 'Red Bull Products', 
+    image: '/assets/red-bull-original.jpg'
+  },
+  { 
+    id: 'summerOfSport', 
+    name: 'Summer of Sport', 
+    image: '/placeholder.svg'
   },
 ];
 

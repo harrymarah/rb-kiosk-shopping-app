@@ -27,14 +27,14 @@ const Index = () => {
   // Category display names mapping
   const categoryDisplayNames: Record<string, string> = {
     newProducts: "New Products",
-    breakfast: "Breakfast Items", 
+    bbq: "BBQ Essentials",
+    bigNightIn: "Big Night In",
     energyDrinks: "Energy Drinks",
-    matchReady: "Match Ready",
     softDrinks: "Soft Drinks",
     favourites: "Customer Favourites",
-    redBull: "Red Bull Products"
+    redBull: "Red Bull Products",
+    summerOfSport: "Summer of Sport",
   };
-
   // Title case utility function
   const toTitleCase = (str: string) => {
     return str.replace(/\w\S*/g, (txt) => 
@@ -53,12 +53,12 @@ const Index = () => {
         'red bull products': 'redBull',
         'new products': 'newProducts',
         'energy drinks': 'energyDrinks',
-        'match ready': 'matchReady',
         'soft drinks': 'softDrinks',
-        'breakfast items': 'breakfast',
-        'customer favourites': 'favourites'
+        'customer favourites': 'favourites',
+        'bbq essentials': 'bbq',
+        'big night in': 'bigNightIn',
+        'summer of sport': 'summerOfSport',
       };
-      
       const categoryId = categoryMappings[categoryParam.toLowerCase()] || categoryParam;
       setSelectedCategory(categoryId);
       // When a category is selected, switch to explore mode (clear active tab)
@@ -109,7 +109,7 @@ const Index = () => {
   const categoryProducts = selectedCategory 
     ? allProducts?.filter(product => product.categories?.includes(selectedCategory)) || []
     : [];
-
+  const favouriteCategoryProducts = allProducts?.filter(p => p.categories?.includes('favourites')) || [];
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -410,7 +410,9 @@ const Index = () => {
       {activeTab === "favourites" && (
         <div className="px-6 py-8">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Your Favourites</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
+              {favItems.length > 0 ? "Your Favourites" : "Customer Favourites"}
+            </h2>
             {favItems.length > 0 ? (
               <div className="grid grid-cols-4 gap-6">
                 {favItems.map((product) => (
@@ -427,9 +429,20 @@ const Index = () => {
                 ))}
               </div>
             ) : (
-              <div className="text-center">
-                <p className="text-muted-foreground">No favorite products yet</p>
-                <p className="text-sm text-muted-foreground mt-2">Click the heart icon on products to add them to your favorites</p>
+              <div className="grid grid-cols-4 gap-6">
+                {favouriteCategoryProducts.map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    image={product.image}
+                    name={product.name}
+                    price={product.price}
+                    offer={product.offer}
+                    isFavorite={favoritesSet.has(product.id)}
+                    onToggleFavorite={() => toggleFavoriteById(product.id)}
+                    onAddToCart={() => handleAddToCart(product)}
+                    productId={product.id}
+                  />
+                ))}
               </div>
             )}
           </div>
