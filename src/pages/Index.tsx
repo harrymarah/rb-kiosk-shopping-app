@@ -279,19 +279,19 @@ const Index = () => {
                 price: '£3.50',
                 image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/5.%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%20Summer%20White%20Peach%20Edition%204%20X%20250ml.jpeg'
               },
-              // Walkers Crisps
-              allProducts?.find(p => p.id === 'walkers-sensations-poppadoms-lime-coriander-sharing-bag-82-5g-685be8') || {
-                id: 'walkers-crisps-ready-salted',
-                name: 'Walkers Ready Salted Crisps 32.5g',
-                price: '£0.80',
-                image: '/placeholder.svg'
+              // Hula Hoops Crisps
+              allProducts?.find(p => p.id === 'hula-hoops-original-multipack-crisps-6x24g-685be8') || {
+                id: 'hula-hoops-original-multipack-crisps-6x24g',
+                name: 'Hula Hoops Original Multipack Crisps 6x24g',
+                price: '£2.50',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/2.%20Hula%20Hoops%20Original%20Multipack%20Crisps%206x24g.jpeg'
               },
-              // Warburtons Bread
+              // Warburtons Hot Dog Rolls
               allProducts?.find(p => p.id === 'warburtons-hot-dog-rolls-6-pack-sliced-65c415') || {
-                id: 'warburtons-medium-sliced-bread',
-                name: 'Warburtons Medium White Bread 800g',
-                price: '£1.10',
-                image: '/placeholder.svg'
+                id: 'warburtons-hot-dog-rolls-6-pack-sliced',
+                name: 'Warburtons Hot Dog Rolls 6 Pack Sliced',
+                price: '£1.40',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/3.%20Warburtons%20Hot%20Dog%20Rolls%206%20Pack%20Sliced.jpeg'
               },
               // McVitie's Jaffa Cakes
               allProducts?.find(p => p.id === 'mcvitie-s-the-original-jaffa-cakes-snack-packs-6-x-3-pack-af692b') || {
@@ -300,19 +300,19 @@ const Index = () => {
                 price: '£1.65',
                 image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/11.%20McVitie\'s%20The%20Original%20Jaffa%20Cakes%20Snack%20Packs%206%20X%203%20Pack.jpeg'
               },
-              // Coca-Cola
+              // Coca-Cola Zero Sugar
               allProducts?.find(p => p.id === 'coca-cola-zero-sugar-24-x-330ml-0a0ed5') || {
-                id: 'coca-cola-original-8x330ml',
-                name: 'Coca-Cola Original 8x330ml',
-                price: '£5.50',
-                image: '/placeholder.svg'
+                id: 'coca-cola-zero-sugar-24-x-330ml',
+                name: 'Coca-Cola Zero Sugar 24 X 330ml',
+                price: '£8.50',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/5.%20Coca-Cola%20Zero%20Sugar%2024%20X%20330ml.jpeg'
               },
-              // Andrex Toilet Tissue
-              {
-                id: 'andrex-toilet-tissue-9-pack',
-                name: 'Andrex Classic Clean Toilet Tissue 9 Pack',
-                price: '£6.50',
-                image: '/placeholder.svg'
+              // Propercorn Sweet & Salty Popcorn
+              allProducts?.find(p => p.id === 'propercorn-sweet-salty-popcorn-6-x-14g-98f6d2') || {
+                id: 'propercorn-sweet-salty-popcorn-6-x-14g',
+                name: 'Propercorn Sweet & Salty Popcorn 6 X 14g',
+                price: '£3.50',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/9.%20Propercorn%20Sweet%20&%20Salty%20Popcorn%206%20X%2014g.jpeg'
               },
               // Pepsi Max
               allProducts?.find(p => p.id === 'pepsi-max-no-sugar-cola-cans-24-x-330ml-605b03') || {
@@ -321,47 +321,47 @@ const Index = () => {
                 price: '£8.50',
                 image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Soft%20Drinks/3.%20Pepsi%20Max%20No%20Sugar%20Cola%20Cans%2024%20X%20330ml.jpg'
               },
-              // Persil Laundry Capsules
-              {
-                id: 'persil-laundry-capsules-38-wash',
-                name: 'Persil Non-Bio Laundry Capsules 38 Wash',
-                price: '£12.00',
-                image: '/placeholder.svg'
+              // Kit Kat Chunky Chocolate Bars
+              allProducts?.find(p => p.id === 'kit-kat-chunky-milk-chocolate-bars-multipack-40g-4-pack-ab8d92') || {
+                id: 'kit-kat-chunky-milk-chocolate-bars-multipack',
+                name: 'Kit Kat Chunky Milk Chocolate Bars Multipack 40g 4 Pack',
+                price: '£3.00',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/6.%20Kit%20Kat%20Chunky%20Milk%20Chocolate%20Bars%20Multipack%2040g%204%20Pack.jpeg'
               },
-              // Fairy Washing-Up Liquid
-              {
-                id: 'fairy-washing-up-liquid-original',
-                name: 'Fairy Original Washing-Up Liquid 780ml',
+              // Rowntree's Fruit Pastilles
+              allProducts?.find(p => p.id === 'rowntree-s-fruit-pastilles-sweets-sharing-bag-143g-5f7e82') || {
+                id: 'rowntree-s-fruit-pastilles-sweets-sharing-bag',
+                name: 'Rowntree\'s Fruit Pastilles Sweets Sharing Bag 143g',
+                price: '£2.25',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/5.%20Rowntree\'s%20Fruit%20Pastilles%20Sweets%20Sharing%20Bag%20143g.jpeg'
+              },
+              // Dr. Oetker Ristorante Pizza
+              allProducts?.find(p => p.id === 'dr-oetker-ristorante-pizza-pepperoni-salame-320g-8e2f93') || {
+                id: 'dr-oetker-ristorante-pizza-pepperoni-salame',
+                name: 'Dr. Oetker Ristorante Pizza - Pepperoni-Salame 320g',
+                price: '£3.25',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/1.%20Dr.%20Oetker%20Ristorante%20Pizza%20-%20Pepperoni-Salame%20320g.jpeg'
+              },
+              // Cadbury Dairy Milk Chocolate
+              allProducts?.find(p => p.id === 'cadbury-dairy-milk-chocolate-bar-large-360g-6456f6') || {
+                id: 'cadbury-dairy-milk-chocolate-bar-large-360g',
+                name: 'Cadbury Dairy Milk Chocolate Bar Large 360g',
+                price: '£4.50',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/8.%20Cadbury%20Dairy%20Milk%20Chocolate%20Bar%20Large%20360g.jpeg'
+              },
+              // Oatly Barista Edition
+              allProducts?.find(p => p.id === 'oatly-barista-edition-oat-drink-long-life-1l-7d8e92') || {
+                id: 'oatly-barista-edition-oat-drink-long-life-1l',
+                name: 'Oatly Barista Edition Oat Drink Long Life 1L',
+                price: '£2.80',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/10.%20Oatly%20Barista%20Edition%20Oat%20Drink%20Long%20Life%201L.jpeg'
+              },
+              // Doritos Cool Original Tortilla Chips
+              allProducts?.find(p => p.id === 'doritos-cool-original-tortilla-chips-sharing-bag-crisps-180g-9a8f7e') || {
+                id: 'doritos-cool-original-tortilla-chips-sharing-bag',
+                name: 'Doritos Cool Original Tortilla Chips Sharing Bag Crisps 180g',
                 price: '£2.50',
-                image: '/placeholder.svg'
-              },
-              // Pot Noodle
-              {
-                id: 'pot-noodle-chicken-curry-90g',
-                name: 'Pot Noodle Chicken & Mushroom 90g',
-                price: '£1.25',
-                image: '/placeholder.svg'
-              },
-              // Birds Eye Frozen Fish Fingers
-              {
-                id: 'birds-eye-fish-fingers-10-pack',
-                name: 'Birds Eye Fish Fingers 10 Pack 280g',
-                price: '£2.75',
-                image: '/placeholder.svg'
-              },
-              // Arla Milk
-              {
-                id: 'arla-fresh-milk-2-pint',
-                name: 'Arla Fresh British Milk 2 Pint',
-                price: '£1.45',
-                image: '/placeholder.svg'
-              },
-              // Walkers Frozen Chips
-              {
-                id: 'walkers-oven-chips-900g',
-                name: 'Walkers Oven Chips Straight Cut 900g',
-                price: '£1.80',
-                image: '/placeholder.svg'
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/1.%20Doritos%20Cool%20Original%20Tortilla%20Chips%20Sharing%20Bag%20Crisps%20180g.jpg'
               }
             ].filter(Boolean)} 
             favorites={favoritesSet}
