@@ -131,7 +131,7 @@ const Index = () => {
       <TabNavigation activeTab={activeTab} onTabChange={handleTabChange} />
       
       
-      {activeTab === "newin" && allProducts && (
+      {activeTab === "newin" && !selectedCategory && allProducts && (
         <div className="px-6 py-6">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-2xl font-bold text-foreground mb-6">New Products</h2>
