@@ -16,7 +16,7 @@ const categories: CategoryItem[] = [
   { 
     id: 'newProducts', 
     name: 'New Products', 
-    image: '/assets/try-something-new.jpg'
+    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/6.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%20Fuji%20Apple%20&%20Ginger,%20Winter%20Edition%204%20X%20250ml.jpeg'
   },
   { 
     id: 'bbq', 
@@ -36,7 +36,7 @@ const categories: CategoryItem[] = [
   { 
     id: 'favourites', 
     name: 'Favourites', 
-    image: '/assets/breakfast-items.jpg'
+    image: '/assets/red-bull-original.jpg'
   },
   { 
     id: 'energyDrinks', 
