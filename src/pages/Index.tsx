@@ -269,61 +269,117 @@ const Index = () => {
           <ProductCarousel 
             title="Your Usual Items" 
             products={[
-              // Milk - essential everyday item
-              allProducts?.find(p => p.id === 'breakfast2') || {
-                id: 'breakfast2',
-                name: 'British Whole Milk 2 Pint',
-                price: '£1.89',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%202%20-%20British%20Whole%20Milk%202%20Pint.jpg'
+              // Heinz Beanz
+              allProducts?.find(p => p.id === 'heinz-beanz-in-tomato-sauce-415g-16a467') || {
+                id: 'heinz-beanz-in-tomato-sauce-415g-16a467',
+                name: 'Heinz Beanz In Tomato Sauce 415G',
+                price: '£1.40',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/4.%20Heinz%20Beanz%20In%20Tomato%20Sauce%20415g.avif'
               },
-              // Eggs - cooking staple
-              allProducts?.find(p => p.id === 'breakfast6') || {
-                id: 'breakfast6',
-                name: 'Large Free Range Eggs 6 Pack',
-                price: '£2.49',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%204%20-%20Large%20Free%20Range%20Eggs%206%20Pack.jpg'
+              // Heinz Tomato Ketchup
+              allProducts?.find(p => p.id === 'heinz-tomato-ketchup-910g-729f91') || {
+                id: 'heinz-tomato-ketchup-910g-729f91',
+                name: 'Heinz Tomato Ketchup 910g',
+                price: '£4.50',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/7.%20Heinz%20Tomato%20Ketchup%20910g.jpg'
               },
-              // Bread - daily essential
-              allProducts?.find(p => p.id === 'breakfast4') || {
-                id: 'breakfast4',
-                name: 'White Farmhouse Bread 800g',
+              // Cadbury Dairy Milk
+              allProducts?.find(p => p.id === 'cadbury-dairy-milk-chocolate-bar-large-360g-6456f6') || {
+                id: 'cadbury-dairy-milk-chocolate-bar-large-360g-6456f6',
+                name: 'Cadbury Dairy Milk Chocolate Bar Large 360g',
+                price: '£4.50',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/8.%20Cadbury%20Dairy%20Milk%20Chocolate%20Bar%20Large%20360g.jpeg'
+              },
+              // Red Bull Peach Edition
+              allProducts?.find(p => p.id === 'red-bull-sugar-free-energy-drink-summer-white-peach-edition-4-x-250ml-17c73f') || {
+                id: 'red-bull-sugar-free-energy-drink-summer-white-peach-edition-4-x-250ml-17c73f',
+                name: 'Red Bull Sugar Free Energy Drink Summer White Peach Edition 4 X 250ml',
+                price: '£3.50',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/5.%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%20Summer%20White%20Peach%20Edition%204%20X%20250ml.jpeg'
+              },
+              // Walkers Crisps
+              allProducts?.find(p => p.id === 'walkers-sensations-poppadoms-lime-coriander-sharing-bag-82-5g-685be8') || {
+                id: 'walkers-crisps-ready-salted',
+                name: 'Walkers Ready Salted Crisps 32.5g',
+                price: '£0.80',
+                image: '/placeholder.svg'
+              },
+              // Warburtons Bread
+              allProducts?.find(p => p.id === 'warburtons-hot-dog-rolls-6-pack-sliced-65c415') || {
+                id: 'warburtons-medium-sliced-bread',
+                name: 'Warburtons Medium White Bread 800g',
+                price: '£1.10',
+                image: '/placeholder.svg'
+              },
+              // McVitie's Jaffa Cakes
+              allProducts?.find(p => p.id === 'mcvitie-s-the-original-jaffa-cakes-snack-packs-6-x-3-pack-af692b') || {
+                id: 'mcvitie-s-the-original-jaffa-cakes-snack-packs-6-x-3-pack-af692b',
+                name: 'McVitie\'s The Original Jaffa Cakes Snack Packs 6 X 3 Pack',
+                price: '£1.65',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/11.%20McVitie\'s%20The%20Original%20Jaffa%20Cakes%20Snack%20Packs%206%20X%203%20Pack.jpeg'
+              },
+              // Coca-Cola
+              allProducts?.find(p => p.id === 'coca-cola-zero-sugar-24-x-330ml-0a0ed5') || {
+                id: 'coca-cola-original-8x330ml',
+                name: 'Coca-Cola Original 8x330ml',
+                price: '£5.50',
+                image: '/placeholder.svg'
+              },
+              // Andrex Toilet Tissue
+              {
+                id: 'andrex-toilet-tissue-9-pack',
+                name: 'Andrex Classic Clean Toilet Tissue 9 Pack',
+                price: '£6.50',
+                image: '/placeholder.svg'
+              },
+              // Pepsi Max
+              allProducts?.find(p => p.id === 'pepsi-max-no-sugar-cola-cans-24-x-330ml-605b03') || {
+                id: 'pepsi-max-no-sugar-cola-cans-24-x-330ml-605b03',
+                name: 'Pepsi Max No Sugar Cola Cans 24 X 330ml',
+                price: '£8.50',
+                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Soft%20Drinks/3.%20Pepsi%20Max%20No%20Sugar%20Cola%20Cans%2024%20X%20330ml.jpg'
+              },
+              // Persil Laundry Capsules
+              {
+                id: 'persil-laundry-capsules-38-wash',
+                name: 'Persil Non-Bio Laundry Capsules 38 Wash',
+                price: '£12.00',
+                image: '/placeholder.svg'
+              },
+              // Fairy Washing-Up Liquid
+              {
+                id: 'fairy-washing-up-liquid-original',
+                name: 'Fairy Original Washing-Up Liquid 780ml',
+                price: '£2.50',
+                image: '/placeholder.svg'
+              },
+              // Pot Noodle
+              {
+                id: 'pot-noodle-chicken-curry-90g',
+                name: 'Pot Noodle Chicken & Mushroom 90g',
                 price: '£1.25',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%203%20-%20White%20Farmhouse%20Bread%20800g.jpg'
+                image: '/placeholder.svg'
               },
-              // Orange juice - breakfast staple
-              allProducts?.find(p => p.id === 'breakfast8') || {
-                id: 'breakfast8',
-                name: 'Innocent Orange Juice Smooth 900ml',
-                price: '£3.49',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%206%20-%20Innocent%20Orange%20Juice%20Smooth%20900ml.jpg'
+              // Birds Eye Frozen Fish Fingers
+              {
+                id: 'birds-eye-fish-fingers-10-pack',
+                name: 'Birds Eye Fish Fingers 10 Pack 280g',
+                price: '£2.75',
+                image: '/placeholder.svg'
               },
-              // Red Bull original single - regular energy boost
-              allProducts?.find(p => p.id === 'energy1') || {
-                id: 'energy1',
-                name: 'Red Bull Energy Drink 250ml',
-                price: '£2.49',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/17%20-%20Red%20Bull%20Energy%20Drink%20250ml.png'
+              // Arla Milk
+              {
+                id: 'arla-fresh-milk-2-pint',
+                name: 'Arla Fresh British Milk 2 Pint',
+                price: '£1.45',
+                image: '/placeholder.svg'
               },
-              // Red Bull sugar free - healthier option
-              allProducts?.find(p => p.id === 'energy2') || {
-                id: 'energy2',
-                name: 'Red Bull Sugar Free Energy Drink 250ml',
-                price: '£2.49',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/18%20-%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%20250ml%20.png'
-              },
-              // Red Bull 4-pack - bulk buy for regular consumers
-              allProducts?.find(p => p.id === 'energy3') || {
-                id: 'energy3',
-                name: 'Red Bull Energy 250ml x4',
-                price: '£7.99',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/1%20-%20Red%20Bull%20Energy%20250ml%20x4.jpeg'
-              },
-              // Yogurt - healthy breakfast/snack option
-              allProducts?.find(p => p.id === 'breakfast7') || {
-                id: 'breakfast7',
-                name: 'Activia Vanilla & Granola Breakfast Pot',
-                price: '£2.99',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Breakfast%20Items/Image%205%20-%20Activia%20Vanilla%20&%20Granola%20Breakfast%20Pot.jpg'
+              // Walkers Frozen Chips
+              {
+                id: 'walkers-oven-chips-900g',
+                name: 'Walkers Oven Chips Straight Cut 900g',
+                price: '£1.80',
+                image: '/placeholder.svg'
               }
             ].filter(Boolean)} 
             favorites={favoritesSet}
