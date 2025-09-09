@@ -118,12 +118,12 @@ const EnergyDrinks = () => {
       </header>
 
       {/* Enhanced Banner with Header */}
-      <section className="relative bg-gradient-to-br from-blue-800 via-blue-600 to-red-600 text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-purple-800 text-white overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-red-500/20 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-24 h-24 bg-yellow-400/20 rounded-full blur-lg animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-blue-400/15 rounded-full blur-md animate-pulse delay-500"></div>
+          <div className="absolute top-10 left-10 w-32 h-32 bg-purple-500/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-24 h-24 bg-blue-400/20 rounded-full blur-lg animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-purple-400/15 rounded-full blur-md animate-pulse delay-500"></div>
         </div>
         
         <div className="relative container mx-auto px-4 py-12 flex items-center justify-center min-h-[140px]">
