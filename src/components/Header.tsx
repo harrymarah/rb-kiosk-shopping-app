@@ -52,6 +52,14 @@ const Header = () => {
           </div>
           
           <div className="flex items-center gap-2">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="h-11 w-11 rounded-full hover:bg-gray-100 border border-gray-200"
+              onClick={() => navigate('/')}
+            >
+              <Home className="h-5 w-5 text-gray-700" />
+            </Button>
             <CouponsDrawer>
               <Button variant="ghost" size="icon" className="relative h-11 w-11 rounded-full hover:bg-gray-100 border border-gray-200">
                 <Ticket className="h-5 w-5 text-gray-700" />
