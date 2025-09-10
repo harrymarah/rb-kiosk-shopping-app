@@ -448,18 +448,6 @@ const Index = () => {
                     price: '£8.50',
                     image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Soft%20Drinks/3.%20Pepsi%20Max%20No%20Sugar%20Cola%20Cans%2024%20X%20330ml.jpg'
                   },
-                  allProducts?.find(p => p.name.toLowerCase().includes('ariel') || p.name.toLowerCase().includes('washing powder')) || {
-                    id: 'ariel-original-washing-powder-unavailable',
-                    name: 'Ariel Original Washing Powder 675g - Currently Unavailable',
-                    price: '£4.00',
-                    image: '/placeholder.svg'
-                  },
-                  allProducts?.find(p => p.name.toLowerCase().includes('fairy') || p.name.toLowerCase().includes('washing up liquid')) || {
-                    id: 'fairy-washing-up-liquid-unavailable',
-                    name: 'Fairy Washing Up Liquid Original 433ml - Currently Unavailable',
-                    price: '£2.00',
-                    image: '/placeholder.svg'
-                  }
                 ].map((product) => (
                   <ProductCard
                     key={product.id}
