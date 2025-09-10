@@ -88,7 +88,7 @@
       "id": "baileys-cinnamon-swirl-17-vol-70cl-eb7892",
       "name": "Baileys Cinnamon Swirl 17% Vol 70cl",
       "price": "£17.00",
-      "image": "",
+      "image": "/placeholder.svg",
       "categories": [
         "newProducts"
       ],
@@ -138,7 +138,7 @@
       "id": "that-s-nuts-walkers-salt-vinegar-sharing-coated-peanuts-160g-9de494",
       "name": "That’s Nuts Walkers Salt & Vinegar Sharing Coated Peanuts 160g",
       "price": "£2.75",
-      "image": "",
+      "image": "/placeholder.svg",
       "categories": [
         "newProducts"
       ],
@@ -175,7 +175,7 @@
       "id": "budweiser-lager-beer-12-x-300ml-b34476",
       "name": "Budweiser Lager Beer 12 X 300ml",
       "price": "£8.50",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20%20Assets/qcom/products/BBQ/4.%20Budweiser%20Lager%20Beer%2012%20X%20300ml.jpeg",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/4.%20Budweiser%20Lager%20Beer%2012%20X%20300ml.jpeg",
       "categories": [
         "bbq"
       ]
