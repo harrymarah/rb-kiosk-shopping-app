@@ -229,7 +229,6 @@ const EnergyDrinks = () => {
               POTENTIAL
             </h2>
             <div className="mt-4 w-24 h-1 bg-gradient-to-r from-yellow-400 to-red-500 mx-auto rounded-full animate-scale-in delay-500"></div>
-            <p className="text-sm text-white/80 mt-2">Click to clear filters</p>
           </div>
         </div>
         
