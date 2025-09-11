@@ -246,127 +246,27 @@ const Index = () => {
         </div>
       )}
 
-      {activeTab === "usuals" && allProducts && (
-        <div className="space-y-8">
-          <ProductCarousel 
-            title="Your Usual Items" 
-            products={[
-              // Heinz Beanz
-              allProducts?.find(p => p.id === 'heinz-beanz-in-tomato-sauce-415g-16a467') || {
-                id: 'heinz-beanz-in-tomato-sauce-415g-16a467',
-                name: 'Heinz Beanz In Tomato Sauce 415G',
-                price: '£1.40',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/4.%20Heinz%20Beanz%20In%20Tomato%20Sauce%20415g.jpeg'
-              },
-              // Heinz Tomato Ketchup
-              allProducts?.find(p => p.id === 'heinz-tomato-ketchup-910g-729f91') || {
-                id: 'heinz-tomato-ketchup-910g-729f91',
-                name: 'Heinz Tomato Ketchup 910g',
-                price: '£4.50',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/7.%20Heinz%20Tomato%20Ketchup%20910g.jpg'
-              },
-              // Cadbury Dairy Milk
-              allProducts?.find(p => p.id === 'cadbury-dairy-milk-chocolate-bar-large-360g-6456f6') || {
-                id: 'cadbury-dairy-milk-chocolate-bar-large-360g-6456f6',
-                name: 'Cadbury Dairy Milk Chocolate Bar Large 360g',
-                price: '£4.50',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/8.%20Cadbury%20Dairy%20Milk%20Chocolate%20Bar%20Large%20360g.jpeg'
-              },
-              // Red Bull Peach Edition
-              allProducts?.find(p => p.id === 'red-bull-sugar-free-energy-drink-summer-white-peach-edition-4-x-250ml-17c73f') || {
-                id: 'red-bull-sugar-free-energy-drink-summer-white-peach-edition-4-x-250ml-17c73f',
-                name: 'Red Bull Sugar Free Energy Drink Summer White Peach Edition 4 X 250ml',
-                price: '£3.50',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/5.%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%20Summer%20White%20Peach%20Edition%204%20X%20250ml.jpeg'
-              },
-              // Hula Hoops Crisps
-              allProducts?.find(p => p.id === 'hula-hoops-original-multipack-crisps-6x24g-685be8') || {
-                id: 'hula-hoops-original-multipack-crisps-6x24g',
-                name: 'Hula Hoops Original Multipack Crisps 6x24g',
-                price: '£2.50',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/2.%20Hula%20Hoops%20Original%20Multipack%20Crisps%206x24g.jpeg'
-              },
-              // Warburtons Hot Dog Rolls
-              allProducts?.find(p => p.id === 'warburtons-hot-dog-rolls-6-pack-sliced-65c415') || {
-                id: 'warburtons-hot-dog-rolls-6-pack-sliced',
-                name: 'Warburtons Hot Dog Rolls 6 Pack Sliced',
-                price: '£1.40',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/3.%20Warburtons%20Hot%20Dog%20Rolls%206%20Pack%20Sliced.jpeg'
-              },
-              // McVitie's Jaffa Cakes
-              allProducts?.find(p => p.id === 'mcvitie-s-the-original-jaffa-cakes-snack-packs-6-x-3-pack-af692b') || {
-                id: 'mcvitie-s-the-original-jaffa-cakes-snack-packs-6-x-3-pack-af692b',
-                name: 'McVitie\'s The Original Jaffa Cakes Snack Packs 6 X 3 Pack',
-                price: '£1.65',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/11.%20McVitie\'s%20The%20Original%20Jaffa%20Cakes%20Snack%20Packs%206%20X%203%20Pack.jpeg'
-              },
-              // Coca-Cola Zero Sugar
-              allProducts?.find(p => p.id === 'coca-cola-zero-sugar-24-x-330ml-0a0ed5') || {
-                id: 'coca-cola-zero-sugar-24-x-330ml',
-                name: 'Coca-Cola Zero Sugar 24 X 330ml',
-                price: '£8.50',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/5.%20Coca-Cola%20Zero%20Sugar%2024%20X%20330ml.jpeg'
-              },
-              // Propercorn Sweet & Salty Popcorn
-              allProducts?.find(p => p.id === 'propercorn-sweet-salty-popcorn-6-x-14g-98f6d2') || {
-                id: 'propercorn-sweet-salty-popcorn-6-x-14g',
-                name: 'Propercorn Sweet & Salty Popcorn 6 X 14g',
-                price: '£3.50',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/9.%20Propercorn%20Sweet%20&%20Salty%20Popcorn%206%20X%2014g.jpeg'
-              },
-              // Pepsi Max
-              allProducts?.find(p => p.id === 'pepsi-max-no-sugar-cola-cans-24-x-330ml-605b03') || {
-                id: 'pepsi-max-no-sugar-cola-cans-24-x-330ml-605b03',
-                name: 'Pepsi Max No Sugar Cola Cans 24 X 330ml',
-                price: '£8.50',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Soft%20Drinks/3.%20Pepsi%20Max%20No%20Sugar%20Cola%20Cans%2024%20X%20330ml.jpg'
-              },
-              // Kit Kat Chunky Chocolate Bars
-              allProducts?.find(p => p.id === 'kit-kat-chunky-milk-chocolate-bars-multipack-40g-4-pack-ab8d92') || {
-                id: 'kit-kat-chunky-milk-chocolate-bars-multipack',
-                name: 'Kit Kat Chunky Milk Chocolate Bars Multipack 40g 4 Pack',
-                price: '£3.00',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/6.%20Kit%20Kat%20Chunky%20Milk%20Chocolate%20Bars%20Multipack%2040g%204%20Pack.jpeg'
-              },
-              // Rowntree's Fruit Pastilles
-              allProducts?.find(p => p.id === 'rowntree-s-fruit-pastilles-sweets-sharing-bag-143g-5f7e82') || {
-                id: 'rowntree-s-fruit-pastilles-sweets-sharing-bag',
-                name: 'Rowntree\'s Fruit Pastilles Sweets Sharing Bag 143g',
-                price: '£2.25',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/5.%20Rowntree\'s%20Fruit%20Pastilles%20Sweets%20Sharing%20Bag%20143g.jpeg'
-              },
-              // Dr. Oetker Ristorante Pizza
-              allProducts?.find(p => p.id === 'dr-oetker-ristorante-pizza-pepperoni-salame-320g-8e2f93') || {
-                id: 'dr-oetker-ristorante-pizza-pepperoni-salame',
-                name: 'Dr. Oetker Ristorante Pizza - Pepperoni-Salame 320g',
-                price: '£3.25',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/1.%20Dr.%20Oetker%20Ristorante%20Pizza%20-%20Pepperoni-Salame%20320g.jpeg'
-              },
-              // Cadbury Dairy Milk Chocolate
-              allProducts?.find(p => p.id === 'cadbury-dairy-milk-chocolate-bar-large-360g-6456f6') || {
-                id: 'cadbury-dairy-milk-chocolate-bar-large-360g',
-                name: 'Cadbury Dairy Milk Chocolate Bar Large 360g',
-                price: '£4.50',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/8.%20Cadbury%20Dairy%20Milk%20Chocolate%20Bar%20Large%20360g.jpeg'
-              },
-              // Oatly Barista Edition
-              allProducts?.find(p => p.id === 'oatly-barista-edition-oat-drink-long-life-1l-7d8e92') || {
-                id: 'oatly-barista-edition-oat-drink-long-life-1l',
-                name: 'Oatly Barista Edition Oat Drink Long Life 1L',
-                price: '£2.80',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/10.%20Oatly%20Barista%20Edition%20Oat%20Drink%20Long%20Life%201L.jpeg'
-              },
-              // Doritos Cool Original Tortilla Chips
-              allProducts?.find(p => p.id === 'doritos-cool-original-tortilla-chips-sharing-bag-crisps-180g-9a8f7e') || {
-                id: 'doritos-cool-original-tortilla-chips-sharing-bag',
-                name: 'Doritos Cool Original Tortilla Chips Sharing Bag Crisps 180g',
-                price: '£2.50',
-                image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/1.%20Doritos%20Cool%20Original%20Tortilla%20Chips%20Sharing%20Bag%20Crisps%20180g.jpg'
-              }
-            ].filter(Boolean)} 
-            favorites={favoritesSet}
-            onToggleFavorite={toggleFavoriteById}
-          />
+      {activeTab === "usuals" && !selectedCategory && allProducts && (
+        <div className="px-6 py-6">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-2xl font-bold text-foreground mb-6">Your Usual Items</h2>
+            <div className="grid grid-cols-4 gap-6">
+              {allProducts.filter(p => p.categories?.includes('usuals')).map((product) => (
+                <ProductCard
+                  key={product.id}
+                  image={product.image}
+                  name={product.name}
+                  price={product.price}
+                  originalPrice={product.originalPrice}
+                  offer={product.offer}
+                  isFavorite={favoritesSet.has(product.id)}
+                  onToggleFavorite={() => toggleFavoriteById(product.id)}
+                  onAddToCart={() => handleAddToCart(product)}
+                  productId={product.id}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       )}
 
