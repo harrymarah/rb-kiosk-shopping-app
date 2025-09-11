@@ -287,7 +287,7 @@ const Index = () => {
                   <span className="text-sm text-muted-foreground">
                     Home Delivery • Delivered
                   </span>
-                  <span className="font-bold">£28.45</span>
+                  <span className="font-bold">£35.58</span>
                 </div>
               </div>
               
