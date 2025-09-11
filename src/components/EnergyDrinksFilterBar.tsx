@@ -96,7 +96,7 @@ const EnergyDrinksFilterBar = ({
                 variant="outline"
                 size="sm"
                 onClick={onClearFilters}
-                className="text-muted-foreground hover:text-foreground"
+                className="bg-red-600 text-white border-red-600 hover:bg-red-700 hover:border-red-700 hover:text-white"
               >
                 Clear All
               </Button>
