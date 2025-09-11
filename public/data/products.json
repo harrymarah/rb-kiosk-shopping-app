@@ -39,6 +39,11 @@
       "id": "summerOfSport",
       "name": "Summer of Sport",
       "description": "Snacks and drinks for big games"
+    },
+    {
+      "id": "usuals",
+      "name": "Usuals",
+      "description": "Your everyday essentials"
     }
   ],
   "products": [
@@ -289,7 +294,8 @@
       "price": "£4.50",
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/8.%20Cadbury%20Dairy%20Milk%20Chocolate%20Bar%20Large%20360g.jpeg",
       "categories": [
-        "summerOfSport"
+        "summerOfSport",
+        "usuals"
       ]
     },
     {
@@ -676,7 +682,136 @@
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/14.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%20Blue%20Edition%20Juneberry%204%20X%20250ml.jpg",
       "categories": [
         "redBull",
-        "energyDrinks"
+        "energyDrinks",
+        "usuals"
+      ]
+    },
+    {
+      "id": "heinz-baked-beans-in-tomato-sauce-4-x-415g-usualspack",
+      "name": "Heinz Baked Beans In Tomato Sauce 4 X 415g",
+      "price": "£3.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Usuals/1.%20Heinz%20Baked%20Beans%20In%20Tomato%20Sauce%204%20X%20415g.jpeg",
+      "categories": [
+        "usuals"
+      ]
+    },
+    {
+      "id": "heinz-top-down-squeezy-tomato-ketchup-sauce-910g-usuals",
+      "name": "Heinz Top Down Squeezy Tomato Ketchup Sauce 910g",
+      "price": "£4.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Usuals/2.%20Heinz%20Top%20Down%20Squeezy%20Tomato%20Ketchup%20Sauce%20910g.jpeg",
+      "categories": [
+        "usuals"
+      ]
+    },
+    {
+      "id": "walkers-classic-variety-multipack-crisps-6-x-25g-usuals",
+      "name": "Walkers Classic Variety Multipack Crisps 6 X 25g",
+      "price": "£2.15",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Usuals/5.%20Walkers%20Classic%20Variety%20Multipack%20Crisps%206%20X%2025g.jpeg",
+      "categories": [
+        "usuals"
+      ]
+    },
+    {
+      "id": "warburtons-farmhouse-thick-sliced-white-bread-800g-usuals",
+      "name": "Warburtons Farmhouse Thick Sliced White Bread 800g",
+      "price": "£1.60",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Usuals/6.%20Warburtons%20Farmhouse%20Thick%20Sliced%20White%20Bread%20800g.jpeg",
+      "categories": [
+        "usuals"
+      ]
+    },
+    {
+      "id": "mcvities-jaffa-cakes-original-biscuits-10-pack-110g-usuals",
+      "name": "McVitie's Jaffa Cakes Original Biscuits 10 Pack 110g",
+      "price": "£1.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Usuals/7.%20McVitie's%20Jaffa%20Cakes%20Original%20Biscuits%2010%20Pack%20110g.jpeg",
+      "categories": [
+        "usuals"
+      ]
+    },
+    {
+      "id": "coca-cola-original-taste-8x330ml-usuals",
+      "name": "Coca-Cola Original Taste 8x330ml",
+      "price": "£4.75",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Usuals/8.%20Coca-Cola%20Original%20Taste%208x330ml.jpeg",
+      "categories": [
+        "usuals",
+        "softDrinks"
+      ]
+    },
+    {
+      "id": "andrex-complete-clean-toilet-tissue-standard-rolls-9-rolls-usuals",
+      "name": "Andrex Complete Clean Toilet Tissue Standard Rolls 9 Rolls",
+      "price": "£5.95",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Usuals/9.%20Andrex%20Complete%20Clean%20Toilet%20Tissue%20Standard%20Rolls%209%20Rolls.jpeg",
+      "categories": [
+        "usuals"
+      ]
+    },
+    {
+      "id": "pepsi-max-no-sugar-cola-cans-8-x-330ml-usuals",
+      "name": "Pepsi Max No Sugar Cola Cans 8 X 330ml",
+      "price": "£3.98",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Usuals/10.%20Pepsi%20Max%20No%20Sugar%20Cola%20Cans%208%20X%20330ml.jpeg",
+      "categories": [
+        "usuals",
+        "softDrinks"
+      ]
+    },
+    {
+      "id": "persil-pure-heaven-scent-non-bio-laundry-washing-detergent-capsules-44-washes-928g-usuals",
+      "name": "Persil Pure Heaven Scent Non Bio Laundry Washing Detergent Capsules 44 Washes 928g",
+      "price": "£9.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Usuals/11.%20Persil%20Pure%20Heaven%20Scent%20Non%20Bio%20Laundry%20Washing%20Detergent%20Capsules%2044%20Washes%20928g.jpeg",
+      "categories": [
+        "usuals"
+      ]
+    },
+    {
+      "id": "fairy-max-power-lemon-washing-up-liquid-545ml-usuals",
+      "name": "Fairy Max Power Lemon Washing Up Liquid 545ml",
+      "price": "£2.70",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Usuals/12.%20Fairy%20Max%20Power%20Lemon%20Washing%20Up%20Liquid%20545ml.jpeg",
+      "categories": [
+        "usuals"
+      ]
+    },
+    {
+      "id": "pot-noodle-beef-tomato-4-x-90g-usuals",
+      "name": "Pot Noodle Beef & Tomato 4 X 90g",
+      "price": "£3.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Usuals/13.%20Pot%20Noodle%20Beef%20&%20Tomato%204%20X%2090g.jpeg",
+      "categories": [
+        "usuals"
+      ]
+    },
+    {
+      "id": "birds-eye-cod-fish-fingers-10-pack-280g-usuals",
+      "name": "Birds Eye Cod Fish Fingers 10 Pack 280g",
+      "price": "£3.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Usuals/14.%20Birds%20Eye%20Cod%20Fish%20Fingers%2010%20Pack%20280g.jpeg",
+      "categories": [
+        "usuals"
+      ]
+    },
+    {
+      "id": "cravendale-filtered-fresh-skimmed-milk-2l-fresher-for-longer-usuals",
+      "name": "Cravendale Filtered Fresh Skimmed Milk 2L Fresher for Longer",
+      "price": "£2.90",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Usuals/15.%20Cravendale%20Filtered%20Fresh%20Skimmed%20Milk%202L%20Fresher%20for%20Longer.jpeg",
+      "categories": [
+        "usuals"
+      ]
+    },
+    {
+      "id": "mccain-home-chips-extra-chunky-1kg-usuals",
+      "name": "McCain Home Chips Extra Chunky 1kg",
+      "price": "£3.20",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Usuals/16.%20McCain%20Home%20Chips%20Extra%20Chunky%201kg.jpeg",
+      "categories": [
+        "usuals"
       ]
     }
   ]
