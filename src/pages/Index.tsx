@@ -333,6 +333,64 @@ const Index = () => {
           </div>
         </div>
       )}
+
+      {/* Energy Drinks Section */}
+      <div className="px-6 py-6">
+        <div className="container mx-auto max-w-4xl">
+          <div className="bg-card p-6 rounded-lg border mb-8">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">Energy Drinks</h3>
+                <p className="text-sm text-muted-foreground">6 items</p>
+              </div>
+              <div className="text-right">
+                <span className="text-sm text-muted-foreground">
+                  Energy Collection • Available
+                </span>
+                <span className="font-bold">£26.40</span>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-4 gap-4">
+              {allProducts?.filter(p => p.categories?.includes('energyDrinks')).map((product) => (
+                <ProductCard
+                  key={product.id}
+                  image={product.image}
+                  name={product.name}
+                  price={product.price}
+                  originalPrice={product.originalPrice}
+                  offer={product.offer}
+                  isFavorite={favoritesSet.has(product.id)}
+                  onToggleFavorite={() => toggleFavoriteById(product.id)}
+                  onAddToCart={() => handleAddToCart(product)}
+                  productId={product.id}
+                />
+              ))}
+            </div>
+            
+            {/* Add All Energy Drinks Button */}
+            <div className="text-center mt-8">
+              <button
+                onClick={() => {
+                  const energyDrinksProducts = allProducts?.filter(p => p.categories?.includes('energyDrinks')) || [];
+                  
+                  energyDrinksProducts.forEach(product => {
+                    handleAddToCart(product);
+                  });
+                  
+                  toast({
+                    title: "Items added to basket",
+                    description: "All energy drinks have been added to your basket.",
+                  });
+                }}
+                className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+              >
+                Add All Energy Drinks
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       
       
       {activeTab === "favourites" && (

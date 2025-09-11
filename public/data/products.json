@@ -53,16 +53,58 @@
   ],
   "products": [
     {
-      "id": "red-bull-energy-drink-sugar-free-fuji-apple-ginger-winter-edition-4-x-250ml-1e5cfe",
-      "name": "Red Bull Energy Drink Sugar Free Fuji Apple & Ginger, Winter Edition 4 X 250ml",
-      "price": "£3.50",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/6.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%20Fuji%20Apple%20&%20Ginger,%20Winter%20Edition%204%20X%20250ml.jpeg",
+      "id": "lucozade-energy-orange-8-x-380ml",
+      "name": "Lucozade Energy Orange 8 X 380ml",
+      "price": "£4.60",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/7.%20Lucozade%20Energy%20Orange%208%20X%20380ml.jpeg",
       "categories": [
-        "energyDrinks",
-        "newProducts",
-        "redBull"
-      ],
-      "offer": "New Arrival"
+        "energyDrinks"
+      ]
+    },
+    {
+      "id": "fix8-kombucha-ginger-turmeric-4-x-250ml",
+      "name": "FIX8 Kombucha Ginger Turmeric 4 X 250ml",
+      "price": "£5.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/15.%20FIX8%20Kombucha%20Ginger%20Turmeric%204%20X%20250ml.jpeg",
+      "categories": [
+        "energyDrinks"
+      ]
+    },
+    {
+      "id": "trip-mindful-blend-wild-strawberry-4-x-250ml",
+      "name": "TRIP Mindful Blend Wild Strawberry 4 X 250ml",
+      "price": "£5.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/13.%20TRIP%20Mindful%20Blend%20Wild%20Strawberry%204%20X%20250ml.jpeg",
+      "categories": [
+        "energyDrinks"
+      ]
+    },
+    {
+      "id": "lucozade-sport-drink-orange-4-x-500ml",
+      "name": "Lucozade Sport Drink Orange 4 X 500ml",
+      "price": "£4.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/8.%20Lucozade%20Sport%20Drink%20Orange%204%20X%20500ml.jpeg",
+      "categories": [
+        "energyDrinks"
+      ]
+    },
+    {
+      "id": "powerade-berry-tropical-sports-drink-500ml",
+      "name": "Powerade Berry & Tropical Sports Drink 500ml",
+      "price": "£1.80",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/16.%20Powerade%20Berry%20&%20Tropical%20Sports%20Drink%20500ml.jpg",
+      "categories": [
+        "energyDrinks"
+      ]
+    },
+    {
+      "id": "remedy-kombucha-wild-berry-4-x-330ml",
+      "name": "Remedy Kombucha Wild Berry 4 X 330ml",
+      "price": "£5.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/14.%20Remedy%20Kombucha%20Wild%20Berry%204%20X%20330ml.jpeg",
+      "categories": [
+        "energyDrinks"
+      ]
     },
     {
       "id": "kettle-honey-dijon-mustard-potato-chips-130g-94b0ff",
@@ -251,7 +293,6 @@
       "price": "£10.50",
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/7.%20Red%20Bull%20Energy%20Drink%2012%20X%20250ml.jpeg",
       "categories": [
-        "energyDrinks",
         "redBull",
         "softDrinks",
         "summerOfSport",
@@ -401,81 +442,6 @@
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Soft%20Drinks/5.%20Evian%20Natural%20Bottled%20Mineral%20Still%20Water%206%20X%201.5L.jpg",
       "categories": [
         "softDrinks"
-      ]
-    },
-    {
-      "id": "lucozade-sport-drink-orange-4-x-500ml-3ca9b5",
-      "name": "Lucozade Sport Drink Orange 4 X 500ml",
-      "price": "£4.00",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/8.%20Lucozade%20Sport%20Drink%20Orange%204%20X%20500ml.jpeg",
-      "categories": [
-        "energyDrinks",
-        "softDrinks"
-      ]
-    },
-    {
-      "id": "monster-energy-drink-ultra-4-x-500ml-052d3d",
-      "name": "Monster Energy Drink Ultra 4 X 500ml",
-      "price": "£4.75",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/4.%20Monster%20Energy%20Drink%20Ultra%204%20X%20500ml.jpeg",
-      "categories": [
-        "energyDrinks"
-      ]
-    },
-    {
-      "id": "monster-energy-zero-sugar-4-x-500ml-5ad702",
-      "name": "Monster Energy Zero Sugar 4 X 500ml",
-      "price": "£4.75",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/2.%20Monster%20Energy%20Zero%20Sugar%204%20X%20500ml.jpeg",
-      "categories": [
-        "energyDrinks"
-      ]
-    },
-    {
-      "id": "red-bull-sugar-free-energy-drink-8-x-250ml-cf4b8f",
-      "name": "Red Bull Sugar Free Energy Drink 8 X 250ml",
-      "price": "£7.50",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/4.%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%208%20X%20250ml.jpeg",
-      "categories": [
-        "energyDrinks",
-        "redBull"
-      ]
-    },
-    {
-      "id": "lucozade-energy-orange-8-x-380ml-ac5a2b",
-      "name": "Lucozade Energy Orange 8 X 380ml",
-      "price": "£4.60",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/5.%20Lucozade%20Energy%20Orange%208%20X%20380ml.jpeg",
-      "categories": [
-        "energyDrinks"
-      ]
-    },
-    {
-      "id": "monster-energy-drink-mango-loco-4-x-500ml-a24b90",
-      "name": "Monster Energy Drink Mango Loco 4 X 500ml",
-      "price": "£5.60",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/7.%20Monster%20Energy%20Drink%20Mango%20Loco%204%20X%20500ml.jpeg",
-      "categories": [
-        "energyDrinks"
-      ]
-    },
-    {
-      "id": "red-bull-sugar-free-variety-pack-energy-drink-8-x-250ml-8295d5",
-      "name": "Red Bull Sugar Free Variety Pack Energy Drink 8 X 250ml",
-      "price": "£7.50",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/3.%20Red%20Bull%20Sugar%20Free%20Variety%20Pack%20Energy%20Drink%208%20X%20250ml.jpeg",
-      "categories": [
-        "energyDrinks",
-        "redBull"
-      ]
-    },
-    {
-      "id": "monster-energy-ultra-strawberry-dreams-4-x-500ml-723fdf",
-      "name": "Monster Energy Ultra Strawberry Dreams 4 X 500ml",
-      "price": "£5.65",
-      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/10.%20Monster%20Energy%20Ultra%20Strawberry%20Dreams%204%20X%20500ml.jpeg",
-      "categories": [
-        "energyDrinks"
       ]
     },
     {
