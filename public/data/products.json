@@ -44,6 +44,11 @@
       "id": "usuals",
       "name": "Usuals",
       "description": "Your everyday essentials"
+    },
+    {
+      "id": "lastOrder",
+      "name": "Last Order",
+      "description": "Items from your previous order"
     }
   ],
   "products": [
@@ -249,7 +254,8 @@
         "energyDrinks",
         "redBull",
         "softDrinks",
-        "summerOfSport"
+        "summerOfSport",
+        "lastOrder"
       ]
     },
     {
@@ -507,7 +513,8 @@
       "price": "£1.40",
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/4.%20Heinz%20Beanz%20In%20Tomato%20Sauce%20415g.avif",
       "categories": [
-        "favourites"
+        "favourites",
+        "lastOrder"
       ]
     },
     {
@@ -812,6 +819,87 @@
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Usuals/16.%20McCain%20Home%20Chips%20Extra%20Chunky%201kg.jpeg",
       "categories": [
         "usuals"
+      ]
+    },
+    {
+      "id": "happy-egg-free-range-eggs-medium-6-pack-lastorder",
+      "name": "Happy Egg Free Range Eggs Medium 6 Pack",
+      "price": "£1.90",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Last%20Order/1.%20Happy%20Egg%20Free%20Range%20Eggs%20Medium%206%20Pack.jpeg",
+      "categories": [
+        "lastOrder"
+      ]
+    },
+    {
+      "id": "arla-bob-semi-skimmed-milk-that-tastes-like-whole-2l-lastorder",
+      "name": "Arla BOB Semi Skimmed Milk That Tastes Like Whole 2L",
+      "price": "£3.10",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Last%20Order/2.%20Arla%20BOB%20Semi%20Skimmed%20Milk%20That%20Tastes%20Like%20Whole%202L.jpg",
+      "categories": [
+        "lastOrder"
+      ]
+    },
+    {
+      "id": "cravendale-filtered-fresh-whole-milk-2l-fresher-for-longer-lastorder",
+      "name": "Cravendale Filtered Fresh Whole Milk 2L Fresher for Longer",
+      "price": "£2.90",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Last%20Order/4.%20Cravendale%20Filtered%20Fresh%20Whole%20Milk%202L%20Fresher%20for%20Longer.jpg",
+      "categories": [
+        "lastOrder"
+      ]
+    },
+    {
+      "id": "heinz-curry-tomato-ketchup-570g-lastorder",
+      "name": "Heinz Curry Tomato Ketchup 570g",
+      "price": "£6.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Last%20Order/6.%20Heinz%20Curry%20Tomato%20Ketchup%20570g.jpeg",
+      "categories": [
+        "lastOrder"
+      ]
+    },
+    {
+      "id": "cathedral-city-mature-cheddar-cheese-550g-lastorder",
+      "name": "Cathedral City Mature Cheddar Cheese 550g",
+      "price": "£4.00",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Last%20Order/7.%20Cathedral%20City%20Mature%20Cheddar%20Cheese%20550g.jpeg",
+      "categories": [
+        "lastOrder"
+      ]
+    },
+    {
+      "id": "birds-eye-southern-fried-chicken-grills-2-x-180g-lastorder",
+      "name": "Birds Eye Southern Fried Chicken Grills 2 X 180g",
+      "price": "£1.50",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Last%20Order/8.%20Birds%20Eye%20Southern%20Fried%20Chicken%20Grills%202%20X%20180g.jpg",
+      "categories": [
+        "lastOrder"
+      ]
+    },
+    {
+      "id": "heinz-cream-of-tomato-soup-400g-lastorder",
+      "name": "Heinz Cream Of Tomato Soup 400g",
+      "price": "£1.70",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Last%20Order/9.%20Heinz%20Cream%20Of%20Tomato%20Soup%20400g.jpeg",
+      "categories": [
+        "lastOrder"
+      ]
+    },
+    {
+      "id": "pot-noodle-chicken-mushroom-instant-noodles-king-pot-114g-lastorder",
+      "name": "Pot Noodle Chicken & Mushroom Instant Noodles King Pot 114g",
+      "price": "£0.90",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Last%20Order/10.%20Pot%20Noodle%20Chicken%20&%20Mushroom%20Instant%20Noodles%20King%20Pot%20114g.jpeg",
+      "categories": [
+        "lastOrder"
+      ]
+    },
+    {
+      "id": "cadbury-dairy-milk-chocolate-bar-110g-lastorder",
+      "name": "Cadbury Dairy Milk Chocolate Bar 110g",
+      "price": "£1.68",
+      "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Last%20Order/11.%20Cadbury%20Dairy%20Milk%20Chocolate%20Bar%20110g.jpeg",
+      "categories": [
+        "lastOrder"
       ]
     }
   ]

@@ -293,67 +293,14 @@ const Index = () => {
               
               {/* Order Items */}
               <div className="grid grid-cols-4 gap-6">
-                {[
-                  {
-                    id: 'red-bull-energy-drink-12-x-250ml-e1fde4',
-                    name: 'Red Bull Energy Drink 12 X 250ml',
-                    price: '£10.50',
-                    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/7.%20Red%20Bull%20Energy%20Drink%2012%20X%20250ml.jpeg'
-                  },
-                  {
-                    id: 'heinz-beanz-in-tomato-sauce-415g-16a467',
-                    name: 'Heinz Beanz In Tomato Sauce 415G',
-                    price: '£1.40',
-                    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Favourites/4.%20Heinz%20Beanz%20In%20Tomato%20Sauce%20415g.jpeg'
-                  },
-                  {
-                    id: 'heinz-tomato-ketchup-910g-729f91',
-                    name: 'Heinz Tomato Ketchup 910g',
-                    price: '£4.50',
-                    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/7.%20Heinz%20Tomato%20Ketchup%20910g.jpg'
-                  },
-                  allProducts?.find(p => p.id === 'cadbury-dairy-milk-chocolate-bar-large-360g-6456f6') || {
-                    id: 'cadbury-dairy-milk-chocolate-bar-large-360g-6456f6',
-                    name: 'Cadbury Dairy Milk Chocolate Bar Large 360g',
-                    price: '£4.50',
-                    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/8.%20Cadbury%20Dairy%20Milk%20Chocolate%20Bar%20Large%20360g.jpeg'
-                  },
-                  allProducts?.find(p => p.id === 'walkers-sensations-poppadoms-lime-coriander-sharing-bag-82-5g-685be8') || {
-                    id: 'walkers-sensations-poppadoms-lime-coriander-sharing-bag-82-5g-685be8',
-                    name: 'Walkers Sensations Poppadoms Lime & Coriander Sharing Bag 82.5g',
-                    price: '£1.75',
-                    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Big%20Night%20In/7.%20Walkers%20Sensations%20Poppadoms%20Lime%20&%20Coriander%20Sharing%20Bag%2082.5g.jpeg'
-                  },
-                  {
-                    id: 'coca-cola-zero-sugar-24-x-330ml-0a0ed5',
-                    name: 'Coca-Cola Zero Sugar 24 X 330ml',
-                    price: '£12.00',
-                    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/BBQ/5.%20Coca-Cola%20Zero%20Sugar%2024%20X%20330ml.jpeg'
-                  },
-                  {
-                    id: 'mcvitie-s-jaffa-cakes-hot-honey-flavour-x10-04db04',
-                    name: 'McVitie\'s Jaffa Cakes Hot Honey Flavour x10',
-                    price: '£1.50',
-                    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/New/8.%20McVitie\'s%20Jaffa%20Cakes%20Hot%20Honey%20Flavour%20x10.jpg'
-                  },
-                  allProducts?.find(p => p.id === 'doritos-cool-original-tortilla-chips-sharing-bag-crisps-180g-e0e8e9') || {
-                    id: 'doritos-cool-original-tortilla-chips-sharing-bag-crisps-180g-e0e8e9',
-                    name: 'Doritos Cool Original Tortilla Chips Sharing Bag Crisps 180g',
-                    price: '£1.75',
-                    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Summer%20of%20Sport/1.%20Doritos%20Cool%20Original%20Tortilla%20Chips%20Sharing%20Bag%20Crisps%20180g.jpg'
-                  },
-                  allProducts?.find(p => p.id === 'pepsi-max-no-sugar-cola-cans-24-x-330ml-605b03') || {
-                    id: 'pepsi-max-no-sugar-cola-cans-24-x-330ml-605b03',
-                    name: 'Pepsi Max No Sugar Cola Cans 24 X 330ml',
-                    price: '£8.50',
-                    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Soft%20Drinks/3.%20Pepsi%20Max%20No%20Sugar%20Cola%20Cans%2024%20X%20330ml.jpg'
-                  },
-                ].map((product) => (
+                {allProducts?.filter(p => p.categories?.includes('lastOrder')).map((product) => (
                   <ProductCard
                     key={product.id}
                     image={product.image}
                     name={product.name}
                     price={product.price}
+                    originalPrice={product.originalPrice}
+                    offer={product.offer}
                     isFavorite={favoritesSet.has(product.id)}
                     onToggleFavorite={() => toggleFavoriteById(product.id)}
                     onAddToCart={() => handleAddToCart(product)}
@@ -366,19 +313,9 @@ const Index = () => {
               <div className="text-center mt-8">
                 <button
                   onClick={() => {
-                    const hardCodedProducts = [
-                      { id: 'red-bull-energy-drink-12-x-250ml-e1fde4', name: 'Red Bull Energy Drink 12 X 250ml', price: '£10.50' },
-                      { id: 'heinz-beanz-in-tomato-sauce-415g-16a467', name: 'Heinz Beanz In Tomato Sauce 415G', price: '£1.40' },
-                      { id: 'heinz-tomato-ketchup-910g-729f91', name: 'Heinz Tomato Ketchup 910g', price: '£4.50' },
-                      { id: 'cadbury-dairy-milk-chocolate-bar-large-360g-6456f6', name: 'Cadbury Dairy Milk Chocolate Bar Large 360g', price: '£4.50' },
-                      { id: 'walkers-sensations-poppadoms-lime-coriander-sharing-bag-82-5g-685be8', name: 'Walkers Sensations Poppadoms Lime & Coriander Sharing Bag 82.5g', price: '£1.75' },
-                      { id: 'coca-cola-zero-sugar-24-x-330ml-0a0ed5', name: 'Coca-Cola Zero Sugar 24 X 330ml', price: '£12.00' },
-                      { id: 'mcvitie-s-jaffa-cakes-hot-honey-flavour-x10-04db04', name: 'McVitie\'s Jaffa Cakes Hot Honey Flavour x10', price: '£1.50' },
-                      { id: 'doritos-cool-original-tortilla-chips-sharing-bag-crisps-180g-e0e8e9', name: 'Doritos Cool Original Tortilla Chips Sharing Bag Crisps 180g', price: '£1.75' },
-                      { id: 'pepsi-max-no-sugar-cola-cans-24-x-330ml-605b03', name: 'Pepsi Max No Sugar Cola Cans 24 X 330ml', price: '£8.50' }
-                    ];
+                    const lastOrderProducts = allProducts?.filter(p => p.categories?.includes('lastOrder')) || [];
                     
-                    hardCodedProducts.forEach(product => {
+                    lastOrderProducts.forEach(product => {
                       handleAddToCart(product);
                     });
                     
