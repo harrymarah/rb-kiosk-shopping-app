@@ -59,7 +59,8 @@
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/7.%20Lucozade%20Energy%20Orange%208%20X%20380ml.jpeg",
       "categories": [
         "energyDrinks"
-      ]
+      ],
+      "subcategory": "getSportReady"
     },
     {
       "id": "fix8-kombucha-ginger-turmeric-4-x-250ml",
@@ -68,7 +69,8 @@
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/15.%20FIX8%20Kombucha%20Ginger%20Turmeric%204%20X%20250ml.jpeg",
       "categories": [
         "energyDrinks"
-      ]
+      ],
+      "subcategory": "trySomethingNew"
     },
     {
       "id": "trip-mindful-blend-wild-strawberry-4-x-250ml",
@@ -77,7 +79,8 @@
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/13.%20TRIP%20Mindful%20Blend%20Wild%20Strawberry%204%20X%20250ml.jpeg",
       "categories": [
         "energyDrinks"
-      ]
+      ],
+      "subcategory": "trySomethingNew"
     },
     {
       "id": "lucozade-sport-drink-orange-4-x-500ml",
@@ -86,7 +89,8 @@
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/8.%20Lucozade%20Sport%20Drink%20Orange%204%20X%20500ml.jpeg",
       "categories": [
         "energyDrinks"
-      ]
+      ],
+      "subcategory": "getSportReady"
     },
     {
       "id": "powerade-berry-tropical-sports-drink-500ml",
@@ -95,7 +99,8 @@
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/16.%20Powerade%20Berry%20&%20Tropical%20Sports%20Drink%20500ml.jpg",
       "categories": [
         "energyDrinks"
-      ]
+      ],
+      "subcategory": "getSportReady"
     },
     {
       "id": "remedy-kombucha-wild-berry-4-x-330ml",
@@ -104,7 +109,8 @@
       "image": "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/14.%20Remedy%20Kombucha%20Wild%20Berry%204%20X%20330ml.jpeg",
       "categories": [
         "energyDrinks"
-      ]
+      ],
+      "subcategory": "trySomethingNew"
     },
     {
       "id": "kettle-honey-dijon-mustard-potato-chips-130g-94b0ff",
@@ -636,7 +642,8 @@
       "categories": [
         "redBull",
         "energyDrinks"
-      ]
+      ],
+      "subcategory": "energiseAllDay"
     },
     {
       "id": "red-bull-energy-drink-8-x-250ml-47cad1",

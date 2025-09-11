@@ -21,12 +21,14 @@ interface EnergyDrinksFilterBarProps {
   flavours: string[];
   selectedBrand: string;
   selectedFlavour: string;
+  selectedCategory: string;
   lowSugar: boolean;
   isNew: boolean;
   onOffer: boolean;
   sortBy: string;
   onBrandChange: (brand: string) => void;
   onFlavourChange: (flavour: string) => void;
+  onCategoryChange: (category: string) => void;
   onLowSugarChange: (checked: boolean) => void;
   onNewChange: (checked: boolean) => void;
   onOfferChange: (checked: boolean) => void;
@@ -40,12 +42,14 @@ const EnergyDrinksFilterBar = ({
   flavours,
   selectedBrand,
   selectedFlavour,
+  selectedCategory,
   lowSugar,
   isNew,
   onOffer,
   sortBy,
   onBrandChange,
   onFlavourChange,
+  onCategoryChange,
   onLowSugarChange,
   onNewChange,
   onOfferChange,
@@ -58,6 +62,7 @@ const EnergyDrinksFilterBar = ({
   const hasActiveFilters = 
     selectedBrand !== "all" || 
     selectedFlavour !== "all" || 
+    selectedCategory !== "all" ||
     lowSugar || 
     isNew || 
     onOffer || 
@@ -100,7 +105,7 @@ const EnergyDrinksFilterBar = ({
         </div>
 
         <CollapsibleContent className="space-y-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 pt-4 border-t border-border mt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 pt-4 border-t border-border mt-4">
             {/* Brand Dropdown */}
             <div className="space-y-2">
               <label className="text-sm font-medium text-foreground">Brand</label>
@@ -131,6 +136,22 @@ const EnergyDrinksFilterBar = ({
                       {flavour}
                     </SelectItem>
                   ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Category Dropdown */}
+            <div className="space-y-2">
+              <label className="text-sm font-medium text-foreground">Category</label>
+              <Select value={selectedCategory} onValueChange={onCategoryChange}>
+                <SelectTrigger className="w-full bg-background">
+                  <SelectValue placeholder="All Categories" />
+                </SelectTrigger>
+                <SelectContent className="bg-background border border-border shadow-lg z-50">
+                  <SelectItem value="all">All Categories</SelectItem>
+                  <SelectItem value="energiseAllDay">Energise All Day</SelectItem>
+                  <SelectItem value="getSportReady">Get Sport Ready</SelectItem>
+                  <SelectItem value="trySomethingNew">Try Something New</SelectItem>
                 </SelectContent>
               </Select>
             </div>

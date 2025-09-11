@@ -24,6 +24,7 @@ const EnergyDrinks = () => {
   const [sortBy, setSortBy] = useState("relevance");
   const [selectedHeroImage, setSelectedHeroImage] = useState("energise");
   const [selectedFlavour, setSelectedFlavour] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [lowSugar, setLowSugar] = useState(false);
   const [isNew, setIsNew] = useState(false);
   const [onOffer, setOnOffer] = useState(false);
@@ -92,6 +93,11 @@ const EnergyDrinks = () => {
       if (brandName === "red bull" && !productName.includes('red bull') && !product.categories?.includes('redBull')) return false;
       if (brandName === "monster" && !productName.includes('monster')) return false;
       if (brandName === "lucozade" && !productName.includes('lucozade')) return false;
+    }
+    
+    // Category filter
+    if (selectedCategory !== "all") {
+      if (!product.subcategory || product.subcategory !== selectedCategory) return false;
     }
     
     // Flavour filter - improved matching
@@ -230,7 +236,10 @@ const EnergyDrinks = () => {
         <div className="flex w-full h-64">
           <div 
             className="w-1/3 relative overflow-hidden cursor-pointer group"
-            onClick={() => setSelectedHeroImage("energise")}
+            onClick={() => {
+              setSelectedHeroImage("energise");
+              setSelectedCategory("energiseAllDay");
+            }}
           >
             <img 
               src={redBullCategory} 
@@ -245,7 +254,10 @@ const EnergyDrinks = () => {
           </div>
           <div 
             className="w-1/3 relative overflow-hidden cursor-pointer group"
-            onClick={() => setSelectedHeroImage("sport")}
+            onClick={() => {
+              setSelectedHeroImage("sport");
+              setSelectedCategory("getSportReady");
+            }}
           >
             <img 
               src={lucozadeCategory} 
@@ -260,7 +272,10 @@ const EnergyDrinks = () => {
           </div>
           <div 
             className="w-1/3 relative overflow-hidden cursor-pointer group"
-            onClick={() => setSelectedHeroImage("new")}
+            onClick={() => {
+              setSelectedHeroImage("new");
+              setSelectedCategory("trySomethingNew");
+            }}
           >
             <img 
               src={tripCategory} 
@@ -284,12 +299,14 @@ const EnergyDrinks = () => {
           flavours={availableFlavours}
           selectedBrand={selectedBrand}
           selectedFlavour={selectedFlavour}
+          selectedCategory={selectedCategory}
           lowSugar={lowSugar}
           isNew={isNew}
           onOffer={onOffer}
           sortBy={sortBy}
           onBrandChange={setSelectedBrand}
           onFlavourChange={setSelectedFlavour}
+          onCategoryChange={setSelectedCategory}
           onLowSugarChange={setLowSugar}
           onNewChange={setIsNew}
           onOfferChange={setOnOffer}
@@ -297,6 +314,7 @@ const EnergyDrinks = () => {
           onClearFilters={() => {
             setSelectedBrand("all");
             setSelectedFlavour("all");
+            setSelectedCategory("all");
             setLowSugar(false);
             setIsNew(false);
             setOnOffer(false);
