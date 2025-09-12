@@ -29,6 +29,11 @@ const EnergyDrinks = () => {
   const [isNew, setIsNew] = useState(false);
   const [onOffer, setOnOffer] = useState(false);
 
+  // Scroll to top when page loads
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // SEO: set page metadata
   useEffect(() => {
     document.title = "Energy Drinks – Energise Every Moment | QuickMart";
