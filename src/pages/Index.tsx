@@ -106,8 +106,13 @@ const Index = () => {
   };
 
   const handleCategorySelect = (category: string | null) => {
-    setSelectedCategory(category);
-    // Don't change activeTab - let the category view show regardless of tab
+    if (category === 'favourites') {
+      setActiveTab('favourites');
+      setSelectedCategory(null);
+    } else {
+      setSelectedCategory(category);
+      // Don't change activeTab - let the category view show regardless of tab
+    }
   };
 
   const toggleFavoriteById = (productId: string) => {
