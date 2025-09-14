@@ -243,16 +243,13 @@ const ProductDetail = () => {
               </p>
               
               {/* Info squares for Red Bull products */}
-              {(['energy2', 'energy4', 'rb_sf473', 'rb_sf8pack'].includes(product.id) || 
-                ['energy1', 'energy3', 'fav4', 'rb_original473', 'rb_original355'].includes(product.id)) && (
+              {(['red-bull-energy-drink-12-x-250ml-e1fde4', 'red-bull-energy-drink-8-x-250ml-47cad1', 'red-bull-energy-drink-4-x-250ml-559d99'].includes(product.id)) && (
                 <div className="mt-6">
                   <h4 className="text-md font-semibold text-foreground mb-4">Product Information</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div className="bg-white rounded-lg overflow-hidden border border-gray-100">
                       <img
-                        src={['energy1', 'energy3', 'fav4', 'rb_original473', 'rb_original355'].includes(product.id) 
-                          ? "/assets/info-squares/red-bull-info-1.jpg"
-                          : "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Info%20Squares/1.jpg"}
+                        src="/assets/info-squares/red-bull-info-1.jpg"
                         alt="Red Bull Product Information 1"
                         loading="lazy"
                         className="w-full h-auto object-contain"
@@ -260,9 +257,7 @@ const ProductDetail = () => {
                     </div>
                     <div className="bg-white rounded-lg overflow-hidden border border-gray-100">
                       <img
-                        src={['energy1', 'energy3', 'fav4', 'rb_original473', 'rb_original355'].includes(product.id) 
-                          ? "/assets/info-squares/red-bull-info-1.jpg"
-                          : "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Info%20Squares/2.jpg"}
+                        src="/assets/info-squares/red-bull-info-3.jpg"
                         alt="Red Bull Product Information 2"
                         loading="lazy"
                         className="w-full h-auto object-contain"
@@ -270,9 +265,7 @@ const ProductDetail = () => {
                     </div>
                     <div className="bg-white rounded-lg overflow-hidden border border-gray-100">
                       <img
-                        src={['energy1', 'energy3', 'fav4', 'rb_original473', 'rb_original355'].includes(product.id) 
-                          ? "/assets/info-squares/red-bull-info-3.jpg"
-                          : "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Info%20Squares/3.jpg"}
+                        src="/assets/info-squares/red-bull-info-4.jpg"
                         alt="Red Bull Product Information 3"
                         loading="lazy"
                         className="w-full h-auto object-contain"
@@ -280,9 +273,7 @@ const ProductDetail = () => {
                     </div>
                     <div className="bg-white rounded-lg overflow-hidden border border-gray-100">
                       <img
-                        src={['energy1', 'energy3', 'fav4', 'rb_original473', 'rb_original355'].includes(product.id) 
-                          ? "/assets/info-squares/red-bull-info-4.jpg"
-                          : ""}
+                        src="/assets/info-squares/red-bull-info-5.jpg"
                         alt="Red Bull Product Information 4"
                         loading="lazy"
                         className="w-full h-auto object-contain"
