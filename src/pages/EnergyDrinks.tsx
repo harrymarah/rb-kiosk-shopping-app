@@ -365,27 +365,27 @@ const EnergyDrinks = () => {
             </Button>
           </div>
 
-          {/* Monster White 4pk */}
+          {/* Monster Energy Drink Ultra 4 X 500ml */}
           <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-lg p-4 border border-green-200 dark:border-green-700">
             <div className="relative mb-3 bg-white rounded-lg p-3 shadow-sm">
               <img 
-                src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/2%20-%20Monster%20Energy%20Drink%204x500ml.jpg"
-                alt="Monster White 4pk"
+                src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/1.%20Monster%20Energy%20Drink%20Ultra%204%20X%20500ml.jpeg"
+                alt="Monster Energy Drink Ultra 4 X 500ml"
                 className="w-full h-32 object-contain"
               />
               <Badge className="absolute top-1 right-1 bg-yellow-500 text-black">Sponsored</Badge>
             </div>
-            <h3 className="font-semibold text-sm mb-2">Monster White 4pk</h3>
+            <h3 className="font-semibold text-sm mb-2">Monster Energy Drink Ultra 4 X 500ml</h3>
             <p className="text-lg font-bold text-primary mb-3">£6.99</p>
             <Button 
               size="sm" 
               className="w-full bg-green-600 hover:bg-green-700"
               onClick={() => {
                 const product = {
-                  id: "monster-white-4pk-sponsored",
-                  name: "Monster White 4pk",
+                  id: "monster-energy-drink-ultra-4-x-500ml-sponsored",
+                  name: "Monster Energy Drink Ultra 4 X 500ml",
                   price: "£6.99",
-                  image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/2%20-%20Monster%20Energy%20Drink%204x500ml.jpg"
+                  image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/1.%20Monster%20Energy%20Drink%20Ultra%204%20X%20500ml.jpeg"
                 };
                 addItem(product);
               }}
