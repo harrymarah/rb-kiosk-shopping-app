@@ -8,6 +8,7 @@ import ProductCard from "@/components/ProductCard";
 import { useProducts } from "@/components/ProductSection";
 import { useBasket } from "@/contexts/BasketContext";
 import { useToast } from "@/components/ui/use-toast";
+import { useFavorites } from "@/contexts/FavoritesContext";
 import { OfferDrawer } from "@/components/OfferDrawer";
 import { getProxiedImageUrl } from "@/lib/image";
 import {
@@ -42,11 +43,11 @@ const ProductDetail = () => {
   const navigate = useNavigate();
   const { allProducts, isLoading } = useProducts();
   const { addItem } = useBasket();
+  const { favorites, toggleFavorite, isFavorite: isInFavorites } = useFavorites();
   const { toast } = useToast();
   const [product, setProduct] = useState<Product | null>(null);
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
   const [quantity, setQuantity] = useState(1);
-  const [isFavorite, setIsFavorite] = useState(false);
   const [showOfferDrawer, setShowOfferDrawer] = useState(false);
 
   useEffect(() => {
@@ -331,10 +332,20 @@ const ProductDetail = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  onClick={() => setIsFavorite(!isFavorite)}
+                  onClick={() => {
+                    if (product) {
+                      toggleFavorite({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.image,
+                        category: product.categories?.[0] || 'general'
+                      });
+                    }
+                  }}
                   className="px-4"
                 >
-                  <Heart className={`h-4 w-4 ${isFavorite ? 'fill-destructive text-destructive' : ''}`} />
+                  <Heart className={`h-4 w-4 ${product && isInFavorites(product.id) ? 'fill-destructive text-destructive' : ''}`} />
                 </Button>
               </div>
             </div>
@@ -361,8 +372,14 @@ const ProductDetail = () => {
                         price={relatedProduct.price}
                         originalPrice={relatedProduct.originalPrice}
                         offer={relatedProduct.offer}
-                        isFavorite={false}
-                        onToggleFavorite={() => {}}
+                        isFavorite={isInFavorites(relatedProduct.id)}
+                        onToggleFavorite={() => toggleFavorite({
+                          id: relatedProduct.id,
+                          name: relatedProduct.name,
+                          price: relatedProduct.price,
+                          image: relatedProduct.image,
+                          category: relatedProduct.categories?.[0] || 'general'
+                        })}
                         onAddToCart={() => handleAddRelatedToCart(relatedProduct)}
                         productId={relatedProduct.id}
                       />
