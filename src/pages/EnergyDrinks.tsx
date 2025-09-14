@@ -123,15 +123,15 @@ const EnergyDrinks = () => {
       if (!productName.includes('sugar free') && !productName.includes('zero') && !productName.includes('diet')) return false;
     }
     
-    // New filter
+    // New filter - check if product is in newProducts category
     if (isNew) {
-      const productName = product.name?.toLowerCase() || '';
-      const description = product.description?.toLowerCase() || '';
-      if (!productName.includes('new') && !description.includes('new')) return false;
+      if (!product.categories?.includes('newProducts')) return false;
     }
     
-    // On offer filter
-    if (onOffer && !product.offer) return false;
+    // On offer filter - check for discount offers but exclude "New Arrival" offers
+    if (onOffer) {
+      if (!product.offer || product.offer === 'New Arrival') return false;
+    }
     
     return true;
   });
