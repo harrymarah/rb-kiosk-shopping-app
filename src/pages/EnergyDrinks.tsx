@@ -146,7 +146,40 @@ const EnergyDrinks = () => {
       case "name":
         return a.name.localeCompare(b.name);
       default:
-        return 0;
+        // Custom order for energy drinks
+        const customOrder = [
+          "red-bull-energy-drink-sugar-free-12-x-250ml-48d657",
+          "monster-energy-drink-ultra-4-x-500ml",
+          "red-bull-energy-drink-sugar-free-winter-edition-fuji-apple-ginger-4-x-250ml-694fb5",
+          "red-bull-energy-drink-12-x-250ml-e1fde4",
+          "red-bull-sugar-free-variety-pack-energy-drink-8-x-250ml",
+          "lucozade-energy-orange-8-x-380ml",
+          "fix8-kombucha-ginger-turmeric-4-x-250ml",
+          "monster-energy-zero-sugar-4-x-500ml",
+          "trip-mindful-blend-wild-strawberry-4-x-250ml",
+          "lucozade-sport-drink-orange-4-x-500ml",
+          "red-bull-energy-drink-sugar-free-winter-edition-vanilla-iced-berry-energy-drink-4-x-250ml-d22875",
+          "red-bull-energy-drink-sugar-free-8-x-250ml-04d296",
+          "powerade-berry-tropical-sports-drink-500ml",
+          "monster-energy-ultra-strawberry-dreams-4-x-500ml",
+          "remedy-kombucha-wild-berry-4-x-330ml",
+          "monster-energy-drink-mango-loco-4-x-500ml"
+        ];
+        
+        const aIndex = customOrder.indexOf(a.id);
+        const bIndex = customOrder.indexOf(b.id);
+        
+        // If both products are in the custom order, sort by their position
+        if (aIndex !== -1 && bIndex !== -1) {
+          return aIndex - bIndex;
+        }
+        
+        // If only one is in the custom order, prioritize it
+        if (aIndex !== -1) return -1;
+        if (bIndex !== -1) return 1;
+        
+        // If neither is in the custom order, sort alphabetically
+        return a.name.localeCompare(b.name);
     }
   });
 
