@@ -186,7 +186,7 @@ const EnergyDrinks = () => {
       </header>
 
       {/* Interactive Hero Image Banner */}
-      <section className="relative h-[200px] overflow-hidden">
+      <section className="relative h-[300px] overflow-hidden">
         <div className="absolute inset-0 transition-all duration-500 ease-in-out">
           {selectedHeroImage === "energise" && (
             <div 
@@ -238,7 +238,7 @@ const EnergyDrinks = () => {
         </div>
         
         {/* Image Tiles */}
-        <div className="flex w-full h-64">
+        <div className="flex w-full h-80">
           <div 
             className="w-1/3 relative overflow-hidden cursor-pointer group"
             onClick={() => {
@@ -252,7 +252,7 @@ const EnergyDrinks = () => {
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center">
-              <h3 className="text-white text-xl md:text-2xl font-bold text-center px-4 pb-6">
+              <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold text-center px-4 pb-6">
                 ENERGISE ALL DAY
               </h3>
             </div>
@@ -270,7 +270,7 @@ const EnergyDrinks = () => {
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center">
-              <h3 className="text-white text-xl md:text-2xl font-bold text-center px-4 pb-6">
+              <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold text-center px-4 pb-6">
                 GET SPORT READY
               </h3>
             </div>
@@ -288,7 +288,7 @@ const EnergyDrinks = () => {
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center">
-              <h3 className="text-white text-xl md:text-2xl font-bold text-center px-4 pb-6">
+              <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold text-center px-4 pb-6">
                 TRY SOMETHING NEW
               </h3>
             </div>
