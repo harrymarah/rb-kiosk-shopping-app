@@ -41,6 +41,16 @@ const SearchBar = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchTerm.trim()) {
+      const trimmedSearch = searchTerm.trim().toLowerCase();
+      
+      // Check for specific energy drink related terms
+      if (trimmedSearch === 'energy drink' || 
+          trimmedSearch === 'energy drinks' || 
+          trimmedSearch === 'sports and energy') {
+        window.location.href = 'https://redbullcom.harrymarah.uk/energy-drinks';
+        return;
+      }
+      
       navigate(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
       setShowSuggestions(false);
       setSearchTerm("");
