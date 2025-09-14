@@ -369,7 +369,7 @@ const EnergyDrinks = () => {
           <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-lg p-4 border border-green-200 dark:border-green-700">
             <div className="relative mb-3 bg-white rounded-lg p-3 shadow-sm">
               <img 
-                src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/1.%20Monster%20Energy%20Drink%20Ultra%204%20X%20500ml.jpeg"
+                src="https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/4.%20Monster%20Energy%20Drink%20Ultra%204%20X%20500ml.jpeg"
                 alt="Monster Energy Drink Ultra 4 X 500ml"
                 className="w-full h-32 object-contain"
               />
@@ -385,7 +385,7 @@ const EnergyDrinks = () => {
                   id: "monster-energy-drink-ultra-4-x-500ml-sponsored",
                   name: "Monster Energy Drink Ultra 4 X 500ml",
                   price: "£6.99",
-                  image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/1.%20Monster%20Energy%20Drink%20Ultra%204%20X%20500ml.jpeg"
+                  image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/4.%20Monster%20Energy%20Drink%20Ultra%204%20X%20500ml.jpeg"
                 };
                 addItem(product);
               }}
