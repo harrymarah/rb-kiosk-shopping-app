@@ -166,10 +166,34 @@ const ProductDetail = () => {
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink 
-                onClick={() => navigate(`/?category=${product.categories?.[0]}&tab=explore`)}
+                onClick={() => {
+                  // Handle special routing for energy drinks
+                  if (product.categories?.includes('energyDrinks')) {
+                    navigate('/energy-drinks');
+                  } else {
+                    navigate(`/?category=${product.categories?.[0]}&tab=explore`);
+                  }
+                }}
                 className="cursor-pointer hover:text-foreground"
               >
-                BBQ
+                {(() => {
+                  // Map category IDs to display names
+                  const categoryDisplayNames: Record<string, string> = {
+                    energyDrinks: "Energy Drinks",
+                    bbq: "BBQ",
+                    newProducts: "New Products",
+                    favourites: "Favourites",
+                    redBull: "Red Bull Products",
+                    softDrinks: "Soft Drinks",
+                    summerOfSport: "Summer of Sport",
+                    bigNightIn: "Big Night In",
+                    usuals: "Usuals",
+                    lastOrder: "Last Order"
+                  };
+                  
+                  const primaryCategory = product.categories?.[0] || 'general';
+                  return categoryDisplayNames[primaryCategory] || primaryCategory.charAt(0).toUpperCase() + primaryCategory.slice(1);
+                })()}
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
