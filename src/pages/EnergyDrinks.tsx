@@ -128,9 +128,9 @@ const EnergyDrinks = () => {
       if (!product.categories?.includes('newProducts')) return false;
     }
     
-    // On offer filter - check for discount offers but exclude "New Arrival" offers
+    // On offer filter - check for any offers
     if (onOffer) {
-      if (!product.offer || product.offer === 'New Arrival') return false;
+      if (!product.offer) return false;
     }
     
     return true;
