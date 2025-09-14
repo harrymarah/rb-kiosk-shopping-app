@@ -34,7 +34,7 @@ const categories: CategoryItem[] = [
   { 
     id: 'softDrinks', 
     name: 'Soft Drinks', 
-    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/assets/soft_drinks_cat.jpg'
+    image: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Soft%20Drinks/6.%20Lucozade%20Sport%20Drink%20Orange%204%20X%20500ml.avif'
   },
   { 
     id: 'energyDrinks', 
