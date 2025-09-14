@@ -2,6 +2,7 @@ import React from "react";
 import { Heart, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Sheet,
   SheetContent,
@@ -49,46 +50,48 @@ const FavoritesDrawer: React.FC<FavoritesDrawerProps> = ({ children }) => {
           </SheetDescription>
         </SheetHeader>
         
-        <div className="mt-6 space-y-4">
-          {favorites.length === 0 ? (
-            <div className="text-center py-8 text-muted-foreground">
-              <Heart className="h-12 w-12 mx-auto mb-4 opacity-50" />
-              <p>No favorites yet</p>
-              <p className="text-sm">Tap the heart icon on products to add them here</p>
-            </div>
-          ) : (
-            favorites.map((item) => (
-              <div key={item.id} className="flex items-center gap-3 p-3 border rounded-lg">
-                <img 
-                  src={item.image} 
-                  alt={item.name}
-                  className="w-12 h-12 object-cover rounded"
-                />
-                <div className="flex-1 min-w-0">
-                  <h4 className="font-medium text-sm truncate">{item.name}</h4>
-                  <p className="text-primary font-semibold">{item.price}</p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Button
-                    size="sm"
-                    onClick={() => handleAddToBasket(item)}
-                    className="h-8 w-8 p-0"
-                  >
-                    <Plus className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => removeFromFavorites(item.id)}
-                    className="h-8 w-8 p-0 text-muted-foreground hover:text-destructive"
-                  >
-                    <Heart className="h-4 w-4 fill-current" />
-                  </Button>
-                </div>
+        <ScrollArea className="h-[calc(100vh-200px)] mt-6">
+          <div className="space-y-4 pr-4">
+            {favorites.length === 0 ? (
+              <div className="text-center py-8 text-muted-foreground">
+                <Heart className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                <p>No favorites yet</p>
+                <p className="text-sm">Tap the heart icon on products to add them here</p>
               </div>
-            ))
-          )}
-        </div>
+            ) : (
+              favorites.map((item) => (
+                <div key={item.id} className="flex items-center gap-3 p-3 border rounded-lg">
+                  <img 
+                    src={item.image} 
+                    alt={item.name}
+                    className="w-12 h-12 object-cover rounded"
+                  />
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-medium text-sm truncate">{item.name}</h4>
+                    <p className="text-primary font-semibold">{item.price}</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Button
+                      size="sm"
+                      onClick={() => handleAddToBasket(item)}
+                      className="h-8 w-8 p-0"
+                    >
+                      <Plus className="h-4 w-4" />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => removeFromFavorites(item.id)}
+                      className="h-8 w-8 p-0 text-muted-foreground hover:text-destructive"
+                    >
+                      <Heart className="h-4 w-4 fill-current" />
+                    </Button>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        </ScrollArea>
       </SheetContent>
     </Sheet>
   );
