@@ -48,7 +48,7 @@ export const CouponProvider: React.FC<CouponProviderProps> = ({ children }) => {
       discountAmount: 1.00,
       description: 'when you buy',
       productName: 'Red Bull Energy Drink Sugarfree Winter Edition Fuji-Apple & Ginger 4 x 250ml',
-      productImage: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Red%20Bull%20Products/ALL/12%20-%20Red%20Bull%20Peach%20Edition%20Sugar%20Free%20Energy%20Drink%20250ml%20x%204.jpg',
+      productImage: 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/6.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%20Fuji%20Apple%20&%20Ginger,%20Winter%20Edition%204%20X%20250ml.jpeg',
       productPrice: '£4.99',
       validUntil: '31 Dec 2025 (Limited Winter Edition)',
       isActive: true
