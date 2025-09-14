@@ -18,8 +18,9 @@ interface CouponContextType {
   availableCoupons: Coupon[];
   applyCoupon: (couponId: string) => void;
   removeCoupon: (couponId: string) => void;
-  getTotalDiscount: () => number;
+  getTotalDiscount: (basketItems?: any[]) => number;
   getAppliedCoupons: () => Coupon[];
+  validateCouponEligibility: (coupon: Coupon, basketItems?: any[]) => boolean;
 }
 
 const CouponContext = createContext<CouponContextType | undefined>(undefined);
@@ -76,10 +77,33 @@ export const CouponProvider: React.FC<CouponProviderProps> = ({ children }) => {
     setAppliedCoupons(appliedCoupons.filter(id => id !== couponId));
   };
 
-  const getTotalDiscount = () => {
+  const getTotalDiscount = (basketItems: any[] = []) => {
     return availableCoupons
       .filter(coupon => appliedCoupons.includes(coupon.id) && coupon.type === 'discount')
+      .filter(coupon => validateCouponEligibility(coupon, basketItems))
       .reduce((total, coupon) => total + coupon.discountAmount, 0);
+  };
+
+  const validateCouponEligibility = (coupon: Coupon, basketItems: any[] = []): boolean => {
+    // For coupons that require specific products, check if they're in the basket
+    if (coupon.id === 'diet-coke-discount') {
+      // Check if basket contains Diet Coke 8 x 330ml
+      return basketItems.some(item => 
+        item.name.toLowerCase().includes('diet coke') && 
+        (item.name.includes('8') || item.name.includes('330ml'))
+      );
+    }
+    
+    if (coupon.id === 'rb-winter-discount') {
+      // Check if basket contains Red Bull Winter Edition
+      return basketItems.some(item => 
+        item.name.toLowerCase().includes('red bull') && 
+        item.name.toLowerCase().includes('winter')
+      );
+    }
+    
+    // Default: allow coupon if no specific product requirements
+    return true;
   };
 
   const getAppliedCoupons = () => {
@@ -93,7 +117,8 @@ export const CouponProvider: React.FC<CouponProviderProps> = ({ children }) => {
       applyCoupon,
       removeCoupon,
       getTotalDiscount,
-      getAppliedCoupons
+      getAppliedCoupons,
+      validateCouponEligibility
     }}>
       {children}
     </CouponContext.Provider>

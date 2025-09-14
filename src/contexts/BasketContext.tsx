@@ -85,7 +85,7 @@ export const BasketProvider: React.FC<BasketProviderProps> = ({ children }) => {
   };
 
   const getCouponDiscount = () => {
-    return coupons.getTotalDiscount();
+    return coupons.getTotalDiscount(items);
   };
 
   const getDiscountedTotal = () => {

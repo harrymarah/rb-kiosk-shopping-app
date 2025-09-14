@@ -112,7 +112,7 @@ const Checkout = () => {
 
   const subtotal = getTotalPrice();
   const deliveryFee = selectedDelivery === 'express' ? 2.99 : selectedDelivery === 'collect' ? 0 : (subtotal >= 35 ? 0 : 3.99);
-  const couponDiscount = getTotalDiscount();
+  const couponDiscount = getTotalDiscount(items);
   const total = subtotal + deliveryFee - couponDiscount;
 
 
