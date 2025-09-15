@@ -1,9 +1,10 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const INACTIVITY_TIMEOUT = 15 * 60 * 1000; // 15 minutes in milliseconds
 
 export const useInactivityTimer = () => {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [showDialog, setShowDialog] = useState(false);
 
   const resetTimer = () => {
     if (timeoutRef.current) {
@@ -11,8 +12,17 @@ export const useInactivityTimer = () => {
     }
     
     timeoutRef.current = setTimeout(() => {
-      window.location.href = 'https://redbullswitch.harrymarah.uk';
+      setShowDialog(true);
     }, INACTIVITY_TIMEOUT);
+  };
+
+  const handleStayHere = () => {
+    setShowDialog(false);
+    resetTimer();
+  };
+
+  const handleGoToSelector = () => {
+    window.location.href = 'https://redbullswitch.harrymarah.uk';
   };
 
   useEffect(() => {
@@ -26,9 +36,11 @@ export const useInactivityTimer = () => {
       'click'
     ];
 
-    // Reset timer on any activity
+    // Reset timer on any activity (but not when dialog is shown)
     const handleActivity = () => {
-      resetTimer();
+      if (!showDialog) {
+        resetTimer();
+      }
     };
 
     // Add event listeners
@@ -48,5 +60,11 @@ export const useInactivityTimer = () => {
         document.removeEventListener(event, handleActivity, true);
       });
     };
-  }, []);
+  }, [showDialog]);
+
+  return {
+    showDialog,
+    handleStayHere,
+    handleGoToSelector
+  };
 };

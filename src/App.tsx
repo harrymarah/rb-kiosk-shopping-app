@@ -1,6 +1,16 @@
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { BasketProvider } from "@/contexts/BasketContext";
@@ -23,7 +33,7 @@ import EnergyDrinks from "./pages/EnergyDrinks";
 const queryClient = new QueryClient();
 
 const App = () => {
-  useInactivityTimer();
+  const { showDialog, handleStayHere, handleGoToSelector } = useInactivityTimer();
   
   return (
   <QueryClientProvider client={queryClient}>
@@ -51,6 +61,23 @@ const App = () => {
                     </Routes>
                   </div>
                   <StickyCartBar />
+                  
+                  <AlertDialog open={showDialog}>
+                    <AlertDialogContent>
+                      <AlertDialogHeader>
+                        <AlertDialogTitle>Session Timeout</AlertDialogTitle>
+                        <AlertDialogDescription>
+                          You've been inactive for 15 minutes. Would you like to return to the app selector or continue using this app?
+                        </AlertDialogDescription>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogCancel onClick={handleStayHere}>Stay Here</AlertDialogCancel>
+                        <AlertDialogAction onClick={handleGoToSelector}>
+                          Go to App Selector
+                        </AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
                 </BrowserRouter>
               </TooltipProvider>
             </BasketProvider>
