@@ -1,6 +1,17 @@
-import { Heart, User, ShoppingCart, Home, Calendar, Ticket } from "lucide-react";
+import { Heart, User, ShoppingCart, Home, Calendar, Ticket, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import SearchBar from "./SearchBar";
 import { useProducts } from "./ProductSection";
 import { useBasket } from "@/contexts/BasketContext";
@@ -52,6 +63,32 @@ const Header = () => {
           </div>
           
           <div className="flex items-center gap-2">
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="h-9 px-3 hover:bg-gray-100 border border-gray-200"
+                >
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  App Selector
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Return to App Selector?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    Are you sure you want to go back to the Red Bull app selector? This will leave the current app.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction onClick={() => window.location.href = 'https://redbullswitch.harrymarah.uk'}>
+                    Yes, go back
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
             <Button 
               variant="ghost" 
               size="icon" 
