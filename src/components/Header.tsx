@@ -67,11 +67,10 @@ const Header = () => {
               <AlertDialogTrigger asChild>
                 <Button 
                   variant="ghost" 
-                  size="sm" 
-                  className="h-9 px-3 hover:bg-gray-100 border border-gray-200"
+                  size="icon" 
+                  className="h-8 w-8 hover:bg-gray-50 text-gray-400 hover:text-gray-600"
                 >
-                  <ArrowLeft className="h-4 w-4 mr-2" />
-                  App Selector
+                  <ArrowLeft className="h-3 w-3" />
                 </Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
