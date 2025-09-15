@@ -9,6 +9,7 @@ import { CouponProvider } from "./contexts/CouponContext";
 import { DeliveryProvider } from "@/contexts/DeliveryContext";
 import { OrderHistoryProvider } from "@/contexts/OrderHistoryContext";
 import { StickyCartBar } from "@/components/StickyCartBar";
+import { useInactivityTimer } from "@/hooks/useInactivityTimer";
 import Index from "./pages/Index";
 import Basket from "./pages/Basket";
 import ProductDetail from "./pages/ProductDetail";
@@ -21,7 +22,10 @@ import EnergyDrinks from "./pages/EnergyDrinks";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => {
+  useInactivityTimer();
+  
+  return (
   <QueryClientProvider client={queryClient}>
     <OrderHistoryProvider>
       <DeliveryProvider>
@@ -55,6 +59,7 @@ const App = () => (
       </DeliveryProvider>
     </OrderHistoryProvider>
   </QueryClientProvider>
-);
+  );
+};
 
 export default App;
