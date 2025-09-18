@@ -339,8 +339,8 @@ const Index = () => {
         </div>
       )}
 
-      {/* Energy Drinks Section - Only show when not on favourites tab */}
-      {activeTab !== "favourites" && (
+      {/* Energy Drinks Section - Only show on foryou tab and when no category is selected */}
+      {activeTab === "foryou" && !selectedCategory && (
         <div className="px-6 py-6">
           <div className="container mx-auto max-w-4xl">
             <div className="bg-card p-6 rounded-lg border mb-8">
