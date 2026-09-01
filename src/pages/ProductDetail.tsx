@@ -180,15 +180,15 @@ const ProductDetail = () => {
                   // Map category IDs to display names
                   const categoryDisplayNames: Record<string, string> = {
                     energyDrinks: "Energy Drinks",
-                    bbq: "BBQ",
                     newProducts: "New Products",
                     favourites: "Favourites",
                     redBull: "Red Bull Products",
                     softDrinks: "Soft Drinks",
-                    summerOfSport: "Summer of Sport",
-                    bigNightIn: "Big Night In",
                     usuals: "Usuals",
-                    lastOrder: "Last Order"
+                    lastOrder: "Last Order",
+                    moveSpring: "Get moving this Spring",
+                    summerOutdoors: "Be outside this Summer",
+                    winterNight: "Settle in for the Winter"
                   };
                   
                   const primaryCategory = product.categories?.[0] || 'general';

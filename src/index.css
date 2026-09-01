@@ -21,6 +21,12 @@ All colors MUST be HSL.
     --primary: 220 91% 44%;
     --primary-foreground: 0 0% 100%;
     
+    /* Storefront hero - deep, dark blue */
+    --storefront: 223 64% 11%;
+    --storefront-foreground: 0 0% 100%;
+    --storefront-muted: 218 30% 74%;
+    --storefront-accent: 205 100% 60%;
+
     --brand-yellow: 45 93% 47%;
     --brand-yellow-foreground: 0 0% 9%;
     

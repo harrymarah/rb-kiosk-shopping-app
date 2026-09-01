@@ -20,6 +20,7 @@ export default {
 		extend: {
 			fontFamily: {
 				'sans': ['Lato', 'system-ui', 'sans-serif'],
+				'display': ['Archivo', 'Lato', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -30,6 +31,12 @@ export default {
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
+				},
+				storefront: {
+					DEFAULT: 'hsl(var(--storefront))',
+					foreground: 'hsl(var(--storefront-foreground))',
+					muted: 'hsl(var(--storefront-muted))',
+					accent: 'hsl(var(--storefront-accent))'
 				},
 				'brand-yellow': {
 					DEFAULT: 'hsl(var(--brand-yellow))',

@@ -3,52 +3,62 @@
     {
       "id": "energyDrinks",
       "name": "Energy Drinks",
-      "description": "Boost your energy levels"
+      "description": "Boost your energy levels",
+      "imagePath": "Energy Drinks/1. Red Bull Energy Drink 18 x 250ml.png"
     },
     {
       "id": "favourites",
       "name": "Favourites",
-      "description": "Our most popular products"
+      "description": "Our most popular products",
+      "imagePath": "Favourites/1. Dr. Oetker Ristorante Pizza - Pepperoni-Salame 320g.jpeg"
     },
     {
       "id": "newProducts",
       "name": "New Products",
-      "description": "Latest additions to our store"
+      "description": "Latest additions to our store",
+      "imagePath": "New Products/1. Red Bull The Summer Edition Sugar Free Citrus Zest Edition Energy Drink 4 x 250ml.avif"
     },
     {
       "id": "redBull",
       "name": "Red Bull Products",
-      "description": "Full range of Red Bull energy drinks"
+      "description": "Full range of Red Bull energy drinks",
+      "imagePath": "Red Bull/1. Red Bull Energy Drink 12 X 250ml.jpeg"
     },
     {
       "id": "softDrinks",
       "name": "Soft Drinks",
-      "description": "Refreshing non-alcoholic beverages"
+      "description": "Refreshing non-alcoholic beverages",
+      "imagePath": "Soft Drinks/1. Goodrays 4 x 330ml CBD Cans.jpg"
     },
     {
       "id": "usuals",
       "name": "Usuals",
-      "description": "Your everyday essentials"
+      "description": "Your everyday essentials",
+      "imagePath": "Usuals/1. Heinz Top Down Squeezy Tomato Ketchup Sauce 910g.avif"
     },
     {
       "id": "lastOrder",
       "name": "Last Order",
-      "description": "Items from your previous order"
+      "description": "Items from your previous order",
+      "imagePath": "Last Order/1. McCain Home Chips Extra Chunky 1kg.jpeg"
     },
     {
       "id": "moveSpring",
       "name": "Get moving this Spring",
-      "description": "Get your year moving"
+      "description": "Get your year moving",
+      "imagePath": "Get moving this Spring/1. Lucozade Sport Drink Orange 4x500ml.jpg"
     },
     {
       "id": "summerOutdoors",
       "name": "Be outside this Summer",
-      "description": "Get outside and enjoy the sun"
+      "description": "Get outside and enjoy the sun",
+      "imagePath": "Be outside this Summer/1. Ben & Jerry's 4 x 68ml Cookie Dough Ice Cream Sandwich.jpg"
     },
     {
       "id": "winterNight",
       "name": "Settle in for the Winter",
-      "description": "Essentials to make your evening great"
+      "description": "Essentials to make your evening great",
+      "imagePath": "Settle in for the Winter/1. English Cheesecake Company Vanilla & Biscoff Cheesecake 484g.avif"
     }
   ],
   "products": [

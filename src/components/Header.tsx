@@ -39,12 +39,9 @@ const Header = () => {
     console.log('Selected product:', product);
     // You can add navigation logic here
   };
-  return <header className="bg-white shadow-md border-b border-border">
-      {/* Top Status Bar */}
-      
-
+  return <header className="bg-storefront text-storefront-foreground shadow-md">
       {/* Main Header */}
-      <div className="px-4 py-6 bg-white">
+      <div className="px-4 py-6">
 
         {/* Search Bar - Made more prominent */}
         <div className="mb-8">
@@ -54,10 +51,10 @@ const Header = () => {
         {/* Brand and Navigation */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
+            <h1 className="font-display text-4xl font-extrabold tracking-tight text-storefront-foreground">
               QuickMart
             </h1>
-            <p className="text-sm text-gray-600 font-medium">
+            <p className="text-sm text-storefront-muted font-medium mt-1">
               Earlham Street • Open until 11pm
             </p>
           </div>
@@ -68,7 +65,7 @@ const Header = () => {
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className="h-8 w-8 hover:bg-gray-50 text-gray-400 hover:text-gray-600"
+                  className="h-8 w-8 text-storefront-muted hover:bg-white/10 hover:text-storefront-foreground"
                 >
                   <ArrowLeft className="h-3 w-3" />
                 </Button>
@@ -91,28 +88,28 @@ const Header = () => {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="h-11 w-11 rounded-full hover:bg-gray-100 border border-gray-200"
+              className="h-11 w-11 rounded-full border border-white/20 bg-white/10 hover:bg-white/20"
               onClick={() => navigate('/')}
             >
-              <Home className="h-5 w-5 text-gray-700" />
+              <Home className="h-5 w-5 text-storefront-foreground" />
             </Button>
             <CouponsDrawer>
-              <Button variant="ghost" size="icon" className="relative h-11 w-11 rounded-full hover:bg-gray-100 border border-gray-200">
-                <Ticket className="h-5 w-5 text-gray-700" />
+              <Button variant="ghost" size="icon" className="relative h-11 w-11 rounded-full border border-white/20 bg-white/10 hover:bg-white/20">
+                <Ticket className="h-5 w-5 text-storefront-foreground" />
               </Button>
             </CouponsDrawer>
             <FavoritesDrawer>
-              <Button variant="ghost" size="icon" className="relative h-11 w-11 rounded-full hover:bg-gray-100 border border-gray-200">
-                <Heart className="h-5 w-5 text-gray-700" />
-                {favorites.length > 0 && <Badge className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center text-xs bg-red-500 text-white border-2 border-white">
+              <Button variant="ghost" size="icon" className="relative h-11 w-11 rounded-full border border-white/20 bg-white/10 hover:bg-white/20">
+                <Heart className="h-5 w-5 text-storefront-foreground" />
+                {favorites.length > 0 && <Badge className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center text-xs bg-red-500 text-white border-2 border-storefront">
                     {favorites.length}
                   </Badge>}
               </Button>
             </FavoritesDrawer>
             <BasketDrawer>
-              <Button variant="ghost" size="icon" className="relative h-11 w-11 rounded-full hover:bg-gray-100 border border-gray-200">
-                <ShoppingCart className="h-5 w-5 text-gray-700" />
-                {getTotalItems() > 0 && <Badge className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center text-xs bg-red-500 text-white border-2 border-white">
+              <Button variant="ghost" size="icon" className="relative h-11 w-11 rounded-full border border-white/20 bg-white/10 hover:bg-white/20">
+                <ShoppingCart className="h-5 w-5 text-storefront-foreground" />
+                {getTotalItems() > 0 && <Badge className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center text-xs bg-red-500 text-white border-2 border-storefront">
                     {getTotalItems()}
                   </Badge>}
               </Button>

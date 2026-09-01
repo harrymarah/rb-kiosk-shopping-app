@@ -8,6 +8,7 @@ import ProductSection, { useProducts } from "@/components/ProductSection";
 import ProductCarousel from "@/components/ProductCarousel";
 import ProductCard from "@/components/ProductCard";
 import BannerAd from "@/components/BannerAd";
+import OffersSection from "@/components/OffersSection";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useBasket } from "@/contexts/BasketContext";
 import { useToast } from "@/components/ui/use-toast";
@@ -57,13 +58,15 @@ const Index = () => {
   // Category display names mapping
   const categoryDisplayNames: Record<string, string> = {
     newProducts: "New Products",
-    bbq: "BBQ Essentials",
-    bigNightIn: "Big Night In",
     energyDrinks: "Energy Drinks",
     softDrinks: "Soft Drinks",
     favourites: "Favourites",
     redBull: "Red Bull Products",
-    summerOfSport: "Summer of Sport",
+    usuals: "Usuals",
+    lastOrder: "Last Order",
+    moveSpring: "Get moving this Spring",
+    summerOutdoors: "Be outside this Summer",
+    winterNight: "Settle in for the Winter",
   };
   // Title case utility function
   const toTitleCase = (str: string) => {
@@ -85,9 +88,11 @@ const Index = () => {
         'energy drinks': 'energyDrinks',
         'soft drinks': 'softDrinks',
         'favourites': 'favourites',
-        'bbq essentials': 'bbq',
-        'big night in': 'bigNightIn',
-        'summer of sport': 'summerOfSport',
+        'usuals': 'usuals',
+        'last order': 'lastOrder',
+        'get moving this spring': 'moveSpring',
+        'be outside this summer': 'summerOutdoors',
+        'settle in for the winter': 'winterNight',
       };
       const categoryId = categoryMappings[categoryParam.toLowerCase()] || categoryParam;
       setSelectedCategory(categoryId);
@@ -165,6 +170,9 @@ const Index = () => {
       </div>
       
       <CategorySection onSelectCategory={handleCategorySelect} />
+
+      {!selectedCategory && <OffersSection />}
+
       <TabNavigation activeTab={activeTab} onTabChange={handleTabChange} />
       
       {activeTab === "foryou" && !selectedCategory && allProducts && (
@@ -173,7 +181,7 @@ const Index = () => {
             <div className="mb-8">
               <BannerAd />
             </div>
-            <h2 className="text-2xl font-bold text-foreground mb-6">Products You'll Love</h2>
+            <h2 className="font-display text-2xl font-extrabold tracking-tight text-foreground mb-6">Products You'll Love</h2>
             <div className="grid grid-cols-4 gap-6">
               {forYouProducts.map((product, index) => (
                 <ProductCard
@@ -198,7 +206,7 @@ const Index = () => {
       {activeTab === "newin" && !selectedCategory && allProducts && (
         <div className="px-6 py-6">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold text-foreground mb-6">New Products</h2>
+            <h2 className="font-display text-2xl font-extrabold tracking-tight text-foreground mb-6">New Products</h2>
             <div className="grid grid-cols-4 gap-6">
               {allProducts.filter(p => p.categories?.includes('newProducts')).map((product) => (
                 <ProductCard
@@ -230,7 +238,7 @@ const Index = () => {
                 ← Back to explore
               </button>
             </div>
-            <h2 className="text-2xl font-bold text-foreground mb-6">{categoryDisplayNames[selectedCategory] || toTitleCase(selectedCategory)}</h2>
+            <h2 className="font-display text-2xl font-extrabold tracking-tight text-foreground mb-6">{categoryDisplayNames[selectedCategory] || toTitleCase(selectedCategory)}</h2>
             <div className="grid grid-cols-4 gap-6">
               {categoryProducts.map((product) => (
                 <ProductCard
@@ -254,7 +262,7 @@ const Index = () => {
       {activeTab === "usuals" && !selectedCategory && allProducts && (
         <div className="px-6 py-6">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold text-foreground mb-6">Your Usual Items</h2>
+            <h2 className="font-display text-2xl font-extrabold tracking-tight text-foreground mb-6">Your Usual Items</h2>
             <div className="grid grid-cols-4 gap-6">
               {allProducts.filter(p => p.categories?.includes('usuals')).map((product) => (
                 <ProductCard
@@ -278,7 +286,7 @@ const Index = () => {
       {activeTab === "lastorder" && (
         <div className="px-6 py-8">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Last Order</h2>
+            <h2 className="font-display text-2xl font-extrabold tracking-tight text-foreground mb-8 text-center">Last Order</h2>
             <div className="space-y-6">
               {/* Order Info */}
               <div className="bg-gray-50 rounded-lg p-4 border">
@@ -344,7 +352,7 @@ const Index = () => {
       {activeTab === "favourites" && (
         <div className="px-6 py-8">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Your Favourites</h2>
+            <h2 className="font-display text-2xl font-extrabold tracking-tight text-foreground mb-8 text-center">Your Favourites</h2>
             <div className="grid grid-cols-4 gap-6">
               {favItems.map((product) => (
                 <ProductCard
