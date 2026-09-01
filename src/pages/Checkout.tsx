@@ -15,6 +15,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ArrowLeft, ShoppingCart, Plus, MapPin, Clock, Truck, Zap, Car } from "lucide-react";
 import { useProducts } from "@/components/ProductSection";
 import CheckoutCouponWallet from "@/components/CheckoutCouponWallet";
+import PromoCodeInput from "@/components/PromoCodeInput";
 import { format } from "date-fns";
 
 import {
@@ -124,13 +125,17 @@ const Checkout = () => {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Basket
           </Button>
-          <h1 className="text-3xl font-bold">Secure Checkout</h1>
+          <h1 className="font-display text-3xl font-extrabold tracking-tight">Secure Checkout</h1>
           <p className="text-muted-foreground mt-1">Complete your grocery order</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Delivery Information */}
+          {/* Delivery Details */}
           <div className="lg:col-span-2 space-y-6">
+            <h2 className="font-display text-2xl font-extrabold tracking-tight text-foreground">
+              Delivery Details
+            </h2>
+
             {/* Selected Delivery Method */}
             <Card>
               <CardHeader>
@@ -252,7 +257,8 @@ const Checkout = () => {
               </CardContent>
             </Card>
 
-            {/* Coupon Wallet */}
+            {/* Promo code + coupon wallet */}
+            <PromoCodeInput />
             <CheckoutCouponWallet />
           </div>
 
@@ -338,7 +344,7 @@ const Checkout = () => {
         {/* Last-minute additions */}
         {recommendations.length > 0 && (
           <div className="mt-12">
-            <h2 className="text-2xl font-bold mb-6">Don't forget these essentials</h2>
+            <h2 className="font-display text-2xl font-extrabold tracking-tight mb-6">Don't forget these essentials</h2>
             
             <Carousel
               opts={{

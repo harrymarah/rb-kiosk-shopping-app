@@ -1,15 +1,53 @@
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useBasket } from "@/contexts/BasketContext";
+import { useProducts } from "@/components/ProductSection";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { ArrowLeft, Plus, Minus, Trash2, ShoppingCart, CreditCard, ShoppingBag } from "lucide-react";
+import { ArrowLeft, Plus, Minus, Trash2, ShoppingCart, CreditCard, ShoppingBag, PackageX } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import LastMinuteSavings from "@/components/LastMinuteSavings";
+import LoyaltyBanner from "@/components/LoyaltyBanner";
+
+// Worked example of an out-of-stock swap: the milk is unavailable, so the
+// order is filled with bottled water instead.
+const SUBSTITUTION_DEMO = {
+  outOfStockId: "cravendale-filtered-fresh-whole-milk-2l-fresher-for-longer",
+  replacementId: "evian-natural-bottled-mineral-still-water-6-x-1-5l",
+};
 
 const Basket = () => {
-  const { items, updateQuantity, removeItem, getTotalPrice, clearBasket } = useBasket();
+  const { items, updateQuantity, removeItem, getTotalPrice, clearBasket, addItem } = useBasket();
+  const { allProducts } = useProducts();
   const navigate = useNavigate();
   const { toast } = useToast();
+  const seededSubstitution = useRef(false);
+
+  // Seed the substitution example once the basket has something in it. The
+  // basket is in-memory, so this resets with the session.
+  useEffect(() => {
+    if (seededSubstitution.current) return;
+    if (!items.length || !allProducts?.length) return;
+    if (items.some((item) => item.substitutedFor)) return;
+
+    const outOfStock = allProducts.find((p: any) => p.id === SUBSTITUTION_DEMO.outOfStockId);
+    const replacement = allProducts.find((p: any) => p.id === SUBSTITUTION_DEMO.replacementId);
+    if (!outOfStock || !replacement) return;
+
+    seededSubstitution.current = true;
+    addItem({
+      id: replacement.id,
+      name: replacement.name,
+      price: replacement.price,
+      image: replacement.image,
+      substitutedFor: {
+        name: outOfStock.name,
+        price: outOfStock.price,
+        image: outOfStock.image,
+      },
+    });
+  }, [items, allProducts, addItem]);
 
   const formatPrice = (price: number) => `£${price.toFixed(2)}`;
 
@@ -48,8 +86,10 @@ const Basket = () => {
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Shopping
             </Button>
-            <h1 className="text-3xl font-bold">Your Basket</h1>
+            <h1 className="font-display text-3xl font-extrabold tracking-tight">Your Basket</h1>
           </div>
+
+          <LastMinuteSavings />
 
           <Card>
             <CardContent className="py-16 text-center">
@@ -80,7 +120,7 @@ const Basket = () => {
             Continue Shopping
           </Button>
           <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold">Your Basket</h1>
+            <h1 className="font-display text-3xl font-extrabold tracking-tight">Your Basket</h1>
             <Button 
               variant="outline" 
               size="sm" 
@@ -93,6 +133,9 @@ const Basket = () => {
           </div>
         </div>
 
+        <LastMinuteSavings />
+        <LoyaltyBanner />
+
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Basket Items */}
           <div className="lg:col-span-2 space-y-4">
@@ -101,8 +144,39 @@ const Basket = () => {
               const itemTotal = itemPrice * item.quantity;
 
               return (
-                <Card key={item.id}>
+                <Card key={item.id} className={item.substitutedFor ? "border-2 border-amber-400" : undefined}>
+                  {item.substitutedFor && (
+                    <div className="flex items-center gap-2 px-6 py-2.5 bg-amber-50 border-b border-amber-200 rounded-t-lg">
+                      <PackageX className="w-4 h-4 text-amber-700 flex-shrink-0" />
+                      <p className="text-sm font-semibold text-amber-900">
+                        Out of stock — we&apos;ve swapped this for you
+                      </p>
+                    </div>
+                  )}
                   <CardContent className="p-6">
+                    {item.substitutedFor && (
+                      <div className="flex items-center gap-3 mb-4 pb-4 border-b border-border">
+                        <div className="w-12 h-12 bg-muted rounded-md overflow-hidden flex-shrink-0 opacity-50">
+                          <img
+                            src={item.substitutedFor.image}
+                            alt={item.substitutedFor.name}
+                            className="w-full h-full object-contain grayscale"
+                            onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/placeholder.svg'; }}
+                          />
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-sm text-muted-foreground line-through truncate">
+                            {item.substitutedFor.name}
+                          </p>
+                          <p className="text-xs text-muted-foreground line-through">
+                            {item.substitutedFor.price}
+                          </p>
+                        </div>
+                        <span className="ml-auto flex-shrink-0 whitespace-nowrap text-xs font-semibold uppercase tracking-wide text-amber-700">
+                          Replaced with
+                        </span>
+                      </div>
+                    )}
                     <div className="flex items-center gap-4">
                       {/* Item Image */}
                       <div className="w-20 h-20 bg-muted rounded-lg overflow-hidden flex-shrink-0">

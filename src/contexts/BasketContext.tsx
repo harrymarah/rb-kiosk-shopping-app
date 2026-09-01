@@ -7,6 +7,15 @@ export interface BasketItem {
   price: string;
   image: string;
   quantity: number;
+  /**
+   * Set when this line replaces an item that was out of stock, so the basket
+   * can show the original struck through alongside its substitute.
+   */
+  substitutedFor?: {
+    name: string;
+    price: string;
+    image: string;
+  };
 }
 
 interface BasketContextType {
