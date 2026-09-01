@@ -1,11 +1,31 @@
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import fs from "fs";
 import path from "path";
+
+// GitHub Pages serves static files with no rewrite rule, so a direct hit on a
+// client route (/basket, /checkout, ...) 404s. Pages falls back to 404.html,
+// so shipping a copy of index.html under that name hands those URLs to the
+// router instead.
+const spaFallback = (): Plugin => ({
+  name: "spa-404-fallback",
+  apply: "build",
+  closeBundle() {
+    const dist = path.resolve(__dirname, "dist");
+    const index = path.join(dist, "index.html");
+    if (fs.existsSync(index)) {
+      fs.copyFileSync(index, path.join(dist, "404.html"));
+    }
+  },
+});
 import { componentTagger } from "lovable-tagger";
 import { VitePWA } from "vite-plugin-pwa";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Served from the apex of a custom domain (redbullcom.harrymarah.uk), not
+  // from a /repo-name/ path, so the default base is correct here.
+  base: "/",
   server: {
     host: "::",
     port: 8080,
@@ -73,7 +93,8 @@ export default defineConfig(({ mode }) => ({
           }
         ]
       }
-    })
+    }),
+    spaFallback(),
   ].filter(Boolean),
   resolve: {
     alias: {
