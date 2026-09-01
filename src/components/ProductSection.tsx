@@ -1,5 +1,6 @@
 import ProductCard from "./ProductCard";
 import { useEffect, useState } from "react";
+import { getProductImageUrl } from "@/lib/image";
 
 interface ProductSectionProps {
   title: string;
@@ -53,8 +54,19 @@ export const useProducts = () => {
   useEffect(() => {
     const CACHE_KEY = 'productsData';
     const VERSION_KEY = 'productsDataVersion';
-    const CACHE_VERSION = '2025-09-09-v2';
+    const CACHE_VERSION = '2026-09-01-v1';
     const DATA_URL = '/data/products.json';
+
+    // products.json stores "<category folder>/<filename>"; resolve it to the
+    // public Supabase URL once, on load, so every consumer still reads
+    // product.image as a plain URL.
+    const withImages = (data: any) => ({
+      ...data,
+      products: (data.products || []).map((p: any) => ({
+        ...p,
+        image: getProductImageUrl(p.imagePath ?? p.image),
+      })),
+    });
 
     const loadData = async () => {
       try {
@@ -64,13 +76,15 @@ export const useProducts = () => {
         const storedVersion = localStorage.getItem(VERSION_KEY);
         if (storedVersion !== CACHE_VERSION) {
           localStorage.removeItem(CACHE_KEY);
+          // Derived from the old product list - would otherwise pin dead images.
+          localStorage.removeItem('forYouProducts');
           localStorage.setItem(VERSION_KEY, CACHE_VERSION);
         }
-        
+
         // Try to load from localStorage first for instant UI
         const cachedData = localStorage.getItem(CACHE_KEY);
         if (cachedData) {
-          const data = JSON.parse(cachedData);
+          const data = withImages(JSON.parse(cachedData));
           setProducts(data.products);
           setCategories(data.categories);
           const flatProducts = data.products || [];
@@ -81,7 +95,7 @@ export const useProducts = () => {
         // Fetch fresh data (cache-busted) and update state/cache
         const response = await fetch(`${DATA_URL}?v=${CACHE_VERSION}`);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const data = await response.json();
+        const data = withImages(await response.json());
         
         localStorage.setItem(CACHE_KEY, JSON.stringify(data));
         localStorage.setItem(VERSION_KEY, CACHE_VERSION);
@@ -96,7 +110,7 @@ export const useProducts = () => {
         // If fetch fails, try to use cached data
         const cachedData = localStorage.getItem(CACHE_KEY);
         if (cachedData) {
-          const data = JSON.parse(cachedData);
+          const data = withImages(JSON.parse(cachedData));
           setProducts(data.products);
           setCategories(data.categories);
           const flatProducts = data.products || [];
