@@ -65,9 +65,11 @@ const Header = () => {
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className="h-8 w-8 text-storefront-muted hover:bg-white/10 hover:text-storefront-foreground"
+                  aria-label="Back to the Red Bull app selector"
+                  title="Back to the Red Bull app selector"
+                  className="h-11 w-11 rounded-full border border-white/20 bg-white/10 hover:bg-white/20"
                 >
-                  <ArrowLeft className="h-3 w-3" />
+                  <ArrowLeft className="h-5 w-5 text-storefront-foreground" />
                 </Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
