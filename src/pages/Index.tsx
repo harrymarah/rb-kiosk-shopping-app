@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
 import WelcomeSection from "@/components/WelcomeSection";
 import CategorySection from "@/components/CategorySection";
@@ -16,6 +16,7 @@ import { useToast } from "@/components/ui/use-toast";
 // Force fresh component compilation
 const Index = () => {
   const [searchParams] = useSearchParams();
+  const location = useLocation();
   const [forYouProducts, setForYouProducts] = useState<any[]>([]);
   const [activeTab, setActiveTab] = useState("foryou");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -75,7 +76,10 @@ const Index = () => {
     ).replace(/([a-z])([A-Z])/g, '$1 $2');
   };
 
-  // Handle URL params for category selection
+  // Handle URL params for category selection. Keyed on location.key as well as
+  // the params: navigating home from an open category re-lands on "/" with the
+  // same (empty) params, so without the key this would not re-run and the
+  // category view would stay on screen.
   useEffect(() => {
     const categoryParam = searchParams.get("category");
     const tabParam = searchParams.get("tab");
@@ -102,8 +106,13 @@ const Index = () => {
       setActiveTab(tabParam);
       // When switching to a tab, clear category selection
       setSelectedCategory(null);
+    } else {
+      // Plain "/" - e.g. the Home button. Clear the category and come back to
+      // the default tab; leaving activeTab on "explore" would render nothing.
+      setSelectedCategory(null);
+      setActiveTab("foryou");
     }
-  }, [searchParams]);
+  }, [searchParams, location.key]);
 
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
@@ -111,13 +120,12 @@ const Index = () => {
   };
 
   const handleCategorySelect = (category: string | null) => {
-    if (category === 'favourites') {
-      setActiveTab('favourites');
-      setSelectedCategory(null);
-    } else {
-      setSelectedCategory(category);
-      // Don't change activeTab - let the category view show regardless of tab
-    }
+    // Favourites is a product category in its own right ("Our most popular
+    // products"), so its tile opens the category grid like every other one.
+    // The shopper's own saved list stays on the Favourites tab and the heart
+    // in the header.
+    setSelectedCategory(category);
+    // Don't change activeTab - let the category view show regardless of tab
   };
 
   const toggleFavoriteById = (productId: string) => {

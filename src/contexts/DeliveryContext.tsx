@@ -5,6 +5,9 @@ export type DeliveryType = 'home' | 'express' | 'collect';
 interface DeliveryContextType {
   selectedDelivery: DeliveryType;
   setSelectedDelivery: (delivery: DeliveryType) => void;
+  /** The slot chosen at checkout, e.g. "10:00 AM - 11:00 AM". */
+  scheduledSlot: string;
+  setScheduledSlot: (slot: string) => void;
   getDeliveryDetails: () => {
     label: string;
     description: string;
@@ -21,6 +24,7 @@ interface DeliveryProviderProps {
 
 export const DeliveryProvider: React.FC<DeliveryProviderProps> = ({ children }) => {
   const [selectedDelivery, setSelectedDelivery] = useState<DeliveryType>('home');
+  const [scheduledSlot, setScheduledSlot] = useState<string>('');
 
   const getDeliveryDetails = () => {
     switch (selectedDelivery) {
@@ -57,6 +61,8 @@ export const DeliveryProvider: React.FC<DeliveryProviderProps> = ({ children }) 
 
   return (
     <DeliveryContext.Provider value={{
+      scheduledSlot,
+      setScheduledSlot,
       selectedDelivery,
       setSelectedDelivery,
       getDeliveryDetails

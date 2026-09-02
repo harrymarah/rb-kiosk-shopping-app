@@ -10,7 +10,7 @@ import BannerAd from "@/components/BannerAd";
 
 const Confirmation = () => {
   const navigate = useNavigate();
-  const { selectedDelivery, getDeliveryDetails } = useDelivery();
+  const { selectedDelivery, getDeliveryDetails, scheduledSlot } = useDelivery();
   const { allProducts } = useProducts();
   const { addItem } = useBasket();
   const [deliveryTime, setDeliveryTime] = useState<string>("");
@@ -52,6 +52,12 @@ const Confirmation = () => {
         break;
     }
 
+    // A shopper who booked a slot should see that slot, not a fresh estimate.
+    if (scheduledSlot) {
+      setDeliveryTime(scheduledSlot);
+      return;
+    }
+
     const deliveryDate = new Date(now.getTime() + timeMinutes * 60000);
     setDeliveryTime(
       deliveryDate.toLocaleTimeString('en-GB', {
@@ -73,7 +79,7 @@ const Confirmation = () => {
     }, 60000); // Update every minute
 
     return () => clearInterval(interval);
-  }, [selectedDelivery]);
+  }, [selectedDelivery, scheduledSlot]);
 
   // Set recommended products - grocery essentials
   useEffect(() => {

@@ -74,19 +74,46 @@ const EnergyDrinks = () => {
     { id: "Lucozade", name: "Lucozade", image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/products/Categories/6%20Energy%20Drinks/6%20-%20Lucozade%20Energy%20Orange%204x500ml.jpg", count: energyDrinkProducts.filter(p => p.name?.toLowerCase().includes('lucozade')).length }
   ];
 
-  // Available flavours (extracted from actual product names)
+  // Does a product match a flavour? Shared by the filter and the option list
+  // below, so the dropdown can never offer a flavour that returns nothing.
+  const matchesFlavour = (product: any, flavour: string) => {
+    const flavourName = flavour.toLowerCase();
+    const productName = product.name?.toLowerCase() || '';
+
+    if (flavourName === "original") {
+      return !productName.includes('sugar free')
+        && !productName.includes('zero')
+        && !productName.includes('edition');
+    }
+    if (flavourName === "sugar free") {
+      return productName.includes('sugar free') || productName.includes('sugarfree');
+    }
+    if (flavourName === "zero") return productName.includes('zero');
+    return productName.includes(flavourName);
+  };
+
+  // Candidate flavours, narrowed to those the current range actually carries.
+  // The range changes year to year, so a hardcoded list goes stale and leaves
+  // dropdown options that return an empty grid.
   const availableFlavours = [
-    "Original", 
-    "Sugar Free", 
-    "Fuji Apple & Ginger", 
-    "White Peach", 
-    "Grapefruit & Blossom", 
-    "Vanilla Iced Berry", 
-    "Forest Fruit", 
-    "Watermelon", 
+    "Original",
+    "Sugar Free",
+    "Zero",
+    "Cherry",
+    "Peach",
+    "Citrus Zest",
+    "Vanilla Iced Berry",
+    "Fuji Apple & Ginger",
+    "White Peach",
+    "Grapefruit & Blossom",
+    "Forest Fruit",
+    "Watermelon",
     "Juneberry",
-    "Zero"
-  ];
+    "Mango",
+    "Strawberry",
+    "Guava",
+    "Tropical",
+  ].filter(flavour => energyDrinkProducts.some(p => matchesFlavour(p, flavour)));
 
   // Filter products based on all criteria
   const filteredProducts = energyDrinkProducts.filter(product => {
@@ -105,17 +132,8 @@ const EnergyDrinks = () => {
       if (!product.subcategory || product.subcategory !== selectedCategory) return false;
     }
     
-    // Flavour filter - improved matching
-    if (selectedFlavour !== "all") {
-      const flavourName = selectedFlavour.toLowerCase();
-      const productName = product.name?.toLowerCase() || '';
-      
-      // Special handling for different flavour types
-      if (flavourName === "original" && (productName.includes('sugar free') || productName.includes('zero') || productName.includes('edition'))) return false;
-      if (flavourName === "sugar free" && !productName.includes('sugar free') && !productName.includes('sugarfree')) return false;
-      if (flavourName === "zero" && !productName.includes('zero')) return false;
-      if (flavourName !== "original" && flavourName !== "sugar free" && flavourName !== "zero" && !productName.includes(flavourName)) return false;
-    }
+    // Flavour filter
+    if (selectedFlavour !== "all" && !matchesFlavour(product, selectedFlavour)) return false;
     
     // Low sugar filter
     if (lowSugar) {
@@ -128,9 +146,10 @@ const EnergyDrinks = () => {
       if (!product.categories?.includes('newProducts')) return false;
     }
     
-    // On offer filter - check for any offers
+    // On offer filter - a real discount, not the "New Arrival" badge that
+    // also lives on product.offer
     if (onOffer) {
-      if (!product.offer) return false;
+      if (!product.offerRank && !product.originalPrice) return false;
     }
     
     return true;
@@ -389,7 +408,7 @@ const EnergyDrinks = () => {
                   id: "red-bull-sugar-free-12pk-sponsored",
                   name: "Red Bull Sugar Free 12pk",
                   price: "£14.25",
-                  image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Energy%20Drinks/15.%20Red%20Bull%20Energy%20Drink%20Sugar%20Free%2012%20X%20250ml.jpeg"
+                  image: "https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/qcom/products/Red%20Bull/12.%20Red%20Bull%20Sugar%20Free%20Energy%20Drink%2012%20X%20250ml.jpeg"
                 };
                 addItem(product);
               }}

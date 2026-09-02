@@ -30,7 +30,7 @@ const Checkout = () => {
   const { items, getTotalPrice, clearBasket, addItem } = useBasket();
   const { markCheckoutComplete } = useCheckout();
   const { availableCoupons, applyCoupon: applyGlobalCoupon, getAppliedCoupons, getTotalDiscount } = useCoupons();
-  const { selectedDelivery, getDeliveryDetails } = useDelivery();
+  const { selectedDelivery, getDeliveryDetails, setScheduledSlot } = useDelivery();
   const { addOrder } = useOrderHistory();
   const { allProducts } = useProducts();
   const navigate = useNavigate();
@@ -174,7 +174,16 @@ const Checkout = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <Select value={selectedTimeSlot} onValueChange={setSelectedTimeSlot} required>
+                <Select
+                  value={selectedTimeSlot}
+                  onValueChange={(value) => {
+                    setSelectedTimeSlot(value);
+                    // Carry the choice through so the confirmation can show the
+                    // slot the shopper actually picked.
+                    setScheduledSlot(timeSlots.find((s) => s.value === value)?.label || "");
+                  }}
+                  required
+                >
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder={`Select your preferred ${selectedDelivery === 'collect' ? 'pickup' : 'delivery'} time`} />
                   </SelectTrigger>

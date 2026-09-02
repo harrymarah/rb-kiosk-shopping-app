@@ -147,6 +147,24 @@ const ProductDetail = () => {
     );
   }
 
+  // Category the breadcrumb names, and navigates to.
+  const CATEGORY_LABELS: Record<string, string> = {
+    energyDrinks: "Energy Drinks",
+    newProducts: "New Products",
+    favourites: "Favourites",
+    redBull: "Red Bull Products",
+    softDrinks: "Soft Drinks",
+    usuals: "Usuals",
+    lastOrder: "Last Order",
+    moveSpring: "Get moving this Spring",
+    summerOutdoors: "Be outside this Summer",
+    winterNight: "Settle in for the Winter",
+  };
+  const primaryCategory = product.categories?.[0] || 'general';
+  const primaryCategoryLabel =
+    CATEGORY_LABELS[primaryCategory] ||
+    primaryCategory.charAt(0).toUpperCase() + primaryCategory.slice(1);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -167,33 +185,18 @@ const ProductDetail = () => {
             <BreadcrumbItem>
               <BreadcrumbLink 
                 onClick={() => {
-                  // Handle special routing for energy drinks
-                  if (product.categories?.includes('energyDrinks')) {
+                  // Follow the crumb that is actually shown. Routing on
+                  // "product is in energyDrinks" sent Red Bull products to the
+                  // energy drinks page while the crumb read "Red Bull Products".
+                  if (primaryCategory === 'energyDrinks') {
                     navigate('/energy-drinks');
                   } else {
-                    navigate(`/?category=${product.categories?.[0]}&tab=explore`);
+                    navigate(`/?category=${primaryCategory}&tab=explore`);
                   }
                 }}
                 className="cursor-pointer hover:text-foreground"
               >
-                {(() => {
-                  // Map category IDs to display names
-                  const categoryDisplayNames: Record<string, string> = {
-                    energyDrinks: "Energy Drinks",
-                    newProducts: "New Products",
-                    favourites: "Favourites",
-                    redBull: "Red Bull Products",
-                    softDrinks: "Soft Drinks",
-                    usuals: "Usuals",
-                    lastOrder: "Last Order",
-                    moveSpring: "Get moving this Spring",
-                    summerOutdoors: "Be outside this Summer",
-                    winterNight: "Settle in for the Winter"
-                  };
-                  
-                  const primaryCategory = product.categories?.[0] || 'general';
-                  return categoryDisplayNames[primaryCategory] || primaryCategory.charAt(0).toUpperCase() + primaryCategory.slice(1);
-                })()}
+                {primaryCategoryLabel}
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
