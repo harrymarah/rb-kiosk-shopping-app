@@ -21,6 +21,11 @@ All colors MUST be HSL.
     --primary: 220 91% 44%;
     --primary-foreground: 0 0% 100%;
     
+    /* Offers / Deals section - blush surface, deep red accents */
+    --offer-surface: 12 45% 93%;
+    --offer-accent: 4 63% 47%;
+    --offer-accent-foreground: 0 0% 100%;
+
     /* Storefront hero - deep, dark blue */
     --storefront: 223 64% 11%;
     --storefront-foreground: 0 0% 100%;

@@ -32,6 +32,11 @@ export default {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
 				},
+				offer: {
+					surface: 'hsl(var(--offer-surface))',
+					accent: 'hsl(var(--offer-accent))',
+					'accent-foreground': 'hsl(var(--offer-accent-foreground))'
+				},
 				storefront: {
 					DEFAULT: 'hsl(var(--storefront))',
 					foreground: 'hsl(var(--storefront-foreground))',

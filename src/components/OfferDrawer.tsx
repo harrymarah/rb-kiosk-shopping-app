@@ -114,7 +114,8 @@ const generateOffers = (product: Product, quantity: number): Offer[] => {
       switch (primaryCategory) {
         case 'beverages':
           bundleItem = 'Mixed Nuts';
-          bundleItemImage = 'https://ytmpkdrfujdbfkfhnimq.supabase.co/storage/v1/object/public/Food%20Delivery%20Assets/snacks.jpg';
+          // The old snacks.jpg no longer exists in the bucket.
+          bundleItemImage = product.image;
           break;
         default:
           bundleItem = 'Complementary item';

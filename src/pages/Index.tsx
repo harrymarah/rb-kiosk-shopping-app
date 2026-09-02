@@ -9,6 +9,7 @@ import ProductCarousel from "@/components/ProductCarousel";
 import ProductCard from "@/components/ProductCard";
 import BannerAd from "@/components/BannerAd";
 import OffersSection from "@/components/OffersSection";
+import StorefrontBanners from "@/components/StorefrontBanners";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useBasket } from "@/contexts/BasketContext";
 import { useToast } from "@/components/ui/use-toast";
@@ -161,7 +162,9 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <WelcomeSection />
-      
+
+      {!selectedCategory && <StorefrontBanners />}
+
       {/* New Products Banner */}
       <div className="px-6 py-4">
         <div className="container mx-auto max-w-4xl">
