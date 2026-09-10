@@ -54,7 +54,7 @@ export const useProducts = () => {
   useEffect(() => {
     const CACHE_KEY = 'productsData';
     const VERSION_KEY = 'productsDataVersion';
-    const CACHE_VERSION = '2026-09-01-v1';
+    const CACHE_VERSION = '2026-09-10-v1';
     const DATA_URL = '/data/products.json';
 
     // products.json stores "<category folder>/<filename>"; resolve it to the

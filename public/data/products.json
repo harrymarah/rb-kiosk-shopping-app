@@ -70,7 +70,8 @@
       "categories": [
         "redBull",
         "energyDrinks",
-        "softDrinks"
+        "softDrinks",
+        "usuals"
       ],
       "subcategory": "energiseAllDay"
     },
@@ -160,7 +161,7 @@
     },
     {
       "id": "red-bull-the-summer-edition-sugar-free-citrus-zest-edition-energy-drink-4-x-250ml",
-      "name": "Red Bull The Summer Edition Sugar Free Citrus Zest Edition Energy Drink 4 x 250ml",
+      "name": "Red Bull Energy Drink Yellow Edition Citrus Zest 4 x 250ml",
       "price": "£4.25",
       "imagePath": "Red Bull/9. Red Bull The Summer Edition Sugar Free Citrus Zest Edition Energy Drink 4 x 250ml.avif",
       "categories": [
